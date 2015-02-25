@@ -25,6 +25,12 @@
 	cursor: pointer;
 }
 
+.select-box-wrapper select option {
+	padding: 0.5em;
+	line-height: 1.5;
+	font-size: 1em;
+}
+
 .select-box-wrapper select {
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -54,7 +60,8 @@
 input[type=range] {
 	-webkit-appearance: none;
 	appearance: none; /* Hides the slider so that custom slider can be made */
-	width: 100%; /* Specific width is required for Firefox. */
+	width: 100%;
+	border-radius: 15px; /* Specific width is required for Firefox. */
 }
 
 input[type="range"]:focus {
@@ -146,12 +153,12 @@ input[type=range]::-ms-tooltip {
 input[type=range]::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	appearance: none;
-	height: 2em;
-	width: 2em;
+	height: 3em;
+	width: 3em;
 	border-radius: 100%;
 	background-color: #fff;
 	cursor: pointer;
-	margin-top: -5px;
+	margin-top: -10px;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 	outline: none;
 	border: none;
@@ -163,8 +170,8 @@ input[type=range]::-webkit-slider-thumb {
 
 input[type=range]::-moz-range-thumb {
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-	height: 2em;
-	width: 2em;
+	height: 3em;
+	width: 3em;
 	border-radius: 100%;
 	background: #fff;
 	cursor: pointer;
@@ -177,8 +184,8 @@ input[type=range]::-moz-range-thumb {
 
 input[type=range]::-ms-thumb {
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-	height: 2em;
-	width: 2em;
+	height: 3em;
+	width: 3em;
 	border-radius: 100%;
 	background: #ffffff;
 	cursor: pointer;

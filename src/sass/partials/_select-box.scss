@@ -25,6 +25,15 @@
         cursor: pointer;
     }
 }
+.select-box-wrapper select option {
+    //padding:1em;
+    padding:0.5em;
+    line-height:1.5;
+    font-size:1em;
+}
+.select-box-wrapper select:first-child {
+
+}
 .select-box-wrapper select {
     -webkit-appearance: none;
     -moz-appearance: none;
