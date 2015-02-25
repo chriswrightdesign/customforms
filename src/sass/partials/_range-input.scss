@@ -1,7 +1,13 @@
 //range input
 
-$trackHeight: 2px;
+$trackHeight: 10px;
 $thumbDimension: 2em;
+$trackBgColor: #eee;
+$trackHilightColor: rgba(249, 241, 155, 0.5);
+$trackHilightThumbColor: rgba(249, 241, 155, 1);
+
+$trackBorderRadius: 15px;
+
 
 input[type=range] {
   -webkit-appearance: none;
@@ -22,19 +28,19 @@ input[type="range"]:focus {
   
 }
 input[type="range"]:focus::-webkit-slider-runnable-track {
-	background-color: rgba(249, 241, 155, 0.5);
+	background-color: $trackHilightColor;
 }
 input[type="range"]:focus::-moz-range-track {
-	background-color: rgba(249, 241, 155, 0.5);
+	background-color: $trackHilightColor;
 }
 input[type=range]:focus::-webkit-slider-thumb {
-	background-color: rgba(249, 241, 155, 1);
+	background-color: $trackHilightThumbColor;
 }
 input[type=range]:focus::-moz-range-thumb { 
-	background-color: rgba(249, 241, 155, 1);
+	background-color: $trackHilightThumbColor;
 }
 input[type=range]:focus::-ms-thumb {
-	background-color: rgba(249, 241, 155, 1);
+	background-color: $trackHilightThumbColor;
 }
 
 .range-label {
@@ -49,8 +55,8 @@ input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: $trackHeight;
   cursor: pointer;
-  background-color: #eee;
-  border-radius: 15px;
+  background-color: $trackBgColor;
+  border-radius: $trackBorderRadius;
   transition: background 0.3s ease;
 
 }
@@ -59,8 +65,8 @@ input[type=range]::-moz-range-track {
   width: 100%;
   height: $trackHeight;
   cursor: pointer;
-  background-color: #eee;
-  border-radius: 15px;
+  background-color: $trackBgColor;
+  border-radius: $trackBorderRadius;
   transition: background 0.3s ease;
 }
 
@@ -81,7 +87,7 @@ input[type=range]::-ms-track {
 //specific to IE things
 input[type=range]::-ms-fill-lower {
   background-color: #017AFD;
-  border-radius: 15px;
+  border-radius: $trackBorderRadius;
 }
 
 input[type=range]:focus::-ms-fill-lower {
@@ -90,7 +96,7 @@ input[type=range]:focus::-ms-fill-lower {
 
 input[type=range]::-ms-fill-upper {
   background-color: #a9acb1;
-  border-radius: 15px;
+  border-radius: $trackBorderRadius;
 }
 
 input[type=range]:focus::-ms-fill-upper {
@@ -113,7 +119,7 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 100%;
   background-color: #fff;
   cursor: pointer;
-  margin-top: -10px;
+  margin-top: -5px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   outline: none;
   border: none;

@@ -2,8 +2,9 @@
 @import "partials/range-input";
 @import "partials/radio-switch";
 
+$brownbg: #291C15;
 body {
-    background: #a76741;
+    background: $brownbg;
     color: #fff;
     font-family: "effra",sans-serif;
     font-size: 100%;
