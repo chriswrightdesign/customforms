@@ -1,0 +1,24 @@
+@import "partials/select-box";
+@import "partials/range-input";
+
+body {
+    background: #a76741;
+    color: #fff;
+    font-family: "effra",sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+}
+
+h1 {
+
+    font-size: 3em;
+    font-weight: 300;
+    line-height: 1.1;
+    
+}
+.container {
+
+    margin: 0 auto;
+    max-width: 650px;
+
+}
