@@ -351,6 +351,7 @@ input[type="range"]::-ms-thumb {
 .spinner-wrapper {
 	position: relative;
 	display: block;
+	border-radius: 0;
 }
 
 .spinner-wrapper:after {
@@ -375,7 +376,7 @@ input[type="range"]::-ms-thumb {
 	background: none;
 	border: none;
 	background: #fff;
-	padding: 1.1em 0 1.05em 0.6em;
+	padding: 1.1em 0 1.05em 0.4em;
 	text-align: center;
 	font-size: 1em;
 	line-height: 1.5;
@@ -492,5 +493,13 @@ h1 {
 .container {
 	margin: 0 auto;
 	max-width: 650px;
+}
+
+@media all and (min-width: 40em) {
+
+.spinner-input {
+	padding: 1.1em 0 1.05em 0.6em;
+}
+
 }
 

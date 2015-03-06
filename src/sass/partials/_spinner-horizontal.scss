@@ -50,6 +50,7 @@ $spinnerHoziontalBtnTextColor:#fff;
 
      position:relative;
      display:block;
+     border-radius:0;
 
      &:after {
         content: "";
@@ -75,12 +76,17 @@ $spinnerHoziontalBtnTextColor:#fff;
     background: none;
     border: none;
     background:#fff;
-    padding:1.1em 0 1.05em 0.6em;
+    padding:1.1em 0 1.05em 0.4em;
+   
     text-align:center;
     font-size:1em;
     line-height:1.5;
     border-radius:none;
     width: 100%;
+
+     @media all and (min-width:40em){
+         padding:1.1em 0 1.05em 0.6em;
+    }
    
    
 }
