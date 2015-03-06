@@ -366,6 +366,9 @@ input[type=range]::-ms-thumb {
 }
 
 .spinner-input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	box-sizing: border-box;
 	background: none;
 	border: none;
@@ -376,9 +379,6 @@ input[type=range]::-ms-thumb {
 	line-height: 1.5;
 	border-radius: none;
 	width: 100%;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
 }
 
 .spinner-horizontal-list li {
