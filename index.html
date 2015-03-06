@@ -83,6 +83,7 @@
 
 			<form id="number-spinner-horizontal">
 				<div class="spinner-horizontal">
+				<label for="spinner-horizontal-vertical" class="spinner-horizontal-label">How many</label>
 					<ul class="spinner-horizontal-list">
 						<li>
 							<a href="#" data-type="subtract" class="btn-spinner btn-spinner-left js-spinner-horizontal-subtract">-</a>
@@ -105,20 +106,27 @@
 
 			<form id="number-spinner-vertical">
 				<div class="spinner-vertical">
+					<label for="spinner-input-vertical" class="spinner-vertical-label">How many</label>
 					<ul class="spinner-vertical-list">
 						
 						<li>
-							<a href="#" data-type="add" class="btn-vertical-spinner btn-vertical-spinner-top">
+							<a href="#add" data-type="add" class="btn-vertical-spinner btn-vertical-spinner-top">
+							+
+							</a>
 						</li>
-						<li>
+						<li class="spinner-vertical-wrapper">
 							<input type="number" class="vertical-spinner-input js-spinner-input-vertical" id="spinner-input-vertical" value="1" pattern="[0-9]*" />
 						</li>
 						<li>
-							<a href="#" data-type="subtract" class="btn-vertical-spinner btn-vertical-spinner-bottom">
+							<a href="#subtract" data-type="subtract" class="btn-vertical-spinner btn-vertical-spinner-bottom">-</a>
 						</li>
 					</ul>
 				</div>
 			</form>
+
+			<h2>Segmented Radio control</h2>
+
+			<h2>Radio options</h2>
 
 			<!-- <h2>Full screen calendar control</h2>-->
 

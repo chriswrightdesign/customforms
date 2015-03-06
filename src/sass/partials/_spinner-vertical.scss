@@ -1,0 +1,78 @@
+//vertical spinner control
+//spinner horizontal
+$spinnerVerticalBtnColor:#180f0b;
+$spinnerVerticalBtnHover:#20120a;
+$spinnerVerticalBtnRadius: 5px;
+$spinnerVerticalBtnTextColor:#fff;
+
+.spinner-vertical {
+	max-width:5em;
+}
+.spinner-vertical-list {
+
+}
+.spinner-vertical-list li {
+	width: 100%;
+	list-style:none;	
+}
+.spinner-vertical-label {
+    display:block;
+    text-align:center;
+    width:100%;
+}
+.vertical-spinner-input {
+	
+	
+    background: none;
+    border: none;
+    background:#fff;
+    padding:1.5em 0.75em 1.5em 1.25em;
+    text-align:center;
+    font-size:1em;
+    width:100%;
+
+    &:hover, &:focus, &:active {
+    	font-size:1em;
+    }
+}
+.btn-vertical-spinner {
+	text-align:center;
+	padding:1em;
+	width:100%;
+	text-decoration:none;
+	color:$spinnerVerticalBtnTextColor;
+	background:$spinnerVerticalBtnColor;
+	display: block;
+	transition: background 0.4s ease;
+
+	&:hover, &:focus, &:active {
+		background: $spinnerVerticalBtnHover;
+	}
+
+}
+.btn-vertical-spinner-top {
+
+	border-top-left-radius:$spinnerVerticalBtnRadius;
+	border-top-right-radius:$spinnerVerticalBtnRadius;
+}
+.btn-vertical-spinner-bottom {
+	border-bottom-left-radius:$spinnerVerticalBtnRadius;
+	border-bottom-right-radius:$spinnerVerticalBtnRadius;
+}
+
+//hack to hide the number spinner
+//shame!
+
+.spinner-vertical-wrapper {
+	position:relative;
+	&:after {
+		content: "";
+		position:absolute;
+		width:1em;
+		height:1em;
+		display:block;
+		background: #fff;
+		right:-1.6em;
+		top:38%;
+	}
+}
