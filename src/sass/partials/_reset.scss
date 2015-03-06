@@ -23,11 +23,22 @@ ol, ul {
 li {
 	list-style: none;
 }
-input {
+button {
 	border:none;
 	background:none;
 }
-
+input {
+	border:none;
+	background:none;
+	-webkit-apperance:none;
+	border-radius:0;
+}
+input:focus, 
+input:hover,
+select:focus,
+select:hover {
+	font-size:1em;
+}
 blockquote, q {
 	quotes: none;
 }
