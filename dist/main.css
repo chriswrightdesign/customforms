@@ -292,7 +292,7 @@ input[type=range]::-ms-thumb {
 }
 
 .spinner-horizontal {
-	max-width: 15em;
+	max-width: 20em;
 	margin: 0 0 5em 0;
 }
 
@@ -310,7 +310,7 @@ input[type=range]::-ms-thumb {
 
 .btn-spinner {
 	display: block;
-	padding: 0.75em 1em;
+	padding: 1.1em 1.1em;
 	color: #fff;
 	font-size: 1em;
 	font-weight: 700;
@@ -358,10 +358,11 @@ input[type=range]::-ms-thumb {
 	background: none;
 	border: none;
 	background: #fff;
-	padding: 0.7em 0 0.7em 0.7em;
+	padding: 1.1em 0 1.05em 0.6em;
 	text-align: center;
 	font-size: 1em;
 	line-height: 1.5;
+	border-radius: none;
 	width: 100%;
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -404,6 +405,7 @@ input[type=range]::-ms-thumb {
 	background: none;
 	border: none;
 	background: #fff;
+	border-radius: none;
 	padding: 1.5em 0.75em 1.5em 1.25em;
 	text-align: center;
 	font-size: 1em;
