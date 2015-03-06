@@ -76,9 +76,10 @@
 
 			</form>
 
-			<h2>Number spinner</h2>
+			<h2>Number spinner horizontal</h2>
 
-			<p>This implementation uses two anchor links to control the stepper, alternatively you could use radio buttons and add some keyboard support, however, it wouldn't work so well repeatedly hitting the same radio button.</p>
+			<p>This implementation uses two anchor links to control the stepper, alternatively you could use radio buttons and add some keyboard support, however, it wouldn't work so well repeatedly hitting the same radio button. </p>
+			<p>This has a hacky solution where I use a pseudo to cover up the spinner since there appears to be no way to remove the spinner anymore.</p>
 
 			<form id="number-spinner-horizontal">
 				<div class="spinner-horizontal">
@@ -86,8 +87,8 @@
 						<li>
 							<a href="#" data-type="subtract" class="btn-spinner btn-spinner-left js-spinner-horizontal-subtract">-</a>
 						</li>
-						<li>
-							<input type="number" class="spinner-input js-spinner-input-horizontal" id="spinner-input" value="1" />
+						<li class="spinner-wrapper">
+							<input type="number" class="spinner-input js-spinner-input-horizontal" id="spinner-input" value="1" pattern="[0-9]*" />
 						</li>
 						<li>
 							<a href="#" data-type="add" class="btn-spinner btn-spinner-right js-spinner-horizontal-add">+</a>
@@ -97,6 +98,29 @@
 				</div>
 			</form>
 
+
+			<h2>Number spinner Vertical</h2>
+
+			<p>This is a touch friendly vertical spinner style, inspired by the one seen on Virgin America's site.</p>
+
+			<form id="number-spinner-vertical">
+				<div class="spinner-vertical">
+					<ul class="spinner-vertical-list">
+						
+						<li>
+							<a href="#" data-type="add" class="btn-vertical-spinner btn-vertical-spinner-top">
+						</li>
+						<li>
+							<input type="number" class="vertical-spinner-input js-spinner-input-vertical" id="spinner-input-vertical" value="1" pattern="[0-9]*" />
+						</li>
+						<li>
+							<a href="#" data-type="subtract" class="btn-vertical-spinner btn-vertical-spinner-bottom">
+						</li>
+					</ul>
+				</div>
+			</form>
+
+			<!-- <h2>Full screen calendar control</h2>-->
 
 
 		</div>

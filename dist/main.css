@@ -312,6 +312,7 @@ h1 {
 
 .spinner-horizontal {
 	max-width: 15em;
+	margin: 0 0 5em 0;
 }
 
 .spinner-horizontal:after {
@@ -346,11 +347,29 @@ h1 {
 	border-bottom-right-radius: 5px;
 }
 
+.spinner-wrapper {
+	position: relative;
+	display: block;
+}
+
+.spinner-wrapper:after {
+	content: "";
+	position: absolute;
+	width: 1em;
+	height: 2em;
+	display: block;
+	right: 0em;
+	top: 25%;
+	z-index: 1;
+	background: #fff;
+}
+
 .spinner-input {
+	box-sizing: border-box;
 	background: none;
 	border: none;
 	background: #fff;
-	padding: 0.7em 0;
+	padding: 0.7em 0 0.7em 0.7em;
 	text-align: center;
 	font-size: 1em;
 	line-height: 1.5;
