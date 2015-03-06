@@ -66,6 +66,8 @@ $spinnerHoziontalBtnTextColor:#fff;
 }
 
 .spinner-input {
+    border-radius:0;
+    -webkit-border-radius:0; // attempting to remove the borders
     -webkit-appearance:none;
     -moz-appearance:none;
     appearance:none;

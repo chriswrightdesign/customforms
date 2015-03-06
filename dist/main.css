@@ -57,7 +57,7 @@
 	background-color: rgba(249, 241, 155, 0.5);
 }
 
-input[type=range] {
+input[type="range"] {
 	-webkit-appearance: none;
 	appearance: none; /* Hides the slider so that custom slider can be made */
 	width: 100%;
@@ -76,15 +76,15 @@ input[type="range"]:focus::-moz-range-track {
 	background-color: rgba(249, 241, 155, 0.5);
 }
 
-input[type=range]:focus::-webkit-slider-thumb {
+input[type="range"]:focus::-webkit-slider-thumb {
 	background-color: #f9f19b;
 }
 
-input[type=range]:focus::-moz-range-thumb {
+input[type="range"]:focus::-moz-range-thumb {
 	background-color: #f9f19b;
 }
 
-input[type=range]:focus::-ms-thumb {
+input[type="range"]:focus::-ms-thumb {
 	background-color: #f9f19b;
 }
 
@@ -93,7 +93,7 @@ input[type=range]:focus::-ms-thumb {
 	display: block;
 }
 
-input[type=range]::-webkit-slider-runnable-track {
+input[type="range"]::-webkit-slider-runnable-track {
 	width: 100%;
 	height: 10px;
 	cursor: pointer;
@@ -102,7 +102,7 @@ input[type=range]::-webkit-slider-runnable-track {
 	transition: background 0.3s ease;
 }
 
-input[type=range]::-moz-range-track {
+input[type="range"]::-moz-range-track {
 	width: 100%;
 	height: 10px;
 	cursor: pointer;
@@ -111,7 +111,7 @@ input[type=range]::-moz-range-track {
 	transition: background 0.3s ease;
 }
 
-input[type=range]::-ms-track {
+input[type="range"]::-ms-track {
 	cursor: pointer;
 	border-top: 16px;
 	border-bottom: 17px;
@@ -125,31 +125,31 @@ input[type=range]::-ms-track {
 	transition: background 0.3s ease;
 }
 
-input[type=range]::-ms-fill-lower {
+input[type="range"]::-ms-fill-lower {
 	background-color: #017AFD;
 	border-radius: 5px;
 }
 
-input[type=range]:focus::-ms-fill-lower {
+input[type="range"]:focus::-ms-fill-lower {
 	background-color: #017AFD;
 }
 
-input[type=range]::-ms-fill-upper {
+input[type="range"]::-ms-fill-upper {
 	background-color: #a9acb1;
 	border-radius: 5px;
 }
 
-input[type=range]:focus::-ms-fill-upper {
+input[type="range"]:focus::-ms-fill-upper {
 	background-color: #a9acb1;
 }
 
-input[type=range]::-ms-tooltip {
+input[type="range"]::-ms-tooltip {
 	display: none;
 }
 
 /* Special styling for WebKit/Blink */
 
-input[type=range]::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	appearance: none;
 	height: 3em;
@@ -166,7 +166,7 @@ input[type=range]::-webkit-slider-thumb {
 
 /* All the same stuff for Firefox */
 
-input[type=range]::-moz-range-thumb {
+input[type="range"]::-moz-range-thumb {
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 	height: 3em;
 	width: 3em;
@@ -180,7 +180,7 @@ input[type=range]::-moz-range-thumb {
 
 /* All the same stuff for IE */
 
-input[type=range]::-ms-thumb {
+input[type="range"]::-ms-thumb {
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 	height: 3em;
 	width: 3em;
@@ -354,6 +354,8 @@ input[type=range]::-ms-thumb {
 }
 
 .spinner-input {
+	border-radius: 0;
+	-webkit-border-radius: 0;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -402,10 +404,10 @@ input[type=range]::-ms-thumb {
 }
 
 .vertical-spinner-input {
+	border-radius: 0;
 	background: none;
 	border: none;
 	background: #fff;
-	border-radius: none;
 	padding: 1.5em 0.75em 1.5em 1.25em;
 	text-align: center;
 	font-size: 1em;
