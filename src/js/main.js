@@ -3,7 +3,9 @@
   var d = document,
   $, 
   btnSubtract, btnAdd, 
-  spinnerInput, changeSpinner;
+  spinnerInput, changeSpinner, eventType;
+
+  eventType = Modernizr.touch ? "touchstart" : "click";
 
   $ = function(selector){
     return d.querySelector(selector);
@@ -28,7 +30,7 @@
    
   };
  
-  btnSubtract.addEventListener("click", changeSpinner, false);
-  btnAdd.addEventListener("click", changeSpinner, false);
+  btnSubtract.addEventListener(eventType, changeSpinner, false);
+  btnAdd.addEventListener(eventType, changeSpinner, false);
 
 })();

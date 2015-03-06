@@ -69,11 +69,11 @@ $spinnerVerticalBtnTextColor:#fff;
 	&:after {
 		content: "";
 		position:absolute;
-		width:1em;
+		width:1.25em;
 		height:1em;
 		display:block;
 		background: #fff;
-		right:-1.6em;
+		right:-1.9em;
 		top:38%;
 	}
 }
