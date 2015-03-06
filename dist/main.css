@@ -25,6 +25,8 @@
 }
 
 .select-box-wrapper select option {
+	color: #111;
+	background: #fff;
 	padding: 0.5em;
 	line-height: 1.5;
 	font-size: 1em;
@@ -59,7 +61,7 @@ input[type=range] {
 	-webkit-appearance: none;
 	appearance: none; /* Hides the slider so that custom slider can be made */
 	width: 100%;
-	border-radius: 15px; /* Specific width is required for Firefox. */
+	border-radius: 50%; /* Specific width is required for Firefox. */
 }
 
 input[type="range"]:focus {
@@ -96,7 +98,7 @@ input[type=range]::-webkit-slider-runnable-track {
 	height: 10px;
 	cursor: pointer;
 	background-color: #eee;
-	border-radius: 15px;
+	border-radius: 50%;
 	transition: background 0.3s ease;
 }
 
@@ -105,7 +107,7 @@ input[type=range]::-moz-range-track {
 	height: 10px;
 	cursor: pointer;
 	background-color: #eee;
-	border-radius: 15px;
+	border-radius: 50%;
 	transition: background 0.3s ease;
 }
 
@@ -125,7 +127,7 @@ input[type=range]::-ms-track {
 
 input[type=range]::-ms-fill-lower {
 	background-color: #017AFD;
-	border-radius: 15px;
+	border-radius: 50%;
 }
 
 input[type=range]:focus::-ms-fill-lower {
@@ -134,7 +136,7 @@ input[type=range]:focus::-ms-fill-lower {
 
 input[type=range]::-ms-fill-upper {
 	background-color: #a9acb1;
-	border-radius: 15px;
+	border-radius: 50%;
 }
 
 input[type=range]:focus::-ms-fill-upper {
@@ -306,5 +308,72 @@ h1 {
 .container {
 	margin: 0 auto;
 	max-width: 650px;
+}
+
+.spinner-horizontal {
+	max-width: 15em;
+}
+
+.spinner-horizontal:after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+.btn-spinner {
+	display: block;
+	padding: 0.75em 1em;
+	color: #fff;
+	font-size: 1em;
+	font-weight: 700;
+	text-align: center;
+	text-decoration: none;
+	background: #180f0b;
+	transition: background 0.4s ease;
+}
+
+.btn-spinner:hover {
+	background: #20120a;
+}
+
+.btn-spinner-left {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.btn-spinner-right {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.spinner-input {
+	background: none;
+	border: none;
+	background: #fff;
+	padding: 0.7em 0;
+	text-align: center;
+	font-size: 1em;
+	line-height: 1.5;
+	width: 100%;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.spinner-horizontal-list li {
+	float: left;
+	list-style: none;
+}
+
+.spinner-horizontal-list li:nth-of-type(1) {
+	width: 30%;
+}
+
+.spinner-horizontal-list li:nth-of-type(2) {
+	width: 40%;
+}
+
+.spinner-horizontal-list li:nth-of-type(3) {
+	width: 30%;
 }
 

@@ -58,3 +58,24 @@ ol ol > li {
 nav > ul {
 	list-style: none;
 }
+* {
+	box-sizing:border-box;
+}
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button { 
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance:none; 
+  margin: 0; 
+}
+input[type="number"]:hover::-webkit-inner-spin-button,
+input[type="number"]:hover::-webkit-outer-spin-button {
+ -moz-appearance: none;
+  -webkit-appearance: none; 
+  appearance:none
+  margin:0;
+  margin: 0; 
+}
