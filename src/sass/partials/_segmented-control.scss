@@ -17,7 +17,6 @@ $controlTextColor: #fff;
 	list-style:none;
 
 }
-
 .segmented-control-label {
 
 	font-family: 'Lato', sans-serif;
@@ -30,7 +29,6 @@ $controlTextColor: #fff;
 	width:10em;
 	display:block;
 	background:#eee;
-	//border:1px solid $controlBgColor;
 	border-top:1px solid $controlBgColor;
 	border-bottom:1px solid $controlBgColor;
 	color:#111;
@@ -58,18 +56,8 @@ $controlTextColor: #fff;
 	visibility:none;
 	opacity:0;
 }
-.segment-start {
-
-}
-.segment-end {
-
-}
-
-//stuff from CW
 
 .segment-start .segment-switch-label {
-
-	
 	border-top-right-radius:0;
 	border-bottom-right-radius:0;
 	border-top-left-radius:5px;
@@ -79,7 +67,6 @@ $controlTextColor: #fff;
 }
 
 .segment-end .segment-switch-label {
-
 	border-top-right-radius:5px;
 	border-bottom-right-radius:5px;
 	border-top-left-radius:0px;
@@ -92,17 +79,11 @@ $controlTextColor: #fff;
 	background:$controlBgColor;
 	color:#fff;
 	border-color:$controlBgHoverColor;
-	
-
 }
-
-//added for accessibility
 .segmented-control input[type="radio"]:active + label {
-	//border:1px solid $controlKeyboardFocus;
 	color:$controlKeyboardFocus;
 }
 .segmented-control input[type="radio"]:focus + label {
-	//border:1px solid $controlKeyboardFocus;
 	color:$controlKeyboardFocus;
 }
 
