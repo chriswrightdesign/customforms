@@ -1,3 +1,192 @@
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+address,
+cite,
+code,
+em,
+img,
+small,
+strong,
+sup,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+embed,
+figure,
+figcaption,
+footer,
+header,
+nav,
+section,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+li {
+	list-style: none;
+}
+
+button {
+	border: none;
+	background: none;
+}
+
+input {
+	border: none;
+	background: none;
+	-webkit-apperance: none;
+	border-radius: 0;
+}
+
+fieldset {
+	border: none;
+}
+
+input:focus,
+input:hover,
+select:focus,
+select:hover {
+	font-size: 1em;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+ul {
+	list-style: disc;
+}
+
+ul ul {
+	padding-left: 1em;
+}
+
+ul ul > li {
+	list-style: circle;
+}
+
+ol {
+	list-style: decimal;
+}
+
+ol ol {
+	padding-left: 1em;
+}
+
+ol ol > li {
+	list-style: lower-alpha;
+}
+
+nav > ul {
+	list-style: none;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+fieldset,
+legend {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	margin: 0;
+}
+
+input[type="number"]:hover::-webkit-inner-spin-button,
+input[type="number"]:hover::-webkit-outer-spin-button {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	margin: 0;
+	margin: 0;
+}
+
 .select-box-label {
 	display: block;
 	margin: 1em 0;
@@ -348,23 +537,27 @@ input[type="range"]::-ms-thumb {
 	border-bottom-right-radius: 5px;
 }
 
+/*
 .spinner-wrapper {
-	position: relative;
-	display: block;
-	border-radius: 0;
-}
 
-.spinner-wrapper:after {
-	content: "";
-	position: absolute;
-	width: 1em;
-	height: 2em;
-	display: block;
-	right: 0em;
-	top: 25%;
-	z-index: 1;
-	background: #fff;
+     position:relative;
+     display:block;
+     border-radius:0;
+
+     &:after {
+        content: "";
+        position:absolute;
+        width:1em;
+        height:2em;
+        display:block;
+        right:0em;
+        top:25%;
+        
+        z-index:1;
+        background:#fff;
+    }
 }
+*/
 
 .spinner-input {
 	border-radius: 0;
@@ -376,7 +569,7 @@ input[type="range"]::-ms-thumb {
 	background: none;
 	border: none;
 	background: #fff;
-	padding: 1.1em 0 1.05em 0.4em;
+	padding: 1.1em 0.4em 1.05em 0.4em;
 	text-align: center;
 	font-size: 1em;
 	line-height: 1.5;
@@ -461,20 +654,21 @@ input[type="range"]::-ms-thumb {
 	border-bottom-right-radius: 5px;
 }
 
+/*
 .spinner-vertical-wrapper {
-	position: relative;
+	position:relative;
+	&:after {
+		content: "";
+		position:absolute;
+		width:1.25em;
+		height:1em;
+		display:block;
+		background: #fff;
+		right:-1.9em;
+		top:38%;
+	}
 }
-
-.spinner-vertical-wrapper:after {
-	content: "";
-	position: absolute;
-	width: 1.25em;
-	height: 1em;
-	display: block;
-	background: #fff;
-	right: -1.9em;
-	top: 38%;
-}
+*/
 
 .radio-fieldset {
 	border: none;
@@ -505,8 +699,8 @@ input[type="range"]::-ms-thumb {
 	color: #111;
 	text-align: center;
 	text-decoration: none;
-	-webkit-transition: background 0.3s ease, color 0.3s ease;
-	        transition: background 0.3s ease, color 0.3s ease;
+	-webkit-transition: background 0.4s ease, color 0.4s ease;
+	        transition: background 0.4s ease, color 0.4s ease;
 }
 
 .segment-switch-label:hover,
@@ -550,6 +744,36 @@ input[type="range"]::-ms-thumb {
 
 .segmented-control input[type="radio"]:focus + label {
 	color: #79472b;
+}
+
+.password-wrapper {
+	margin: 1.5em 0 0 0;
+	position: relative;
+}
+
+.password-input {
+	width: 100%;
+	border: none;
+	background: none;
+	padding: 1em;
+	font-size: 1em;
+	background: #fff;
+}
+
+.password-input:hover,
+.password-input:focus,
+.password-input:active {
+	font-size: 1em;
+}
+
+.btn-password-switch {
+	display: block;
+	width: 2em;
+	height: 2em;
+	background: #f0f;
+	position: absolute;
+	right: 0;
+	top: 0;
 }
 
 body {

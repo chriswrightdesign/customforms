@@ -46,6 +46,7 @@ $spinnerHoziontalBtnTextColor:#fff;
     border-top-right-radius:$spinnerHorizontalBtnRadius;
     border-bottom-right-radius:$spinnerHorizontalBtnRadius;
 }
+/*
 .spinner-wrapper {
 
      position:relative;
@@ -65,6 +66,7 @@ $spinnerHoziontalBtnTextColor:#fff;
         background:#fff;
     }
 }
+*/
 
 .spinner-input {
     border-radius:0;
@@ -76,7 +78,7 @@ $spinnerHoziontalBtnTextColor:#fff;
     background: none;
     border: none;
     background:#fff;
-    padding:1.1em 0 1.05em 0.4em;
+    padding:1.1em 0.4em 1.05em 0.4em;
    
     text-align:center;
     font-size:1em;
