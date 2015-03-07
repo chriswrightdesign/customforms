@@ -9,11 +9,17 @@
   var btnVerticalAdd, btnVerticalSubtract,
   spinnerVerticalInput, changeVerticalSpinner;
 
+  var btnPasswordSwitch, revealPassword, passwordInput;
+
   eventType = Modernizr.touch ? "touchstart" : "click";
 
   $ = function(selector){
     return d.querySelector(selector);
   };
+
+  //password switcher
+  btnPasswordSwitch = $(".js-password-switch");
+  passwordInput = $(".js-password-input");
 
   //vertical 
   btnVerticalAdd = $(".js-btn-vertical-add");
@@ -24,6 +30,23 @@
   btnHorizonSubtract = $(".js-spinner-horizontal-subtract");
   btnHorizonAdd = $(".js-spinner-horizontal-add");
   spinnerHorizonInput = $(".js-spinner-input-horizontal");
+
+  //password switcher
+  revealPassword = function(e){
+    e.preventDefault();
+
+    if(btnPasswordSwitch.classList.contains("is-active")){
+
+      passwordInput.setAttribute("type", "password");
+    } else {
+       passwordInput.setAttribute("type", "text");
+    }
+
+    btnPasswordSwitch.classList.toggle("is-active");
+
+   
+
+  };
 
   //vertical
   changeVerticalSpinner = function(e){
@@ -59,6 +82,9 @@
     }
    
   };
+
+  //password button
+  btnPasswordSwitch.addEventListener(eventType, revealPassword, false);
  
   //vertical
   btnVerticalAdd.addEventListener(eventType, changeVerticalSpinner, false);
