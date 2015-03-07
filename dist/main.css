@@ -463,6 +463,81 @@ input[type="range"]::-ms-thumb {
 	top: 38%;
 }
 
+.radio-fieldset {
+	border: none;
+}
+
+.segmented-control {
+	padding: 0;
+}
+
+.segmented-control li {
+	float: left;
+	list-style: none;
+}
+
+.segmented-control-label {
+	font-family: 'Lato', sans-serif;
+}
+
+.segment-switch-label {
+	font-family: 'Lato', sans-serif;
+	cursor: pointer;
+	padding: 0.5em 0.75em;
+	width: 10em;
+	display: block;
+	background: #eee;
+	border-top: 1px solid #180f0b;
+	border-bottom: 1px solid #180f0b;
+	color: #111;
+	text-align: center;
+	text-decoration: none;
+	transition: background 0.3s ease, color 0.3s ease;
+}
+
+.segment-switch-label:hover,
+.segment-switch-label:focus,
+.segment-switch-label:active {
+	background: #20120a;
+	color: #fff;
+}
+
+.segment-switch-input {
+	position: absolute;
+	visibility: none;
+	opacity: 0;
+}
+
+.segment-start .segment-switch-label {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-right: 1px solid #180f0b;
+}
+
+.segment-end .segment-switch-label {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	border-left: 1px solid #180f0b;
+}
+
+.segmented-control input[type="radio"]:checked + label {
+	background: #180f0b;
+	color: #fff;
+	border-color: #20120a;
+}
+
+.segmented-control input[type="radio"]:active + label {
+	color: #79472b;
+}
+
+.segmented-control input[type="radio"]:focus + label {
+	color: #79472b;
+}
+
 body {
 	background: #291C15;
 	color: #fff;
@@ -486,6 +561,10 @@ h1 {
 
 .spinner-input {
 	padding: 1.1em 0 1.05em 0.6em;
+}
+
+.segment-switch-label {
+	padding: 0.75em;
 }
 
 }

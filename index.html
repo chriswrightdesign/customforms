@@ -22,9 +22,15 @@
 			
 			<div class="introduction">
 				<h1 class="heading-primary">Custom form elements</h1>
-				<p>A collection of form elements created to work across browsers and devices, and maintain accessibility by still allowing keyboard control and focus.
+				<p>
+					A skeleton collection of form elements created to work across browsers and devices, and maintain accessibility by still allowing keyboard control and focus, and work relatively well with screen readers.
 				</p>
-				<p>Warning: This project is still in an experimental stage, and needs to be tested with VoiceOver, JAWS, and NVDA to confirm they're still actually properly accessible.</p>
+				<p>
+					This project is in its early alpha stages, at the moment I'm building a series of different form controls that I'll then go through testing with.
+					Use these controls at your peril. Test test test.
+
+				</p>
+				
 			</div>
 	
 			<h2>Select box</h2>
@@ -127,8 +133,50 @@
 
 			<h2>Segmented Radio control</h2>
 
+			<form id="radio-segmented-control">
+
+				<fieldset class="radio-fieldset">
+
+					<legend class="segmented-control-label">Pick an option</legend>
+
+					<ul class="segmented-control">
+
+						<li class="segment-start">
+
+							<input class="js-switcher segment-switch-input" id="radio_option1" type="radio" name="segment" value="Option 1" />
+									
+							<label class="segment-switch-label" for="radio_option1">
+								Option 1
+							</label>
+						</li>
+
+						<li>
+							
+							<input class="js-switcher segment-switch-input" id="radio_option2" type="radio" name="segment" value="Option 2" />
+							
+							<label class="segment-switch-label" for="radio_option2">
+								Option 2
+							</label>
+
+						</li>
+						<li class="segment-end">
+							
+							<input class="js-switcher segment-switch-input" id="radio_option3" type="radio" name="segment" value="Option 3" checked="true" />
+							
+							<label class="segment-switch-label" for="radio_option3">
+								Option 3
+							</label>
+						</li>
+					</ul>	
+				</fieldset>
+			</form>
+
+
+
+
 			<h2>Radio options</h2>
 
+			
 			<!-- <h2>Full screen calendar control</h2>-->
 
 

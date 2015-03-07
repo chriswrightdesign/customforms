@@ -1,0 +1,108 @@
+//segmented control
+$controlBgColor: #180f0b;
+$controlBgHoverColor:#20120a;
+$controlKeyboardFocus: #79472b;
+$controlTextColor: #fff;
+
+
+.radio-fieldset {
+	border:none;
+}
+.segmented-control {
+	padding:0;
+}
+.segmented-control li {
+
+    float:left;
+	list-style:none;
+
+}
+
+.segmented-control-label {
+
+	font-family: 'Lato', sans-serif;
+}
+.segment-switch-label {
+
+	font-family: 'Lato', sans-serif;
+	cursor:pointer;
+	padding:0.5em 0.75em;
+	width:10em;
+	display:block;
+	background:#eee;
+	//border:1px solid $controlBgColor;
+	border-top:1px solid $controlBgColor;
+	border-bottom:1px solid $controlBgColor;
+	color:#111;
+	text-align:center;
+	text-decoration:none;
+	transition:background 0.3s ease, color 0.3s ease;
+
+	@media all and (min-width:40em) {
+		padding:0.75em;
+	}
+
+	&:hover, 
+	&:focus, 
+	&:active {
+
+		background:$controlBgHoverColor;
+		color:#fff;
+
+	}
+
+
+}
+.segment-switch-input {
+    position:absolute;
+	visibility:none;
+	opacity:0;
+}
+.segment-start {
+
+}
+.segment-end {
+
+}
+
+//stuff from CW
+
+.segment-start .segment-switch-label {
+
+	
+	border-top-right-radius:0;
+	border-bottom-right-radius:0;
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+	border-right:1px solid $controlBgColor;
+
+}
+
+.segment-end .segment-switch-label {
+
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	border-top-left-radius:0px;
+	border-bottom-left-radius:0px;
+	border-left:1px solid $controlBgColor;
+}
+
+.segmented-control input[type="radio"]:checked + label {
+
+	background:$controlBgColor;
+	color:#fff;
+	border-color:$controlBgHoverColor;
+	
+
+}
+
+//added for accessibility
+.segmented-control input[type="radio"]:active + label {
+	//border:1px solid $controlKeyboardFocus;
+	color:$controlKeyboardFocus;
+}
+.segmented-control input[type="radio"]:focus + label {
+	//border:1px solid $controlKeyboardFocus;
+	color:$controlKeyboardFocus;
+}
+
