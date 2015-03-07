@@ -2,9 +2,9 @@
   "use strict";
 
   var d = document,
-  $, 
-  btnHorizonSubtract, btnHorizonAdd, 
-  spinnerHorizonInput, changeHorizonSpinner, eventType;
+  $, eventType, getDataAttribute;
+  var btnHorizonSubtract, btnHorizonAdd, 
+  spinnerHorizonInput, changeHorizonSpinner;
 
   var btnVerticalAdd, btnVerticalSubtract,
   spinnerVerticalInput, changeVerticalSpinner;
@@ -16,6 +16,9 @@
   $ = function(selector){
     return d.querySelector(selector);
   };
+
+  
+        
 
   //password switcher
   btnPasswordSwitch = $(".js-password-switch");
@@ -30,6 +33,21 @@
   btnHorizonSubtract = $(".js-spinner-horizontal-subtract");
   btnHorizonAdd = $(".js-spinner-horizontal-add");
   spinnerHorizonInput = $(".js-spinner-input-horizontal");
+
+  getDataAttribute = function(el, attr){
+
+    var hasGetAttr = (el.getAttribute && el.getAttribute(attr)) || null;
+    if(!hasGetAttr) {
+        var attrs = ele.attributes;
+        for(var i = 0, len = attrs.length; i < len; i++){
+            if(attrs[i].nodeName === attr) {
+                hasGetAttr = attrs[i].nodeValue;
+            }
+        }
+    }
+    return hasGetAttr;
+
+  };
 
   //password switcher
   revealPassword = function(e){
@@ -52,7 +70,7 @@
   changeVerticalSpinner = function(e){
 
     e.preventDefault();
-    var tmp = e.target.dataset.type;
+    var tmp = getDataAttribute(e.target, "data-type");
     var tmpValue = spinnerVerticalInput.value;
     if(tmp == "add"){
      
@@ -69,7 +87,7 @@
   //horizontal
   changeHorizonSpinner = function(e){
     e.preventDefault();
-    var tmp = e.target.dataset.type;
+    var tmp = getDataAttribute(e.target, "data-type");
     var tmpValue = spinnerHorizonInput.value;
     if(tmp == "add"){
      
