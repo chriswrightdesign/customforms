@@ -14,6 +14,7 @@
 
   var vendorPrefixes = ["", "webkit", "moz", "MS", "ms", "o"];
 
+  var eventTypes = [];
   
 
   //there's no reliable way to detect, so we use a combination of feature detection and UA sniffing
@@ -75,7 +76,17 @@
     reportTouch.textContent = supportTouch;
     reportPointers.textContent = supportPointerEvents;
     reportOnlyTouch.textContent = supportOnlyTouch;
+
+    if(!supportTouch && !supportPointerEvents) {
+      eventTypes.push("click");
+    } else if (supportOnlyTouch) {
+      eventTypes.push("touchstart");
+    } else if (supportPointerEvents){
+      eventTypes.push("MSPointerDown");
+      eventTypes.push("PointerDown");
+    }
   };
+
   getDataAttribute = function(el, attr){
 
     var hasGetAttr = (el.getAttribute && el.getAttribute(attr)) || null;
@@ -132,16 +143,25 @@
     }
   };
 
-  //password button
-  btnPasswordSwitch.addEventListener(eventType, revealPassword, false);
- 
-  //vertical
-  btnVerticalAdd.addEventListener(eventType, changeVerticalSpinner, false);
-  btnVerticalSubtract.addEventListener(eventType, changeVerticalSpinner, false);
-
-  //horizontal
-  btnHorizonSubtract.addEventListener(eventType, changeHorizonSpinner, false);
-  btnHorizonAdd.addEventListener(eventType, changeHorizonSpinner, false);
-
   checkTouch();
+
+  for (var k = 0, evlen = eventTypes.length; k < evlen; k++){
+
+    //password button
+    btnPasswordSwitch.addEventListener(eventTypes[k], revealPassword, false);
+ 
+    //vertical
+    btnVerticalAdd.addEventListener(eventTypes[k], changeVerticalSpinner, false);
+    btnVerticalSubtract.addEventListener(eventTypes[k], changeVerticalSpinner, false);
+
+    //horizontal
+    btnHorizonSubtract.addEventListener(eventTypes[k], changeHorizonSpinner, false);
+    btnHorizonAdd.addEventListener(eventTypes[k], changeHorizonSpinner, false);
+
+  }
+
+  
+  
+
+ 
 })();
