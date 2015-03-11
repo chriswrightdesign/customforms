@@ -246,35 +246,49 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	background-color: rgba(249, 241, 155, 0.5);
 }
 
-input[type="range"] {
+.form-range input[type="range"] {
 	-webkit-appearance: none;
-	appearance: none; /* Hides the slider so that custom slider can be made */
+	font-size: 1em; /* Hides the slider so that custom slider can be made */
 	width: 100%;
 	border-radius: 5px; /* Specific width is required for Firefox. */
 }
 
-input[type="range"]:focus {
+.form-range input[type="range"]:focus {
 	outline: 0;
 }
 
-input[type="range"]:focus::-webkit-slider-runnable-track {
+.form-range input[type="range"]:focus::-webkit-slider-runnable-track {
 	background-color: rgba(249, 241, 155, 0.5);
 }
 
-input[type="range"]:focus::-moz-range-track {
+.form-range input[type="range"]:focus::-moz-range-track {
 	background-color: rgba(249, 241, 155, 0.5);
 }
 
-input[type="range"]:focus::-webkit-slider-thumb {
+.form-range input[type="range"]:focus::-webkit-slider-thumb {
 	background-color: #f9f19b;
 }
 
-input[type="range"]:focus::-moz-range-thumb {
+.form-range input[type="range"]:focus::-moz-range-thumb {
 	background-color: #f9f19b;
 }
 
-input[type="range"]:focus::-ms-thumb {
+.form-range input[type="range"]:focus::-ms-thumb {
 	background-color: #f9f19b;
+}
+
+.form-range input[type="range"]:hover::-moz-range-thumb {
+	height: 2em;
+	width: 2em;
+}
+
+.form-range input[type="range"]:focus::-moz-range-thumb {
+	height: 2em;
+	width: 2em;
+}
+
+.form-range input[type="range"]:hover::-moz-range-track {
+	height: 10px;
 }
 
 .range-label {
@@ -282,7 +296,11 @@ input[type="range"]:focus::-ms-thumb {
 	display: block;
 }
 
-input[type="range"]::-webkit-slider-runnable-track {
+.form-range input[type="text"] {
+	background: #fff;
+}
+
+.form-range input[type="range"]::-webkit-slider-runnable-track {
 	width: 100%;
 	height: 10px;
 	cursor: pointer;
@@ -291,7 +309,7 @@ input[type="range"]::-webkit-slider-runnable-track {
 	transition: background 0.3s ease;
 }
 
-input[type="range"]::-moz-range-track {
+.form-range input[type="range"]::-moz-range-track {
 	width: 100%;
 	height: 10px;
 	cursor: pointer;
@@ -300,7 +318,7 @@ input[type="range"]::-moz-range-track {
 	transition: background 0.3s ease;
 }
 
-input[type="range"]::-ms-track {
+.form-range input[type="range"]::-ms-track {
 	cursor: pointer;
 	border-top: 16px;
 	border-bottom: 17px;
@@ -314,35 +332,35 @@ input[type="range"]::-ms-track {
 	transition: background 0.3s ease;
 }
 
-input[type="range"]::-ms-fill-lower {
+.form-range input[type="range"]::-ms-fill-lower {
 	background-color: #017AFD;
 	border-radius: 5px;
 }
 
-input[type="range"]:focus::-ms-fill-lower {
+.form-range input[type="range"]:focus::-ms-fill-lower {
 	background-color: #017AFD;
 }
 
-input[type="range"]::-ms-fill-upper {
+.form-range input[type="range"]::-ms-fill-upper {
 	background-color: #a9acb1;
 	border-radius: 5px;
 }
 
-input[type="range"]:focus::-ms-fill-upper {
+.form-range input[type="range"]:focus::-ms-fill-upper {
 	background-color: #a9acb1;
 }
 
-input[type="range"]::-ms-tooltip {
+.form-range input[type="range"]::-ms-tooltip {
 	display: none;
 }
 
 /* Special styling for WebKit/Blink */
 
-input[type="range"]::-webkit-slider-thumb {
+.form-range input[type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	appearance: none;
-	height: 3em;
-	width: 3em;
+	height: 2em;
+	width: 2em;
 	border-radius: 100%;
 	background-color: #fff;
 	cursor: pointer;
@@ -355,10 +373,10 @@ input[type="range"]::-webkit-slider-thumb {
 
 /* All the same stuff for Firefox */
 
-input[type="range"]::-moz-range-thumb {
+.form-range input[type="range"]::-moz-range-thumb {
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-	height: 3em;
-	width: 3em;
+	height: 2em;
+	width: 2em;
 	border-radius: 100%;
 	background: #fff;
 	cursor: pointer;
@@ -369,10 +387,10 @@ input[type="range"]::-moz-range-thumb {
 
 /* All the same stuff for IE */
 
-input[type="range"]::-ms-thumb {
+.form-range input[type="range"]::-ms-thumb {
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-	height: 3em;
-	width: 3em;
+	height: 2em;
+	width: 2em;
 	border-radius: 100%;
 	background: #ffffff;
 	cursor: pointer;
@@ -700,6 +718,7 @@ input[type="range"]::-ms-thumb {
 	position: absolute;
 	visibility: none;
 	opacity: 0;
+	left: -9999px;
 }
 
 .segment-start .segment-switch-label {
@@ -732,8 +751,8 @@ input[type="range"]::-ms-thumb {
 	color: #79472b;
 }
 
-input::-ms-clear,
-input::-ms-reveal {
+.password-switcher input::-ms-clear,
+.password-switcher input::-ms-reveal {
 	display: none;
 }
 
@@ -759,21 +778,20 @@ input::-ms-reveal {
 
 .btn-password-switch {
 	display: block;
-	width: 2em;
+	width: 1.87em;
 	height: 2em;
-	background: green;
 	position: absolute;
-	right: 0.5em;
-	top: 50%;
-	transform: translateY(-50%);
+	right: 1em;
+	background: url("../img/icon_view.svg") no-repeat 0 50%;
+	top: 0.5em;
 }
 
 .btn-password-switch:hover {
-	background: #ff0;
+	background-position: -28px 50%;
 }
 
 .btn-password-switch.is-active {
-	background: red;
+	background-position: -28px 50%;
 }
 
 body {
@@ -819,6 +837,14 @@ p {
 .container {
 	margin: 0 auto;
 	max-width: 650px;
+}
+
+@media all {
+
+.form-range input[type="range"] {
+	appearance: none;
+}
+
 }
 
 @media all and (min-width: 40em) {

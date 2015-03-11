@@ -1,7 +1,8 @@
 //range input
 
 $trackHeight: 10px;
-$thumbDimension: 3em;
+$thumbDimension: 2em;
+$msThumbDimension: $thumbDimension;
 $webkitThumbPosition: -10px;
 $trackBgColor: #eee;
 $trackHilightColor: rgba(249, 241, 155, 0.5);
@@ -10,50 +11,75 @@ $trackHilightThumbColor: rgba(249, 241, 155, 1);
 //$trackBorderRadius: 15px;
 $trackBorderRadius: 5px;
 
-input[type="range"] {
+.form-range input[type="range"] {
   -webkit-appearance: none;
   //-moz-apperance:none;
-  appearance: none;
+ 
+  font-size:1em;
   /* Hides the slider so that custom slider can be made */
   width: 100%;
+ 
   border-radius:$trackBorderRadius;
   /* Specific width is required for Firefox. */
 }
 
+@media all {
+  .form-range input[type="range"] {
+     appearance: none;
+  }
+}
 
-input[type="range"]:focus {
+
+.form-range input[type="range"]:focus {
  
   outline: 0;
-  ///background:red;
-  //the focus will make the outline be a square - it's accessible but its ugly.
+  //the focus will make the outline be a square - it's accessible but its ugly. 
+  //our replacement focus feedback is below
 
   
 }
-input[type="range"]:focus::-webkit-slider-runnable-track {
+.form-range input[type="range"]:focus::-webkit-slider-runnable-track {
 	background-color: $trackHilightColor;
 }
-input[type="range"]:focus::-moz-range-track {
+.form-range input[type="range"]:focus::-moz-range-track {
 	background-color: $trackHilightColor;
 }
-input[type="range"]:focus::-webkit-slider-thumb {
+.form-range input[type="range"]:focus::-webkit-slider-thumb {
 	background-color: $trackHilightThumbColor;
 }
-input[type="range"]:focus::-moz-range-thumb { 
+.form-range input[type="range"]:focus::-moz-range-thumb { 
 	background-color: $trackHilightThumbColor;
 }
-input[type="range"]:focus::-ms-thumb {
+.form-range input[type="range"]:focus::-ms-thumb {
 	background-color: $trackHilightThumbColor;
 }
 
+.form-range input[type="range"]:hover::-moz-range-thumb {
+  height: $thumbDimension;
+  width: $thumbDimension;
+}
+.form-range input[type="range"]:focus::-moz-range-thumb {
+  height: $thumbDimension;
+  width: $thumbDimension;
+}
+.form-range input[type="range"]:hover::-moz-range-track {
+  height: $trackHeight;
+
+}
 .range-label {
 	
 	margin:1em 0;
 	display: block;
 
 }
+//fallback for IE8/9 when range is a text input
+.form-range input[type="text"] {
 
+  background:#fff;
 
-input[type="range"]::-webkit-slider-runnable-track {
+}
+
+.form-range input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: $trackHeight;
   cursor: pointer;
@@ -63,7 +89,7 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 }
 
-input[type="range"]::-moz-range-track {
+.form-range input[type="range"]::-moz-range-track {
   width: 100%;
   height: $trackHeight;
   cursor: pointer;
@@ -72,7 +98,7 @@ input[type="range"]::-moz-range-track {
   transition: background 0.3s ease;
 }
 
-input[type="range"]::-ms-track {
+.form-range input[type="range"]::-ms-track {
   cursor: pointer;
   border-top: 16px;
   border-bottom: 17px;
@@ -87,25 +113,25 @@ input[type="range"]::-ms-track {
 }
 
 //specific to IE things
-input[type="range"]::-ms-fill-lower {
+.form-range input[type="range"]::-ms-fill-lower {
   background-color: #017AFD;
   border-radius: $trackBorderRadius;
 }
 
-input[type="range"]:focus::-ms-fill-lower {
+.form-range input[type="range"]:focus::-ms-fill-lower {
   background-color: #017AFD;
 }
 
-input[type="range"]::-ms-fill-upper {
+.form-range input[type="range"]::-ms-fill-upper {
   background-color: #a9acb1;
   border-radius: $trackBorderRadius;
 }
 
-input[type="range"]:focus::-ms-fill-upper {
+.form-range input[type="range"]:focus::-ms-fill-upper {
   background-color: #a9acb1;
 }
 
-input[type="range"]::-ms-tooltip {
+.form-range input[type="range"]::-ms-tooltip {
   display: none;
 }
 
@@ -113,7 +139,7 @@ input[type="range"]::-ms-tooltip {
 
 //Thumbs 
 /* Special styling for WebKit/Blink */
-input[type="range"]::-webkit-slider-thumb {
+.form-range input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   height: $thumbDimension;
@@ -129,7 +155,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 /* All the same stuff for Firefox */
-input[type="range"]::-moz-range-thumb {
+.form-range input[type="range"]::-moz-range-thumb {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   height: $thumbDimension;
   width: $thumbDimension;
@@ -143,10 +169,10 @@ input[type="range"]::-moz-range-thumb {
 
 
 /* All the same stuff for IE */
-input[type="range"]::-ms-thumb {
+.form-range input[type="range"]::-ms-thumb {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  height: $thumbDimension;
-  width: $thumbDimension;
+  height: $msThumbDimension;
+  width: $msThumbDimension;
   border-radius: 100%;
   background: #ffffff;
   cursor: pointer;
