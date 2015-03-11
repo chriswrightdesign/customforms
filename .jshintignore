@@ -1,2 +1,3 @@
 src/js/modernizr.js
 src/js/prism.js
+src/js/polyfill.js
