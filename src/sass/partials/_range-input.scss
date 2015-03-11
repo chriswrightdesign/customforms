@@ -76,7 +76,8 @@ $trackBorderRadius: 5px;
 .form-range input[type="text"] {
 
   background:#fff;
-
+  padding:0.5em;
+  font-size:1em;
 }
 
 .form-range input[type="range"]::-webkit-slider-runnable-track {

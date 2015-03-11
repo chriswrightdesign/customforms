@@ -90,14 +90,14 @@ var classie = {
 };
 // transport
 if ( typeof define === 'function' && define.amd ) {
-// AMD
-define( classie );
+  // AMD
+  define( classie );
 } else if ( typeof exports === 'object' ) {
-// CommonJS
-module.exports = classie;
+  // CommonJS
+  module.exports = classie;
 } else {
-// browser global
-window.classie = classie;
+  // browser global
+  window.classie = classie;
 }
 })( window );
 
@@ -120,9 +120,6 @@ window.classie = classie;
   $ = function(selector){
     return d.querySelector(selector);
   };
-
-  
-        
 
   //password switcher
   btnPasswordSwitch = $(".js-password-switch");

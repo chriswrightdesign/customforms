@@ -1,4 +1,8 @@
 //select box
+.select-box-wrapper input::-ms-clear, 
+.select-box-wrapper input::-ms-reveal {
+    display:none;
+}
 
 .select-box-label {
 	display:block;
@@ -18,23 +22,25 @@
     position: relative;
     transition: background-color 0.4s ease-in-out;
     width: 100%;
+    
     &:hover,
     &:focus,
     &:active {
-        background-color: #fff;
+    //    background-color: #fff;
         cursor: pointer;
     }
+}
+.no-svg .select-box-wrapper {
+    background-image: url("../img/arrow_down.png");
 }
 .select-box-wrapper select option {
     //padding:1em;
     color:#111;
-    background:#fff;
+    //background:rgba(255, 255, 255, 0.5);
+    //background:#fff;
     padding:0.5em;
     line-height:1.5;
     font-size:1em;
-}
-.select-box-wrapper select:first-child {
-
 }
 .select-box-wrapper select {
     -webkit-appearance: none;
@@ -46,10 +52,13 @@
     box-shadow: none;
     color: #697070;
     font-family: Helvetica, sans-serif;
-    font-size: 0.9em;
+    font-size: 1em;
     padding: 1em;
+
     transition: background 0.4s ease;
+
     width: 115%;
+    //width:100%;
     &:hover {
         cursor: pointer;
     }
@@ -57,8 +66,4 @@
     &:focus {
         background-color: rgba(249, 241, 155, 0.5);
     }
-}
-
-//actual select box
-.select-box {
 }

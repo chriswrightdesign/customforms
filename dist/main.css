@@ -187,6 +187,11 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	margin: 0;
 }
 
+.select-box-wrapper input::-ms-clear,
+.select-box-wrapper input::-ms-reveal {
+	display: none;
+}
+
 .select-box-label {
 	display: block;
 	margin: 1em 0;
@@ -209,13 +214,15 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 .select-box-wrapper:hover,
 .select-box-wrapper:focus,
 .select-box-wrapper:active {
-	background-color: #fff;
 	cursor: pointer;
+}
+
+.no-svg .select-box-wrapper {
+	background-image: url("../img/arrow_down.png");
 }
 
 .select-box-wrapper select option {
 	color: #111;
-	background: #fff;
 	padding: 0.5em;
 	line-height: 1.5;
 	font-size: 1em;
@@ -231,7 +238,7 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	box-shadow: none;
 	color: #697070;
 	font-family: Helvetica, sans-serif;
-	font-size: 0.9em;
+	font-size: 1em;
 	padding: 1em;
 	transition: background 0.4s ease;
 	width: 115%;
@@ -298,6 +305,8 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 
 .form-range input[type="text"] {
 	background: #fff;
+	padding: 0.5em;
+	font-size: 1em;
 }
 
 .form-range input[type="range"]::-webkit-slider-runnable-track {
