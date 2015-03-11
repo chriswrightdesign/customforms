@@ -17,16 +17,20 @@ $controlTextColor: #fff;
 	list-style:none;
 
 }
+.segmented-control li {
+	width:33.33%;
+}
 .segmented-control-label {
 
 	font-family: 'Lato', sans-serif;
 }
 .segment-switch-label {
-
+	box-sizing:border-box;
 	font-family: 'Lato', sans-serif;
 	cursor:pointer;
 	padding:0.5em 0.75em;
-	width:10em;
+	width:100%;
+	
 	display:block;
 	background:#eee;
 	border-top:1px solid $controlBgColor;
