@@ -795,20 +795,20 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 
 .btn-password-switch {
 	display: block;
-	width: 1.87em;
-	height: 2em;
+	width: 3.25em;
+	height: 3.25em;
 	position: absolute;
-	right: 1em;
+	right: 0;
 	background: url("../img/icon_view.svg") no-repeat 0 50%;
-	top: 0.5em;
+	top: 0;
 }
 
 .btn-password-switch:hover {
-	background-position: -28px 50%;
+	background-position: -41px 50%;
 }
 
 .btn-password-switch.is-active {
-	background-position: -28px 50%;
+	background-position: -41px 50%;
 }
 
 body {
