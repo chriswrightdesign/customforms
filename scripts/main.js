@@ -19,7 +19,9 @@
 
   //there's no reliable way to detect, so we use a combination of feature detection and UA sniffing
   var mobileRegex = /mobile|tablet|ip(ad|hone|od)|android/i, 
-  supportTouch = ("ontouchstart" in window), checkTouch, displayTouch, supportPointerEvents;
+  supportTouch = ("ontouchstart" in window), 
+  checkTouch, displayTouch, 
+  supportPointerEvents;
   var supportOnlyTouch = supportTouch && mobileRegex.test(navigator.userAgent);
 
   var reportTouch, reportPointers, reportOnlyTouch;
@@ -78,12 +80,18 @@
     reportOnlyTouch.textContent = supportOnlyTouch;
 
     if(!supportTouch && !supportPointerEvents) {
+    
       eventTypes.push("click");
+    
     } else if (supportOnlyTouch) {
+    
       eventTypes.push("touchstart");
+    
     } else if (supportPointerEvents){
-      eventTypes.push("MSPointerDown");
+      
+
       eventTypes.push("PointerDown");
+      eventTypes.push("click");
     }
   };
 
@@ -116,7 +124,9 @@
 
   //vertical
   changeVerticalSpinner = function(e){
+
     e.preventDefault();
+
     var tmp = getDataAttribute(e.target, "data-type");
     //var tmpValue = spinnerVerticalInput.value;
     if(tmp === "add"){
@@ -131,32 +141,46 @@
 
   //horizontal
   changeHorizonSpinner = function(e){
+   
     e.preventDefault();
-    var tmp = getDataAttribute(e.target, "data-type");
+    console.log("event: " + e);
+    
+    
     //var tmpValue = spinnerHorizonInput.value;
-    if(tmp === "add"){
-      spinnerHorizonInput.value++;
-    } else {
-      if(spinnerHorizonInput.value > 0){
-        spinnerHorizonInput.value--; 
+    
+      
+      var tmp = getDataAttribute(e.target, "data-type");
+      if(tmp === "add"){
+        spinnerHorizonInput.value++;
+      
+      } else {
+      
+        if(spinnerHorizonInput.value > 0){
+          spinnerHorizonInput.value--; 
+        }
       }
-    }
+
+    
+    
   };
 
   checkTouch();
 
   for (var k = 0, evlen = eventTypes.length; k < evlen; k++){
 
-    //password button
-    btnPasswordSwitch.addEventListener(eventTypes[k], revealPassword, false);
+      //password button
+      btnPasswordSwitch.addEventListener(eventTypes[k], revealPassword, false);
  
-    //vertical
-    btnVerticalAdd.addEventListener(eventTypes[k], changeVerticalSpinner, false);
-    btnVerticalSubtract.addEventListener(eventTypes[k], changeVerticalSpinner, false);
+      //vertical
+      btnVerticalAdd.addEventListener(eventTypes[k], changeVerticalSpinner, false);
+      btnVerticalSubtract.addEventListener(eventTypes[k], changeVerticalSpinner, false);
 
-    //horizontal
-    btnHorizonSubtract.addEventListener(eventTypes[k], changeHorizonSpinner, false);
-    btnHorizonAdd.addEventListener(eventTypes[k], changeHorizonSpinner, false);
+      //horizontal
+      btnHorizonSubtract.addEventListener(eventTypes[k], changeHorizonSpinner, false);
+      btnHorizonAdd.addEventListener(eventTypes[k], changeHorizonSpinner, false);
+
+    
+    
 
   }
 
