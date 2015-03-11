@@ -14,10 +14,14 @@
 
   var vendorPrefixes = ["", "webkit", "moz", "MS", "ms", "o"];
 
-  var mobileRegex = /mobile|tablet|ip(ad|hone|od)|android/i,
-  supportTouch = ("ontouchstart" in window), checkTouch, displayTouch, supportPointerEvents;
   
+
+  //there's no reliable way to detect, so we use a combination of feature detection and UA sniffing
+  var mobileRegex = /mobile|tablet|ip(ad|hone|od)|android/i, 
+  supportTouch = ("ontouchstart" in window), checkTouch, displayTouch, supportPointerEvents;
   var supportOnlyTouch = supportTouch && mobileRegex.test(navigator.userAgent);
+
+  var reportTouch, reportPointers, reportOnlyTouch;
 
   eventType = supportTouch ? "touchstart" : "click";
 
@@ -62,10 +66,15 @@
   btnHorizonAdd = $(".js-spinner-horizontal-add");
   spinnerHorizonInput = $(".js-spinner-input-horizontal");
 
+  reportTouch = $(".js-touch-support");
+  reportOnlyTouch = $(".js-touch-only");
+  reportPointers = $(".js-pointer-support");
+
   checkTouch = function(){
 
-    displayTouch.textContent = "Support Touch: " + supportTouch + " , Support Pointer Events: " + supportPointerEvents + " , supports only Touch: " + supportOnlyTouch;
-
+    reportTouch.textContent = supportTouch;
+    reportPointers.textContent = supportPointerEvents;
+    reportOnlyTouch.textContent = supportOnlyTouch;
   };
   getDataAttribute = function(el, attr){
 
