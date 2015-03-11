@@ -179,9 +179,6 @@
       btnHorizonSubtract.addEventListener(eventTypes[k], changeHorizonSpinner, false);
       btnHorizonAdd.addEventListener(eventTypes[k], changeHorizonSpinner, false);
 
-    
-    
-
   }
 
   
