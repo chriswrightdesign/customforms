@@ -865,6 +865,30 @@ p {
 	color: #333;
 }
 
+@media screen and (-ms-high-contrast: active) {
+
+.select-box-wrapper select { /* All high contrast styling rules */
+	width: 100%;
+}
+
+}
+
+@media screen and (-ms-high-contrast: black-on-white) {
+
+.select-box-wrapper select {
+	width: 100%;
+}
+
+}
+
+@media screen and (-ms-high-contrast: white-on-black) {
+
+.select-box-wrapper select {
+	width: 100%;
+}
+
+}
+
 @media all {
 
 .form-range input[type="range"] {
