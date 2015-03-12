@@ -66,4 +66,17 @@
     &:focus {
         background-color: rgba(249, 241, 155, 0.5);
     }
+
+    @media screen and (-ms-high-contrast: active) {
+     /* All high contrast styling rules */
+        width: 100%;
+    }
+    @media screen and (-ms-high-contrast: black-on-white) {
+     width: 100%;
+    }
+    @media screen and (-ms-high-contrast: white-on-black) {
+      width: 100%;
+    }
 }
+
+
