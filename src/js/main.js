@@ -11,11 +11,12 @@
   spinnerVerticalInput, changeVerticalSpinner;
 
   var btnPasswordSwitch, revealPassword, passwordInput;
-
   var vendorPrefixes = ["", "webkit", "moz", "MS", "ms", "o"];
 
+  var selectFull, selectFullItem, fullScreenSelect, selectFullIntercept, syncSelectOption,
+  selectItem, selectFullWrapper, toggleSelectWrapper, createInterceptSelect;
+
   var eventTypes = [];
-  
 
   //there's no reliable way to detect, so we use a combination of feature detection and UA sniffing
   var mobileRegex = /mobile|tablet|ip(ad|hone|od)|android/i, 
@@ -27,7 +28,6 @@
   var reportTouch, reportPointers, reportOnlyTouch;
 
   eventType = supportTouch ? "touchstart" : "click";
-
   
   $ = function(selector){
     return d.querySelector(selector);
@@ -69,10 +69,76 @@
   btnHorizonAdd = $(".js-spinner-horizontal-add");
   spinnerHorizonInput = $(".js-spinner-input-horizontal");
 
+  //fullscreen select
+  selectFull = $(".js-select-full");
+  selectItem = $(".js-select-item");
+
+  
   reportTouch = $(".js-touch-support");
   reportOnlyTouch = $(".js-touch-only");
   reportPointers = $(".js-pointer-support");
 
+  
+  toggleSelectWrapper = function(){
+
+    selectFullWrapper.classList.toggle("is-visible");
+    selectFullWrapper.classList.toggle("is-hidden");
+
+  };
+  syncSelectOption = function(e){
+
+    
+    var tempNum = e.target.classList[1];
+    tempNum = parseInt(tempNum, 10);
+    tempNum = tempNum - 1;
+    var textValue = e.target.textContent;
+    selectItem.options[tempNum].selected = true;
+    selectFullItem.textContent = e.target.textContent;
+  
+  
+  };
+  fullScreenSelect = function(e){
+    e.preventDefault();
+    toggleSelectWrapper();
+  };
+  createInterceptSelect = function(){
+
+    var div = document.createElement("div");
+    div.id = "intercept";
+    div.className = "select-full-wrapper js-select-full-wrapper is-hidden";
+    div.addEventListener("click", toggleSelectWrapper, false);
+    
+    var ul = document.createElement("ul");
+    ul.className = "select-full-list";
+    for (var i = 0, len = selectItem.children.length; i < len; i++){
+
+      var li = document.createElement("li");
+      li.textContent = selectItem.children[i].value;
+      li.className = selectItem.children[i].value.toString();
+      li.addEventListener("click", syncSelectOption, false);
+      ul.appendChild(li);
+      
+
+    }
+    div.appendChild(ul);
+    document.body.appendChild(div);
+
+    selectFullWrapper = document.getElementById("intercept");
+
+
+  };
+  selectFullIntercept = function(){
+
+    var a = document.createElement('a');
+    a.className = "select-full-item js-select-full-item";
+    a.textContent = "Select option";
+    a.setAttribute('href', '#');
+    selectFull.insertBefore(a, selectFull.firstChild);
+    selectFullItem = $(".js-select-full-item");
+    createInterceptSelect();
+  };
+  
+  selectFullIntercept();
   checkTouch = function(){
 
     reportTouch.textContent = supportTouch;
@@ -89,7 +155,6 @@
     
     } else if (supportPointerEvents){
       
-
       eventTypes.push("PointerDown");
       eventTypes.push("click");
     }
@@ -124,9 +189,7 @@
 
   //vertical
   changeVerticalSpinner = function(e){
-
     e.preventDefault();
-
     var tmp = getDataAttribute(e.target, "data-type");
     //var tmpValue = spinnerVerticalInput.value;
     if(tmp === "add"){
@@ -178,6 +241,10 @@
       //horizontal
       btnHorizonSubtract.addEventListener(eventTypes[k], changeHorizonSpinner, false);
       btnHorizonAdd.addEventListener(eventTypes[k], changeHorizonSpinner, false);
+
+      selectFull.addEventListener(eventTypes[k], fullScreenSelect, false);
+
+      
 
   }
 
