@@ -218,6 +218,9 @@
 				As Luke Wroblewski calls select boxes the UI of last resort, I wanted to make an alternative which had fallback to the standard select box, most of the solutions I've seen where people have created non-hybrid select boxes have been completely rewriting the solution.
 			</p>
 			<p>
+				This solution is potentially problematic, it requires you to inject an element  above the select box, create an element with mirrored content to the select box and then sync the click to the option in the seleect box.
+			</p>
+			<p>
 				This will need a lot of testing, and probably some ARIA love.
 			</p>
 
