@@ -81,14 +81,14 @@
   
   toggleSelectWrapper = function(){
 
-    selectFullWrapper.classList.toggle("is-visible");
-    selectFullWrapper.classList.toggle("is-hidden");
+    classie.toggle(selectFullWrapper, "is-visible");
+    classie.toggle(selectFullWrapper, "is-hidden")
 
   };
   syncSelectOption = function(e){
 
     
-    var tempNum = e.target.classList[1];
+    var tempNum = e.target.classList[1]; //may be a problem in ie9
     tempNum = parseInt(tempNum, 10);
     tempNum = tempNum - 1;
     var textValue = e.target.textContent;
