@@ -262,10 +262,12 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 .form-range input[type="range"] {
 	box-sizing: border-box;
 	-webkit-appearance: none;
+	appearance: none;
 	font-size: 1em;
 	padding: 0;
 	margin: 0 0 0 -0.25em; /* Hides the slider so that custom slider can be made */
 	width: 100%;
+	height: 10px;
 	border-radius: 5px; /* Specific width is required for Firefox. */
 }
 
@@ -955,14 +957,6 @@ p {
 
 .select-box-wrapper select {
 	width: 100%;
-}
-
-}
-
-@media all {
-
-.form-range input[type="range"] {
-	appearance: none;
 }
 
 }

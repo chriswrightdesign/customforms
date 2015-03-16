@@ -223,6 +223,12 @@
 			<p>
 				This will need a lot of testing, and probably some ARIA love.
 			</p>
+			<p>
+				At the moment this works pretty well on the devices and browsers I've tested (see the readme for the google spreadsheet, however we've lost keyboard control that would be there if this was a simple select element. Our options here are to either - add a listener for keyboard input and assertlive, or when a key is pressed remove the custom stuff and fallback to the standard select box.
+
+			</p>
+
+
 
 
 			
@@ -231,7 +237,7 @@
 				
 				<div class="select-box-wrapper js-select-full">
 
-					<select id="select-box" class="select-box js-select-item">
+					<select id="select-box-full" class="select-box js-select-item">
 						<option value="Option 1">Option 1</option>
 						<option value="Option 2">Option 2</option>
 						<option value="Option 3">Option 3</option>

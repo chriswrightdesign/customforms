@@ -83,8 +83,17 @@
   
   toggleSelectWrapper = function(){
 
-    classie.toggle(selectFullWrapper, "is-visible");
-    classie.toggle(selectFullWrapper, "is-hidden");
+    //if it's visible remove the visible, if it's invisible add the visible
+    if(classie.has(selectFullWrapper, "is-visible")){
+       classie.add(selectFullWrapper, "is-hidden");
+       classie.remove(selectFullWrapper, "is-visible");
+       selectFullWrapper.setAttribute("aria-hidden", "true");
+    } else {
+      classie.remove(selectFullWrapper, "is-hidden");
+      classie.add(selectFullWrapper, "is-visible");
+      selectFullWrapper.setAttribute("aria-hidden", "false");
+
+    }
 
   };
   syncSelectOption = function(e){
@@ -111,6 +120,7 @@
     var div = document.createElement("div");
     div.id = "intercept";
     div.className = "select-full-wrapper js-select-full-wrapper is-hidden";
+    div.setAttribute("aria-hidden", "true");
     div.addEventListener("click", toggleSelectWrapper, false);
     
     var ul = document.createElement("ul");
@@ -138,6 +148,8 @@
 
     var a = document.createElement('a');
     a.className = "select-full-item js-select-full-item";
+    a.setAttribute("aria-controls", "select-box-full");
+    a.setAttribute("title", "select box for options");
     if(supportTextContent){
        a.textContent = "Select option";
     } else {

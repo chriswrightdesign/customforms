@@ -12,24 +12,20 @@ $trackHilightThumbColor: rgba(249, 241, 155, 1);
 $trackBorderRadius: 5px;
 
 .form-range input[type="range"] {
+
   box-sizing:border-box;
   -webkit-appearance: none;
   //-moz-apperance:none;
- 
+   appearance: none;
   font-size:1em;
   padding:0;
   margin:0 0 0 -0.25em;
   /* Hides the slider so that custom slider can be made */
   width: 100%;
+  height: $trackHeight;
  
   border-radius:$trackBorderRadius;
   /* Specific width is required for Firefox. */
-}
-
-@media all {
-  .form-range input[type="range"] {
-     appearance: none;
-  }
 }
 
 
