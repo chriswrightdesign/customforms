@@ -13,6 +13,8 @@
   var btnPasswordSwitch, revealPassword, passwordInput;
   var vendorPrefixes = ["", "webkit", "moz", "MS", "ms", "o"];
 
+  var supportTextContent = ('textContent' in document.body);
+
   var selectFull, selectFullItem, fullScreenSelect, selectFullIntercept, syncSelectOption,
   selectItem, selectFullWrapper, toggleSelectWrapper, createInterceptSelect;
 
@@ -28,7 +30,7 @@
   var reportTouch, reportPointers, reportOnlyTouch;
 
   eventType = supportTouch ? "touchstart" : "click";
-  
+
   $ = function(selector){
     return d.querySelector(selector);
   };
@@ -91,11 +93,13 @@
     //var tempNum = e.target.classList[1]; //may be a problem in ie9
     tempNum = parseInt(tempNum, 10);
     tempNum = tempNum;
-    var textValue = e.target.textContent || e.target.innerText;
+    var textValue = supportTextContent ? e.target.textContent : e.target.innerText;
     selectItem.options[tempNum].selected = true;
-    selectFullItem.textContent = e.target.textContent || selectFullItem.innerText = e.target.innerText;
-    
-  
+    if(supportTextContent){
+      selectFullItem.textContent = e.target.textContent;
+    } else {
+      selectFullItem.innerText = e.target.innerText;
+    }  
   
   };
   fullScreenSelect = function(e){
@@ -114,7 +118,8 @@
     for (var i = 0, len = selectItem.children.length; i < len; i++){
 
       var li = document.createElement("li");
-      li.textContent = selectItem.children[i].value || li.innerText = selectItem.children[i].value;
+
+      li.textContent = supportTextContent ? selectItem.children[i].value : li.innerText = selectItem.children[i].value;
       //changing this to setAttribute so we don't have to rely on classList
       li.setAttribute("data-value", i);
       li.addEventListener("click", syncSelectOption, false);
@@ -133,7 +138,11 @@
 
     var a = document.createElement('a');
     a.className = "select-full-item js-select-full-item";
-    a.textContent = "Select option" || a.innerText = "Select option";
+    if(supportTextContent){
+       a.textContent = "Select option";
+    } else {
+      a.innerText = "Select option"; 
+    }
     a.setAttribute('href', '#');
     selectFull.insertBefore(a, selectFull.firstChild);
     selectFullItem = $(".js-select-full-item");
@@ -142,10 +151,17 @@
   
   selectFullIntercept();
   checkTouch = function(){
+    if(supportTextContent){
+      reportTouch.textContent = supportTouch;
+      reportPointers.textContent = supportPointerEvents;
+      reportOnlyTouch.textContent = supportOnlyTouch;
+    }else {
+      reportTouch.innerText = supportTouch;
+      reportPointers.innerText = supportPointerEvents;
+       reportOnlyTouch.innerText = supportOnlyTouch;
 
-    reportTouch.textContent = supportTouch || reportTouch.innerText = supportTouch;
-    reportPointers.textContent = supportPointerEvents || reportPointers.innerText = supportPointerEvents;
-    reportOnlyTouch.textContent = supportOnlyTouch || reportOnlyTouch.innerText = supportOnlyTouch;
+    }
+     
 
     if(!supportTouch && !supportPointerEvents) {
     
