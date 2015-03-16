@@ -82,15 +82,16 @@
   toggleSelectWrapper = function(){
 
     classie.toggle(selectFullWrapper, "is-visible");
-    classie.toggle(selectFullWrapper, "is-hidden")
+    classie.toggle(selectFullWrapper, "is-hidden");
 
   };
   syncSelectOption = function(e){
 
-    
-    var tempNum = e.target.classList[1]; //may be a problem in ie9
+    var tempNum = getDataAttribute(e.target, "data-value");
+    console.log(tempNum);
+    //var tempNum = e.target.classList[1]; //may be a problem in ie9
     tempNum = parseInt(tempNum, 10);
-    tempNum = tempNum - 1;
+    tempNum = tempNum;
     var textValue = e.target.textContent;
     selectItem.options[tempNum].selected = true;
     selectFullItem.textContent = e.target.textContent;
@@ -114,7 +115,8 @@
 
       var li = document.createElement("li");
       li.textContent = selectItem.children[i].value;
-      li.className = selectItem.children[i].value.toString();
+      //changing this to setAttribute so we don't have to rely on classList
+      li.setAttribute("data-value", i);
       li.addEventListener("click", syncSelectOption, false);
       ul.appendChild(li);
       
