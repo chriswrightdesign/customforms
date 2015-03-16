@@ -88,13 +88,13 @@
   syncSelectOption = function(e){
 
     var tempNum = getDataAttribute(e.target, "data-value");
-    console.log(tempNum);
     //var tempNum = e.target.classList[1]; //may be a problem in ie9
     tempNum = parseInt(tempNum, 10);
     tempNum = tempNum;
-    var textValue = e.target.textContent;
+    var textValue = e.target.textContent || e.target.innerText;
     selectItem.options[tempNum].selected = true;
-    selectFullItem.textContent = e.target.textContent;
+    selectFullItem.textContent = e.target.textContent || selectFullItem.innerText = e.target.innerText;
+    
   
   
   };
@@ -114,7 +114,7 @@
     for (var i = 0, len = selectItem.children.length; i < len; i++){
 
       var li = document.createElement("li");
-      li.textContent = selectItem.children[i].value;
+      li.textContent = selectItem.children[i].value || li.innerText = selectItem.children[i].value;
       //changing this to setAttribute so we don't have to rely on classList
       li.setAttribute("data-value", i);
       li.addEventListener("click", syncSelectOption, false);
@@ -133,7 +133,7 @@
 
     var a = document.createElement('a');
     a.className = "select-full-item js-select-full-item";
-    a.textContent = "Select option";
+    a.textContent = "Select option" || a.innerText = "Select option";
     a.setAttribute('href', '#');
     selectFull.insertBefore(a, selectFull.firstChild);
     selectFullItem = $(".js-select-full-item");
@@ -143,9 +143,9 @@
   selectFullIntercept();
   checkTouch = function(){
 
-    reportTouch.textContent = supportTouch;
-    reportPointers.textContent = supportPointerEvents;
-    reportOnlyTouch.textContent = supportOnlyTouch;
+    reportTouch.textContent = supportTouch || reportTouch.innerText = supportTouch;
+    reportPointers.textContent = supportPointerEvents || reportPointers.innerText = supportPointerEvents;
+    reportOnlyTouch.textContent = supportOnlyTouch || reportOnlyTouch.innerText = supportOnlyTouch;
 
     if(!supportTouch && !supportPointerEvents) {
     
@@ -362,18 +362,3 @@ if ( typeof define === 'function' && define.amd ) {
   window.classie = classie;
 }
 })( window );
-
-if (Object.defineProperty && Object.getOwnPropertyDescriptor && Object.getOwnPropertyDescriptor(Element.prototype, "textContent") && !Object.getOwnPropertyDescriptor(Element.prototype, "textContent").get) {
-  (function() {
-    var innerText = Object.getOwnPropertyDescriptor(Element.prototype, "innerText");
-    
-    Object.defineProperty(Element.prototype, "textContent", { 
-      get: function() {
-        return innerText.get.call(this);
-      },
-      set: function(s) {
-        return innerText.set.call(this, s);
-      }
-    });
-  })();
-} 
