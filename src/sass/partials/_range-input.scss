@@ -19,6 +19,7 @@ $trackBorderRadius: 5px;
    appearance: none;
   font-size:1em;
   padding:0;
+  background:$trackBgColor;
   margin:0 0 0 -0.25em;
   /* Hides the slider so that custom slider can be made */
   width: 100%;
