@@ -207,7 +207,8 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	margin: 0;
 	overflow: hidden;
 	position: relative;
-	transition: background-color 0.4s ease-in-out;
+	-webkit-transition: background-color 0.4s ease-in-out;
+	        transition: background-color 0.4s ease-in-out;
 	width: 100%;
 }
 
@@ -240,7 +241,8 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	font-family: Helvetica, sans-serif;
 	font-size: 1em;
 	padding: 1em;
-	transition: background 0.4s ease;
+	-webkit-transition: background 0.4s ease;
+	        transition: background 0.4s ease;
 	width: 115%;
 }
 
@@ -251,6 +253,10 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 .select-box-wrapper select:active,
 .select-box-wrapper select:focus {
 	background-color: rgba(249, 241, 155, 0.5);
+}
+
+.high-contrast-mode .select-box-wrapper select {
+	width: 100%;
 }
 
 .form-range input[type="range"] {
@@ -318,7 +324,8 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	cursor: pointer;
 	background-color: #eee;
 	border-radius: 5px;
-	transition: background 0.3s ease;
+	-webkit-transition: background 0.3s ease;
+	        transition: background 0.3s ease;
 }
 
 .form-range input[type="range"]::-moz-range-track {
@@ -380,7 +387,8 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 	outline: none;
 	border: none;
-	transition: background 0.3s ease;
+	-webkit-transition: background 0.3s ease;
+	        transition: background 0.3s ease;
 }
 
 /* All the same stuff for Firefox */
@@ -455,8 +463,11 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	cursor: pointer;
 	height: 3.5em;
 	position: absolute;
-	transform: translateX(0);
-	transition: transform 0.2s ease, background 0.4s ease;
+	-webkit-transform: translateX(0);
+	    -ms-transform: translateX(0);
+	        transform: translateX(0);
+	-webkit-transition: -webkit-transform 0.2s ease, background 0.4s ease;
+	        transition: transform 0.2s ease, background 0.4s ease;
 	width: 3.5em;
 	z-index: 1;
 }
@@ -499,11 +510,15 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 }
 
 .radio-switch:checked ~ .radio-switch-toggle {
-	transform: translateX(-0.1em);
+	-webkit-transform: translateX(-0.1em);
+	    -ms-transform: translateX(-0.1em);
+	        transform: translateX(-0.1em);
 }
 
 .radio-switch ~ :checked ~ .radio-switch-toggle {
-	transform: translateX(3.1em);
+	-webkit-transform: translateX(3.1em);
+	    -ms-transform: translateX(3.1em);
+	        transform: translateX(3.1em);
 }
 
 .radio-switch:checked {
@@ -536,7 +551,8 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	text-align: center;
 	text-decoration: none;
 	background: #180f0b;
-	transition: background 0.4s ease;
+	-webkit-transition: background 0.4s ease;
+	        transition: background 0.4s ease;
 }
 
 .btn-spinner:hover,
@@ -652,7 +668,8 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	color: #fff;
 	background: #180f0b;
 	display: block;
-	transition: background 0.4s ease;
+	-webkit-transition: background 0.4s ease;
+	        transition: background 0.4s ease;
 }
 
 .btn-vertical-spinner:hover,
@@ -721,7 +738,8 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	color: #111;
 	text-align: center;
 	text-decoration: none;
-	transition: background 0.4s ease, color 0.4s ease;
+	-webkit-transition: background 0.4s ease, color 0.4s ease;
+	        transition: background 0.4s ease, color 0.4s ease;
 }
 
 .segment-switch-label:hover,
@@ -809,6 +827,57 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 
 .btn-password-switch.is-active {
 	background-position: -41px 50%;
+}
+
+.select-box-wrapper {
+	position: relative;
+}
+
+.select-full-wrapper.is-hidden {
+	opacity: 0;
+	display: none;
+}
+
+.select-full-wrapper.is-visible {
+	display: block;
+	opacity: 1;
+}
+
+.select-full-item {
+	display: block;
+	padding: 1.6em;
+	color: #000;
+	background: #fff url("../img/arrow_down.svg") no-repeat 97% 50%;
+	text-decoration: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+.select-full-wrapper {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	background: #eee;
+	top: 0;
+	left: 0;
+	z-index: 999;
+}
+
+.select-full-list li {
+	width: 100%;
+	padding: 1.5em;
+	cursor: pointer;
+	display: block;
+	text-align: center;
+	font-size: 1.5em;
+	background: #eee;
+	color: #000;
+}
+
+.select-full-list li:hover {
+	background: #ddd;
 }
 
 body {
