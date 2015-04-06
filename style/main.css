@@ -295,16 +295,17 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 82px;
+	bottom: 0;
+	width: 72px;
 	height: 100%;
 }
 
 .svg-arrow-box {
-	fill: #fff;
+	fill: #000;
 }
 
 .svg-arrow-icon {
-	fill: #000;
+	fill: #fff;
 }
 
 .select-box-wrapper-svg select option {
