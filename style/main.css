@@ -296,7 +296,7 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	top: 0;
 	right: 0;
 	width: 82px;
-	height: 75px;
+	height: 100%;
 }
 
 .svg-arrow-box {
@@ -305,10 +305,6 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 
 .svg-arrow-icon {
 	fill: #000;
-}
-
-.no-svg .select-box-wrapper-svg {
-	background-image: url("../img/arrow_down.png");
 }
 
 .select-box-wrapper-svg select option {

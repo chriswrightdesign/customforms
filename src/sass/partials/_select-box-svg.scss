@@ -39,7 +39,7 @@
     top:0;
     right:0;
     width:82px;
-    height:75px;
+    height: 100%;
 }
 .svg-arrow-box {
     fill:#fff;
@@ -49,7 +49,7 @@
 
 }
 .no-svg .select-box-wrapper-svg {
-    background-image: url("../img/arrow_down.png");
+   // background-image: url("../img/arrow_down.png");
 }
 .select-box-wrapper-svg select option {
     //padding:1em;
