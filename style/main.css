@@ -292,9 +292,8 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 .svg-arrow {
 	z-index: 1;
 	position: absolute;
-	height: 110%;
 	right: 0;
-	top: -6px;
+	bottom: 0;
 	display: block;
 	padding: 0;
 }
@@ -310,7 +309,6 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 .select-box-wrapper-svg select option {
 	display: block;
 	color: #111;
-	padding: 0.5em;
 	line-height: 1.5;
 	font-size: 1em;
 	border: none;
@@ -323,13 +321,14 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	-moz-appearance: none;
 	appearance: none;
 	background-color: transparent;
+	border-color: none;
 	background-image: none;
 	border: none;
 	box-shadow: none;
 	color: #697070;
 	font-family: Helvetica, sans-serif;
 	font-size: 1em;
-	padding: 1.25em;
+	padding: 16px;
 	display: block;
 	-webkit-transition: background 0.4s ease;
 	        transition: background 0.4s ease;
