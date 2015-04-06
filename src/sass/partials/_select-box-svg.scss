@@ -12,6 +12,7 @@
 //needs to house the select in order to work
 .select-box-wrapper-svg {
     background-color:#fff;
+    border: none;
     border-radius: 5px;
     font-family: Helvetica, sans-serif;
     font-size: 1em;
@@ -32,12 +33,8 @@
 .svg-arrow {
     z-index:1;
     position:absolute;
-   //height: 150%;
     right:0;
     bottom:0;
-    //top:0;
-    //top:-10px;
-   // margin-top:-16px;
     display:block;
     padding:0;
   
