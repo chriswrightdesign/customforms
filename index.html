@@ -69,6 +69,26 @@
 
 			</form>
 
+			<h2>
+				Select box 2: SVG arrow
+			</h2>
+
+			<form id="form-select-two">
+				<label for="select-box-svg" class="select-box-label">Custom select w/svg arrow</label>
+				<div class="select-box-wrapper-svg t-white">
+					<select id="select-box-svg" class="select-box">
+						<option>Option 1</option>
+						<option>Option 2</option>
+						<option>Option 3</option>
+						<option>Option 4</option>
+					</select>
+					<svg role="presentation" class="svg-arrow" width="61.8px" height="56.3px" viewBox="-458 261.7 41.8 38.3" preserveAspectRatio="xMidYMid">
+						<rect x="-448" y="260.7" class="svg-arrow-box" width="169.3" height="39"/>
+						<polygon class="svg-arrow-icon" points="-429.5,280.2 -431.9,283 -434.3,280.2 "/>
+					</svg>
+				</div>
+			</form>
+
 			<h2>Range input</h2>
 			
 			<form id="form-range" class="form-range">
@@ -213,7 +233,7 @@
 			</form>
 
 
-			<h2>Full screen select box</h2>
+			<h2>Full screen select box: Do not use in a real project</h2>
 			<p>
 				As Luke Wroblewski calls select boxes the UI of last resort, I wanted to make an alternative which had fallback to the standard select box, most of the solutions I've seen where people have created non-hybrid select boxes have been completely rewriting the solution.
 			</p>

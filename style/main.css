@@ -259,6 +259,97 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	width: 100%;
 }
 
+.select-box-wrapper-svg input::-ms-clear,
+.select-box-wrapper-svg input::-ms-reveal {
+	display: none;
+}
+
+.select-box-label {
+	display: block;
+	margin: 1em 0;
+}
+
+.select-box-wrapper-svg {
+	background-color: #fff;
+	border: 1px solid #2a1244;
+	border-radius: 5px;
+	font-family: Helvetica, sans-serif;
+	font-size: 1em;
+	line-height: 1em;
+	margin: 0;
+	overflow: hidden;
+	position: relative;
+	-webkit-transition: background-color 0.4s ease-in-out;
+	        transition: background-color 0.4s ease-in-out;
+	width: 100%;
+}
+
+.select-box-wrapper-svg:hover,
+.select-box-wrapper-svg:focus,
+.select-box-wrapper-svg:active {
+	cursor: pointer;
+}
+
+.svg-arrow {
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 82px;
+	height: 75px;
+}
+
+.svg-arrow-box {
+	fill: #fff;
+}
+
+.svg-arrow-icon {
+	fill: #000;
+}
+
+.no-svg .select-box-wrapper-svg {
+	background-image: url("../img/arrow_down.png");
+}
+
+.select-box-wrapper-svg select option {
+	color: #111;
+	padding: 0.5em;
+	line-height: 1.5;
+	font-size: 1em;
+}
+
+.select-box-wrapper-svg select {
+	position: relative;
+	z-index: 2;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-color: transparent;
+	background-image: none;
+	border: none;
+	box-shadow: none;
+	color: #697070;
+	font-family: Helvetica, sans-serif;
+	font-size: 1em;
+	padding: 1em;
+	-webkit-transition: background 0.4s ease;
+	        transition: background 0.4s ease;
+	width: 115%;
+}
+
+.select-box-wrapper-svg select:hover {
+	cursor: pointer;
+}
+
+.select-box-wrapper-svg select:active,
+.select-box-wrapper-svg select:focus {
+	background-color: rgba(249, 241, 155, 0.5);
+}
+
+.high-contrast-mode .select-box-wrapper-svg select {
+	width: 100%;
+}
+
 .form-range input[type="range"] {
 	box-sizing: border-box;
 	-webkit-appearance: none;
@@ -944,6 +1035,10 @@ p {
 	width: 100%;
 }
 
+.select-box-wrapper-svg select { /* All high contrast styling rules */
+	width: 100%;
+}
+
 }
 
 @media screen and (-ms-high-contrast: black-on-white) {
@@ -952,11 +1047,19 @@ p {
 	width: 100%;
 }
 
+.select-box-wrapper-svg select {
+	width: 100%;
+}
+
 }
 
 @media screen and (-ms-high-contrast: white-on-black) {
 
 .select-box-wrapper select {
+	width: 100%;
+}
+
+.select-box-wrapper-svg select {
 	width: 100%;
 }
 
