@@ -1,0 +1,104 @@
+//reset css file
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, address, cite, code, em, img, small, strong, sup, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, embed, figure, figcaption, footer, header, nav, section, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+li {
+	list-style: none;
+}
+button {
+	border:none;
+	background:none;
+}
+input {
+	border:none;
+	background:none;
+	-webkit-apperance:none;
+	border-radius:0;
+}
+fieldset {
+	border:none;
+}
+input:focus,
+input:hover,
+select:focus,
+select:hover {
+	font-size:1em;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+ul {
+	list-style:disc;
+}
+ul ul {
+	padding-left:1em;
+}
+ul ul > li {
+	list-style:circle;
+
+}
+ol {
+	list-style:decimal;
+}
+ol ol {
+	padding-left:1em;
+}
+ol ol > li {
+	list-style:lower-alpha;
+}
+nav > ul {
+	list-style: none;
+}
+* {
+	box-sizing:border-box;
+}
+fieldset, legend {
+	border:none;
+	margin:0;
+	padding:0;
+}
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance:none;
+  margin: 0;
+}
+input[type="number"]:hover::-webkit-inner-spin-button,
+input[type="number"]:hover::-webkit-outer-spin-button {
+ -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance:none;
+  margin:0;
+  margin: 0;
+}

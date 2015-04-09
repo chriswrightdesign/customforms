@@ -1,0 +1,80 @@
+//select box
+.select-box-wrapper input::-ms-clear,
+.select-box-wrapper input::-ms-reveal {
+    display:none;
+}
+
+.select-box-label {
+	display:block;
+	margin:1em 0;
+}
+
+//needs to house the select in order to work
+.select-box-wrapper {
+    background: #fff url("../img/arrow_down.svg") no-repeat 97% 50%;
+    border: 1px solid #2a1244;
+    border-radius: 5px;
+    font-family: Helvetica, sans-serif;
+    font-size: 1em;
+    line-height: 1em;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    transition: background-color 0.4s ease-in-out;
+    width: 100%;
+    &:hover,
+    &:focus,
+    &:active {
+        cursor: pointer;
+    }
+}
+.no-svg .select-box-wrapper {
+    background-image: url("../img/arrow_down.png");
+}
+.select-box-wrapper select option {
+    color:#111;
+    padding:0.5em;
+    line-height:1.5;
+    font-size:1em;
+}
+.select-box-wrapper select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    color: #697070;
+    font-family: Helvetica, sans-serif;
+    font-size: 1em;
+    padding: 1em;
+    transition: background 0.4s ease;
+    width: 115%;
+    &:hover {
+        cursor: pointer;
+    }
+    &:active,
+    &:focus {
+        background-color: rgba(249, 241, 155, 0.5);
+    }
+
+    @media screen and (-ms-high-contrast: active) {
+     /* All high contrast styling rules */
+        width: 100%;
+        //appearance: menu-list;
+    }
+    @media screen and (-ms-high-contrast: black-on-white) {
+     width: 100%;
+    }
+    @media screen and (-ms-high-contrast: white-on-black) {
+      width: 100%;
+    }
+}
+//requires a script to detect a change
+.high-contrast-mode .select-box-wrapper select {
+
+    width: 100%;
+}
+
+

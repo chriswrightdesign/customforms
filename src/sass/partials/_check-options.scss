@@ -1,0 +1,75 @@
+//segmented control
+$controlBgColor: #180f0b;
+$controlBgHoverColor:#20120a;
+$controlKeyboardFocus: #79472b;
+$controlTextColor: #fff;
+
+//use a media query to progresively enhance
+
+@media all {
+
+	.check-options {
+		//border:none;
+		min-height:90vh;
+	}
+	.check-options-title {
+		font-family: 'Lato', sans-serif;
+	}
+	.check-options-list {
+		padding:0;
+	}
+	.check-listitem {
+		padding: 0 0.5em;
+	}
+	.check-options-input {
+
+	}
+	.check-options-label {
+		font-family: 'Lato', sans-serif;
+		cursor:pointer;
+		padding:0.5em 0.75em;
+		width:100%;
+		display:block;
+		background:#eee;
+		border-top:1px solid $controlBgColor;
+		border-bottom:1px solid $controlBgColor;
+		//border-radius:10px;
+
+		color:#111;
+		text-align:center;
+		text-decoration:none;
+		//transition:background 0.4s ease, color 0.4s ease;
+
+		@media all and (min-width:40em) {
+			padding: 3em;
+		}
+		&:hover,
+		&:focus,
+		&:active {
+
+			background:$controlBgHoverColor;
+			color:#fff;
+
+		}
+	}
+	.check-options-input {
+	   position:absolute;
+		visibility:none;
+		opacity:0;
+		left:-9999px;
+	}
+
+
+	.check-listitem input:checked + label {
+
+		background:$controlBgColor;
+		color:#fff;
+		border-color:$controlBgHoverColor;
+	}
+	.check-listitem input:active + label {
+		color:$controlKeyboardFocus;
+	}
+	.check-listitem input:focus + label {
+		color:$controlKeyboardFocus;
+	}
+}

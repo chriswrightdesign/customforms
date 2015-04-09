@@ -1,0 +1,93 @@
+$bgSwitchOff: #916e5b;
+$bgSwitchOn: #eee;
+$switchToggleSize: 3.25em;
+@media all {
+
+
+    .toggle-container {
+
+        border-radius: 40px;
+        height: 3.5em;
+        max-width: 10em;
+        overflow: hidden;
+        z-index:1;
+        position: relative;
+
+    }
+    .toggle-container:after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+    .radio-toggle-switch-on-off {
+        left: -9999px;
+        opacity: 0;
+        position: absolute;
+        visibility: none;
+    }
+
+    .radio-toggle-switch-on-off-label {
+        color: #000;
+        border-radius:40px;
+        //background:#eee;
+        cursor: pointer;
+       display: block;
+       float: left;
+       padding: 1em;
+       padding-top:1em;
+       padding-bottom:1em;
+        position: absolute;
+        opacity:0;
+        transition: opacity 0.2s ease;
+        width: 100%;
+    }
+
+    .radio-toggle-switch-on-off:nth-of-type(1) + label {
+        background:$bgSwitchOff;
+        padding-left:4.5em;
+        text-align: left;
+
+        &:before {
+
+            right:0;
+            transform:translateX(-4em);
+
+        }
+
+    }
+
+    .radio-toggle-switch-on-off:nth-of-type(2) + label {
+        background:  $bgSwitchOn;
+        padding-right:4.5em;
+        text-align:right;
+        &:before {
+            left:0;
+            transform:translateX(4em);
+
+        }
+    }
+    .radio-toggle-switch-on-off + label {
+       z-index:5;
+       &:before {
+            content: "";
+            top:0;
+            width:$switchToggleSize;
+            height:$switchToggleSize;
+            display:block;
+            border:1px solid #ddd;
+            border-radius:50%;
+            background:#fff;
+            position:absolute;
+             transition:transform 0.3s ease-in-out;
+        }
+    }
+
+    .radio-toggle-switch-on-off:checked + label {
+        z-index: 1;
+        opacity:1;
+        &:before {
+            transform:translateX(0);
+        }
+    }
+}
+

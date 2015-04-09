@@ -1,0 +1,106 @@
+//radio switch
+$toggleSize: 3.5em;
+$toggleColor: #593420;
+$toggleFocusColor: #97664c;
+$switchOnColor: #fff;
+$switchOffColor: #916e5b;
+$radioContainerBg: #fff;
+
+.radio-container {
+    background-color: $radioContainerBg;
+    border-radius: 4em;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    display: block;
+    height: $toggleSize;
+    margin: 0em 0 0 3em;
+    position: relative;
+    width: 6em;
+}
+.radio-container:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+//switch label
+.radio-switch-label {
+
+    color: $switchOnColor;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+    display: block;
+    padding: 1em;
+}
+.radio-label-left {
+    left: -60%;
+    text-align: right;
+}
+.radio-label-right {
+    right: -60%;
+    text-align: left;
+}
+
+//toggle
+.radio-switch-toggle {
+    background: $toggleColor;
+    border: 1px solid $toggleColor;
+    border-radius: 50%;
+    bottom: 0;
+    cursor: pointer;
+    height: 3.5em;
+    position: absolute;
+    transform: translateX(0);
+    transition: transform 0.2s ease, background 0.4s ease;
+    width: 3.5em;
+    z-index: 1;
+}
+
+.radio-switch {
+
+    bottom: 0;
+    cursor: pointer;
+    height: 4em;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    width: 7em;
+    z-index: 2;
+
+}
+.radio-switch:active ~ .radio-switch-toggle {
+	background-color: $toggleFocusColor;
+	border: 1px solid $toggleFocusColor;
+}
+.radio-switch:focus ~ .radio-switch-toggle {
+	background-color: $toggleFocusColor;
+	border: 1px solid $toggleFocusColor;
+}
+.radio-switch:checked ~ .radio-switch-label:nth-of-type(1) {
+    color: $switchOnColor;
+}
+.radio-switch:checked ~ .radio-switch-label:nth-of-type(2) {
+    color:$switchOffColor;
+}
+
+.radio-switch ~ :checked ~ .radio-switch-label:nth-of-type(1) {
+    color: $switchOffColor;
+}
+.radio-switch ~ :checked ~ .radio-switch-label:nth-of-type(2) {
+    color: $switchOnColor;
+}
+
+.radio-switch:checked ~ .radio-switch-toggle {
+	
+    transform: translateX(-0.1em);
+}
+
+.radio-switch ~ :checked ~ .radio-switch-toggle {
+
+    transform: translateX(3.1em);
+}
+
+.radio-switch:checked {
+    z-index: 0;
+}
+
+

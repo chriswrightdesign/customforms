@@ -1,0 +1,84 @@
+//spinner horizontal
+$spinnerHorizontalBtnColor:#180f0b;
+$spinnerHorizontalBtnHover:#20120a;
+$spinnerHorizontalBtnRadius: 5px;
+$spinnerHoziontalBtnTextColor:#fff;
+
+.spinner-horizontal {
+    max-width:20em;
+    margin:0 0 5em 0;
+}
+.spinner-horizontal:after {
+    clear:both;
+    content: "";
+    display: table;
+}
+.spinner-horizontal-label {
+    display:block;
+    text-align:center;
+    width:100%;
+}
+.spinner-horizontal-list {
+
+}
+.btn-spinner {
+    display:block;
+    padding:1.1em 1.1em;
+    color:$spinnerHoziontalBtnTextColor;
+    font-size:1em;
+    font-weight:700;
+    text-align:center;
+    text-decoration:none;
+    background:$spinnerHorizontalBtnColor;
+    transition: background 0.4s ease;
+    &:hover,
+    &:focus,
+    &:active {
+        background: $spinnerHorizontalBtnHover;
+    }
+
+}
+.btn-spinner-left {
+    border-top-left-radius:$spinnerHorizontalBtnRadius;
+    border-bottom-left-radius:$spinnerHorizontalBtnRadius;
+}
+.btn-spinner-right {
+    border-top-right-radius:$spinnerHorizontalBtnRadius;
+    border-bottom-right-radius:$spinnerHorizontalBtnRadius;
+}
+
+.spinner-input {
+    border-radius:0;
+    -webkit-border-radius:0; // attempting to remove the borders
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    box-sizing:border-box;
+    background: none;
+    border: none;
+    background:#fff;
+    padding:1.1em 1em 1.05em 1em;
+    text-align:center;
+    font-size:1em;
+    line-height:1.5;
+    border-radius:none;
+    width: 100%;
+
+     @media all and (min-width:40em){
+         padding:1.1em 1em 1.05em 1em;
+    }
+
+}
+.spinner-horizontal-list li {
+    float:left;
+    list-style: none;
+}
+.spinner-horizontal-list li:nth-of-type(1) {
+    width: 30%
+}
+.spinner-horizontal-list li:nth-of-type(2){
+    width: 40%
+}
+.spinner-horizontal-list li:nth-of-type(3){
+    width: 30%;
+}

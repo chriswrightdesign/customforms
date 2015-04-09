@@ -1,0 +1,56 @@
+.select-box-wrapper {
+	position:relative;
+}
+.select-full-wrapper.is-hidden {
+
+	opacity:0;
+	display:none;
+
+}
+.select-full-wrapper.is-visible {
+
+	display:block;
+	opacity:1;
+
+}
+.select-full-item {
+
+	display: block;
+	padding:1.6em;
+	color:#000;
+	background: #fff url("../img/arrow_down.svg") no-repeat 97% 50%;
+	text-decoration:none;
+	position:absolute;
+	top:0;
+	left:0;
+	width: 100%;
+}
+.select-full-wrapper {
+
+	width:100%;
+	height:100%;
+	position: fixed;
+	background:#eee;
+	top:0;
+	left:0;
+	z-index:999;
+	overflow-y:scroll;
+
+}
+.select-full-list {
+
+}
+.select-full-list li {
+	width:100%;
+	padding:1.5em;
+	cursor:pointer;
+	display:block;
+	text-align:center;
+	font-size:1.5em;
+	background: #eee;
+	color:#000;
+}
+.select-full-list li:hover {
+	background: #ddd;
+
+}
