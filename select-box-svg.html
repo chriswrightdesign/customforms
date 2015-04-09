@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Custom forms</title>
+		<script>
+		  (function(d) {
+		    var config = {
+		      kitId: 'tmv0kmr',
+		      scriptTimeout: 3000
+		    },
+		    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+		  })(document);
+		</script>
+		
+		<link href="style/site.css" rel="stylesheet" />
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="img/favicon.png">
+		<script src="scripts/modernizr.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			
+			
+			<h2>
+				Select box with SVG arrow
+			</h2>
+
+			<form id="form-select-two">
+				<label for="select-box-svg" class="select-box-label">Custom select w/svg arrow</label>
+				<div class="select-box-wrapper-svg t-white">
+					<select id="select-box-svg" class="select-box">
+						<option>Option 1</option>
+						<option>Option 2</option>
+						<option>Option 3</option>
+						<option>Option 4</option>
+					</select>
+					<svg role="presentation" class="svg-arrow" width="62px" height="60px" viewBox="-458 261.7 41.8 38.3">
+						<rect x="-458" y="261.4" class="svg-arrow-box" width="62" height="60"/>
+						<polygon class="svg-arrow-icon" points="-432.9,281.4 -437.1,286.4 -441.3,281.4 "/>
+					</svg>
+				</div>
+			</form>
+
+			
+
+
+		</div>
+		
+		<script>
+			function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("script")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||"all"})}
+			loadCSS('style/main.min.css');
+		</script>		
+
+	</body>
+</html>

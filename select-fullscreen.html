@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Custom forms</title>
+		<script>
+		  (function(d) {
+		    var config = {
+		      kitId: 'tmv0kmr',
+		      scriptTimeout: 3000
+		    },
+		    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+		  })(document);
+		</script>
+		
+		<link href="style/site.css" rel="stylesheet" />
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="img/favicon.png">
+		<script src="scripts/modernizr.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			
+			
+
+
+			<h2>Full screen select box: Do not use in a real project</h2>
+			<p>
+				As Luke Wroblewski calls select boxes the UI of last resort, I wanted to make an alternative which had fallback to the standard select box, most of the solutions I've seen where people have created non-hybrid select boxes have been completely rewriting the solution.
+			</p>
+			<p>
+				This solution is potentially problematic, it requires you to inject an element  above the select box, create an element with mirrored content to the select box and then sync the click to the option in the seleect box.
+			</p>
+			<p>
+				This will need a lot of testing, and probably some ARIA love.
+			</p>
+			<p>
+				At the moment this works pretty well on the devices and browsers I've tested (see the readme for the google spreadsheet, however we've lost keyboard control that would be there if this was a simple select element. Our options here are to either - add a listener for keyboard input and assertlive, or when a key is pressed remove the custom stuff and fallback to the standard select box.
+
+			</p>
+
+
+
+
+			
+			<form id="form-select-fullscreen">
+				<label for="select-box" class="select-box-label">Experimental select</label>
+				
+				<div class="select-box-wrapper js-select-full">
+
+					<select id="select-box-full" class="select-box js-select-item">
+						<option value="Option 1">Option 1</option>
+						<option value="Option 2">Option 2</option>
+						<option value="Option 3">Option 3</option>
+						<option value="Option 4">Option 4</option>
+						<option value="Option 5">Option 5</option>
+						<option value="Option 6">Option 6</option>
+					</select>
+
+				</div>
+
+			</form>
+
+
+
+		</div>
+		
+		<script>
+			function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("script")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||"all"})}
+			loadCSS('style/main.min.css');
+		</script>
+		
+		
+
+	</body>
+</html>
