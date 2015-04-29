@@ -23,33 +23,46 @@
 		<div class="container">
 
 
-			<h2>Number spinner horizontal</h2>
+			<h1>Number spinner horizontal</h1>
 
-			<p>This implementation uses two anchor links to control the stepper, alternatively you could use radio buttons and add some keyboard support, however, it wouldn't work so well repeatedly hitting the same radio button. </p>
-
-			<p>You need to detect a form of touch, as you'll end up with double tap zooms on mobile devices. Keep touch target sizes in mind, as it's quite easy to hit the number input if you have giant sausage fingers and the buttons are too small.</p>
-
-			<form id="number-spinner-horizontal">
+			<form id="number-spinner-horizontal" class="t-brown">
 				<div class="spinner-horizontal">
-				<label for="spinner-horizontal-vertical" class="spinner-horizontal-label">How many</label>
-					<ul class="spinner-horizontal-list">
-						<li role="presentation">
-							<a href="#spinner-input" data-type="subtract" title="Subtract 1" class="btn-spinner btn-spinner-left js-spinner-horizontal-subtract" aria-controls="spinner-input">
-								-
-							</a>
-						</li>
-						<li class="spinner-wrapper" role="presentation">
-							<input type="number" class="spinner-input js-spinner-input-horizontal" id="spinner-input" value="1" min="0" max="20" pattern="[0-9]*" role="alert" aria-live="assertlive" /><!-- Assert live speaks the change of the number -->
-						</li>
-						<li role="presentation">
-							<a href="#spinner-input" data-type="add" class="btn-spinner btn-spinner-right js-spinner-horizontal-add" title="Add 1" aria-controls="spinner-input">
-								+
-							</a>
-						</li>
-					</ul>
+					<label for="spinner-horizontal-vertical" class="spinner-horizontal-label">How many</label>
+
+					<button data-type="subtract" title="Subtract 1" class="l-grid-20 btn-spinner btn-spinner-left js-spinner-horizontal-subtract" aria-controls="spinner-input">-</button>
+
+					<input type="number" class="l-grid-60 spinner-input js-spinner-input-horizontal" id="spinner-input" value="1" min="0" max="20" pattern="[0-9]*" role="alert" aria-live="assertlive" /><!-- Assert live speaks the change of the number -->
+
+					<button data-type="add" class="l-grid-20 btn-spinner btn-spinner-right js-spinner-horizontal-add" title="Add 1" aria-controls="spinner-input">+</button>
 
 				</div>
 			</form>
+
+			<h2>About the component</h2>
+			<p>TBD.</p>
+
+			<h3>Screen Readers</h3>
+			<h4>Apple Voiceover</h4>
+			<p>TBD.</p>
+			<h4>JAWS</h4>
+			<p>TBD.</p>
+			<h4>NVDA</h4>
+			<p>TBD.</p>
+
+			<h3>Keyboard control</h3>
+			<p>TBD.</p>
+
+			<h3>High Contrast</h3>
+			<p>TBD.</p>
+
+			<h3>Inputs</h3>
+			<p>TBD.</p>
+
+			<h3>Cross browser notes</h3>
+			<p>TBD.</p>
+
+			<h3>Cross device notes</h3>
+			<p>TBD.</p>
 
 
 		</div>

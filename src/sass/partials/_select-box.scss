@@ -1,4 +1,38 @@
-//select box
+$bgSelectBoxImage: "../img/arrow_down";
+$bgSelectBoxImageSVG: $bgSelectBoxImage + ".svg";
+$bgSelectBoxImagePNG: $bgSelectBoxImage + ".png";
+$selectBoxBgColor: #fff;
+$optionTextColor: #111;
+$selectBoxBorder: 1px solid #2a1244;
+$selectBoxActiveFocusBgColor: rgba(249, 241, 155, 0.5);
+//
+//Select Box theming
+//
+.t-white .select-box-wrapper {
+    background: $selectBoxBgColor url($bgSelectBoxImageSVG) no-repeat 97% 50%;
+    border: 1px solid #2a1244;
+}
+.no-svg .t-white .select-box-wrapper {
+    background-image: url($bgSelectBoxImagePNG);
+}
+.t-white .select-box-wrapper select option {
+    color: $optionTextColor;
+}
+.t-white .select-box-wrapper select {
+
+    color: #697070;
+
+    &:active,
+    &:focus {
+        background-color: $selectBoxActiveFocusBgColor; //this is transparent so you can still see the arrow when it hilights
+    }
+}
+
+//
+//
+//select box component
+//
+//
 .select-box-wrapper input::-ms-clear,
 .select-box-wrapper input::-ms-reveal {
     display:none;
@@ -11,10 +45,8 @@
 
 //needs to house the select in order to work
 .select-box-wrapper {
-    background: #fff url("../img/arrow_down.svg") no-repeat 97% 50%;
-    border: 1px solid #2a1244;
     border-radius: 5px;
-    font-family: Helvetica, sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
     font-size: 1em;
     line-height: 1em;
     margin: 0;
@@ -28,11 +60,8 @@
         cursor: pointer;
     }
 }
-.no-svg .select-box-wrapper {
-    background-image: url("../img/arrow_down.png");
-}
+
 .select-box-wrapper select option {
-    color:#111;
     padding:0.5em;
     line-height:1.5;
     font-size:1em;
@@ -45,7 +74,6 @@
     background-image: none;
     border: none;
     box-shadow: none;
-    color: #697070;
     font-family: Helvetica, sans-serif;
     font-size: 1em;
     padding: 1em;
@@ -53,10 +81,6 @@
     width: 115%;
     &:hover {
         cursor: pointer;
-    }
-    &:active,
-    &:focus {
-        background-color: rgba(249, 241, 155, 0.5);
     }
 
     @media screen and (-ms-high-contrast: active) {

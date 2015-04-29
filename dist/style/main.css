@@ -274,6 +274,28 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	        flex: 1 0 auto;
 }
 
+.t-white .select-box-wrapper {
+	background: #fff url("../img/arrow_down.svg") no-repeat 97% 50%;
+	border: 1px solid #2a1244;
+}
+
+.no-svg .t-white .select-box-wrapper {
+	background-image: url("../img/arrow_down.png");
+}
+
+.t-white .select-box-wrapper select option {
+	color: #111;
+}
+
+.t-white .select-box-wrapper select {
+	color: #697070;
+}
+
+.t-white .select-box-wrapper select:active,
+.t-white .select-box-wrapper select:focus {
+	background-color: rgba(249, 241, 155, 0.5);
+}
+
 .select-box-wrapper input::-ms-clear,
 .select-box-wrapper input::-ms-reveal {
 	display: none;
@@ -285,10 +307,8 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 }
 
 .select-box-wrapper {
-	background: #fff url("../img/arrow_down.svg") no-repeat 97% 50%;
-	border: 1px solid #2a1244;
 	border-radius: 5px;
-	font-family: Helvetica, sans-serif;
+	font-family: Helvetica, Arial, sans-serif;
 	font-size: 1em;
 	line-height: 1em;
 	margin: 0;
@@ -305,12 +325,7 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	cursor: pointer;
 }
 
-.no-svg .select-box-wrapper {
-	background-image: url("../img/arrow_down.png");
-}
-
 .select-box-wrapper select option {
-	color: #111;
 	padding: 0.5em;
 	line-height: 1.5;
 	font-size: 1em;
@@ -324,7 +339,6 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	background-image: none;
 	border: none;
 	box-shadow: none;
-	color: #697070;
 	font-family: Helvetica, sans-serif;
 	font-size: 1em;
 	padding: 1em;
@@ -337,13 +351,33 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	cursor: pointer;
 }
 
-.select-box-wrapper select:active,
-.select-box-wrapper select:focus {
+.high-contrast-mode .select-box-wrapper select {
+	width: 100%;
+}
+
+.t-white .select-box-wrapper-svg {
+	background-color: #fff;
+}
+
+.t-white .select-box-wrapper-svg select {
+	color: #697070;
+}
+
+.t-white .select-box-wrapper-svg select:active,
+.t-white .select-box-wrapper-svg select:focus {
 	background-color: rgba(249, 241, 155, 0.5);
 }
 
-.high-contrast-mode .select-box-wrapper select {
-	width: 100%;
+.t-white .svg-arrow-box {
+	fill: #180f0b;
+}
+
+.t-white .svg-arrow-icon {
+	fill: #fff;
+}
+
+.t-white .select-box-wrapper-svg select option {
+	color: #111;
 }
 
 .select-box-wrapper-svg input::-ms-clear,
@@ -357,7 +391,6 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 }
 
 .select-box-wrapper-svg {
-	background-color: #fff;
 	border: none;
 	border-radius: 5px;
 	font-family: Helvetica, sans-serif;
@@ -386,17 +419,8 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	padding: 0;
 }
 
-.svg-arrow-box {
-	fill: #180f0b;
-}
-
-.svg-arrow-icon {
-	fill: #fff;
-}
-
 .select-box-wrapper-svg select option {
 	display: block;
-	color: #111;
 	line-height: 1.5;
 	font-size: 1em;
 	border: none;
@@ -413,23 +437,16 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	background-image: none;
 	border: none;
 	box-shadow: none;
-	color: #697070;
 	font-family: Helvetica, sans-serif;
 	font-size: 1em;
 	padding: 16px;
 	display: block;
 	-webkit-transition: background 0.4s ease;
 	        transition: background 0.4s ease;
-	width: 115%;
 }
 
 .select-box-wrapper-svg select:hover {
 	cursor: pointer;
-}
-
-.select-box-wrapper-svg select:active,
-.select-box-wrapper-svg select:focus {
-	background-color: rgba(249, 241, 155, 0.5);
 }
 
 .high-contrast-mode .select-box-wrapper-svg select {
@@ -705,15 +722,40 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	z-index: 0;
 }
 
-.spinner-horizontal {
-	max-width: 20em;
-	margin: 0 0 5em 0;
+.l-grid-60 {
+	width: 60%;
+	float: left;
+}
+
+.l-grid-20 {
+	width: 20%;
+	float: left;
+}
+
+.t-brown .btn-spinner {
+	background: #180f0b;
+	color: #fff;
+}
+
+.t-brown .btn-spinner:hover,
+.t-brown .btn-spinner:focus,
+.t-brown .btn-spinner:active {
+	background: #20120a;
+}
+
+.t-brown .spinner-input {
+	background: #fff;
 }
 
 .spinner-horizontal:after {
 	clear: both;
 	content: "";
 	display: table;
+}
+
+.spinner-horizontal {
+	max-width: 20em;
+	margin: 0 0 5em 0;
 }
 
 .spinner-horizontal-label {
@@ -724,21 +766,14 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 
 .btn-spinner {
 	display: block;
-	padding: 1.1em 1.1em;
-	color: #fff;
+	padding: 1.1em 1em 1.15em;
 	font-size: 1em;
 	font-weight: 700;
 	text-align: center;
 	text-decoration: none;
-	background: #180f0b;
 	-webkit-transition: background 0.4s ease;
 	        transition: background 0.4s ease;
-}
-
-.btn-spinner:hover,
-.btn-spinner:focus,
-.btn-spinner:active {
-	background: #20120a;
+	cursor: pointer;
 }
 
 .btn-spinner-left {
@@ -760,39 +795,31 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	box-sizing: border-box;
 	background: none;
 	border: none;
-	background: #fff;
-	padding: 1.1em 1em 1.05em 1em;
+	padding: 1em 1em 1.05em 1em;
 	text-align: center;
 	font-size: 1em;
 	line-height: 1.5;
 	border-radius: none;
-	width: 100%;
+	display: block;
 }
 
-.spinner-horizontal-list li {
-	float: left;
-	list-style: none;
+.t-brown .btn-vertical-spinner {
+	color: #fff;
+	background: #180f0b;
 }
 
-.spinner-horizontal-list li:nth-of-type(1) {
-	width: 30%;
+.t-brown .btn-vertical-spinner:hover,
+.t-brown .btn-vertical-spinner:focus,
+.t-brown .btn-vertical-spinner:active {
+	background: #20120a;
 }
 
-.spinner-horizontal-list li:nth-of-type(2) {
-	width: 40%;
-}
-
-.spinner-horizontal-list li:nth-of-type(3) {
-	width: 30%;
+.t-brown .vertical-spinner-input {
+	background: #fff;
 }
 
 .spinner-vertical {
 	max-width: 5em;
-}
-
-.spinner-vertical-list li {
-	width: 100%;
-	list-style: none;
 }
 
 .spinner-vertical-label {
@@ -805,7 +832,6 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	border-radius: 0;
 	background: none;
 	border: none;
-	background: #fff;
 	padding: 1.5em 1em 1.5em 1em;
 	text-align: center;
 	font-size: 1em;
@@ -819,21 +845,14 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 }
 
 .btn-vertical-spinner {
+	cursor: pointer;
 	text-align: center;
-	padding: 1em;
+	padding: 2em 1em;
 	width: 100%;
 	text-decoration: none;
-	color: #fff;
-	background: #180f0b;
 	display: block;
 	-webkit-transition: background 0.4s ease;
 	        transition: background 0.4s ease;
-}
-
-.btn-vertical-spinner:hover,
-.btn-vertical-spinner:focus,
-.btn-vertical-spinner:active {
-	background: #20120a;
 }
 
 .btn-vertical-spinner-top {
@@ -1133,6 +1152,10 @@ p {
 }
 
 @media all {
+
+.select-box-wrapper-svg select {
+	width: 115%;
+}
 
 .radio-options {
 	min-height: 90vh;

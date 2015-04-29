@@ -1,4 +1,42 @@
-//select box
+//
+// theming variables
+//
+$selectBoxBgColor: #fff;
+$selectBoxTextColor: #697070;
+$selectBoxFocusActiveBgColor: rgba(249, 241, 155, 0.5);
+$selectBoxOptionTextColor: #111;
+$selectBoxArrowBoxBgColor: #180f0b;
+$selectBoxArrowColor: #fff;
+
+//
+// theming
+//
+
+.t-white .select-box-wrapper-svg {
+     background-color:$selectBoxBgColor;
+}
+.t-white .select-box-wrapper-svg select {
+    color: $selectBoxTextColor;
+
+    &:active,
+    &:focus {
+        background-color: $selectBoxFocusActiveBgColor;
+    }
+}
+.t-white .svg-arrow-box {
+   fill: $selectBoxArrowBoxBgColor;
+}
+.t-white .svg-arrow-icon {
+    fill: $selectBoxArrowColor;
+}
+.t-white .select-box-wrapper-svg select option {
+    color: $selectBoxOptionTextColor;
+}
+
+//
+// component
+//
+
 .select-box-wrapper-svg input::-ms-clear,
 .select-box-wrapper-svg input::-ms-reveal {
     display:none;
@@ -11,7 +49,6 @@
 
 //needs to house the select in order to work
 .select-box-wrapper-svg {
-    background-color:#fff;
     border: none;
     border-radius: 5px;
     font-family: Helvetica, sans-serif;
@@ -38,18 +75,10 @@
     padding:0;
 
 }
-.svg-arrow-box {
-   fill: #180f0b;
-}
-.svg-arrow-icon {
-    fill:#fff;
-}
-.no-svg .select-box-wrapper-svg {
-   // background-image: url("../img/arrow_down.png");
-}
+
+
 .select-box-wrapper-svg select option {
     display:block;
-    color:#111;
     line-height:1.5;
     font-size:1em;
     border:none;
@@ -66,25 +95,19 @@
     background-image: none;
     border: none;
     box-shadow: none;
-    color: #697070;
     font-family: Helvetica, sans-serif;
     font-size: 1em;
     padding: 16px;
     display: block;
     transition: background 0.4s ease;
-    width: 115%;
+
     &:hover {
         cursor: pointer;
-    }
-    &:active,
-    &:focus {
-        background-color: rgba(249, 241, 155, 0.5);
     }
 
     @media screen and (-ms-high-contrast: active) {
      /* All high contrast styling rules */
         width: 100%;
-        //appearance: menu-list;
     }
     @media screen and (-ms-high-contrast: black-on-white) {
      width: 100%;
@@ -93,6 +116,12 @@
       width: 100%;
     }
 }
+@media all {
+    .select-box-wrapper-svg select {
+        width: 115%;
+    }
+}
+
 //requires a script to detect a change
 .high-contrast-mode .select-box-wrapper-svg select {
 

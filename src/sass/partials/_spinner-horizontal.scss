@@ -1,48 +1,65 @@
-//spinner horizontal
+//spinner horizontal theme variables
 $spinnerHorizontalBtnColor:#180f0b;
 $spinnerHorizontalBtnHover:#20120a;
 $spinnerHorizontalBtnRadius: 5px;
 $spinnerHoziontalBtnTextColor:#fff;
 
-.spinner-horizontal {
-    max-width:20em;
-    margin:0 0 5em 0;
+//layout
+.l-grid-60 {
+    width:60%;
+    float:left;
 }
-.spinner-horizontal:after {
-    clear:both;
-    content: "";
-    display: table;
+.l-grid-20 {
+    width:20%;
+    float:left;
 }
-.spinner-horizontal-label {
-    display:block;
-    text-align:center;
-    width:100%;
-}
-.spinner-horizontal-list {
-
-}
-.btn-spinner {
-    display:block;
-    padding:1.1em 1.1em;
-    color:$spinnerHoziontalBtnTextColor;
-    font-size:1em;
-    font-weight:700;
-    text-align:center;
-    text-decoration:none;
+//theming
+.t-brown .btn-spinner {
     background:$spinnerHorizontalBtnColor;
-    transition: background 0.4s ease;
+    color:$spinnerHoziontalBtnTextColor;
     &:hover,
     &:focus,
     &:active {
         background: $spinnerHorizontalBtnHover;
     }
+}
+.t-brown .spinner-input {
+    background:#fff;
+}
 
+.spinner-horizontal:after {
+    clear:both;
+    content: "";
+    display: table;
+}
+.spinner-horizontal {
+    max-width:20em;
+    margin:0 0 5em 0;
+}
+
+.spinner-horizontal-label {
+    display:block;
+    text-align:center;
+    width:100%;
+}
+
+.btn-spinner {
+    display:block;
+    padding:1.1em 1em 1.15em;
+    font-size:1em;
+    font-weight:700;
+    text-align:center;
+    text-decoration:none;
+    transition: background 0.4s ease;
+    cursor:pointer;
 }
 .btn-spinner-left {
+
     border-top-left-radius:$spinnerHorizontalBtnRadius;
     border-bottom-left-radius:$spinnerHorizontalBtnRadius;
 }
 .btn-spinner-right {
+
     border-top-right-radius:$spinnerHorizontalBtnRadius;
     border-bottom-right-radius:$spinnerHorizontalBtnRadius;
 }
@@ -56,29 +73,15 @@ $spinnerHoziontalBtnTextColor:#fff;
     box-sizing:border-box;
     background: none;
     border: none;
-    background:#fff;
-    padding:1.1em 1em 1.05em 1em;
+    padding:1em 1em 1.05em 1em;
     text-align:center;
     font-size:1em;
     line-height:1.5;
     border-radius:none;
-    width: 100%;
+    display:block;
 
      @media all and (min-width:40em){
          padding:1.1em 1em 1.05em 1em;
     }
 
-}
-.spinner-horizontal-list li {
-    float:left;
-    list-style: none;
-}
-.spinner-horizontal-list li:nth-of-type(1) {
-    width: 30%
-}
-.spinner-horizontal-list li:nth-of-type(2){
-    width: 40%
-}
-.spinner-horizontal-list li:nth-of-type(3){
-    width: 30%;
 }
