@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Custom forms - Number spinner horizontal</title>
+		<script>
+		  (function(d) {
+		    var config = {
+		      kitId: 'tmv0kmr',
+		      scriptTimeout: 3000
+		    },
+		    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+		  })(document);
+		</script>
+
+		<link href="../style/site.css" rel="stylesheet" />
+    <link href="../style/spinner-horizontal.min.css" rel="stylesheet" />
+		<link href="../style/prism.min.css" rel="stylesheet" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="img/favicon.png">
+		<script src="../scripts/modernizr.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Number spinner horizontal</h1>
+      <p>v0.2a</p>
+
+			<form id="number-spinner-horizontal" class="t-white">
+				<fieldset class="spinner-horizontal">
+					<label for="spinner-horizontal-vertical" class="spinner-horizontal-label">Quantity</label>
+
+					<button data-type="subtract" title="Subtract 1" class="l-grid-25 btn-spinner btn-spinner-left js-spinner-horizontal-subtract" aria-controls="spinner-input">-</button>
+
+					<input type="number" class="l-grid-50 spinner-input js-spinner-input-horizontal" id="spinner-input" value="1" min="0" max="20" step="1" pattern="[0-9]*" role="alert" aria-live="assertlive" />
+          <!-- Assert live speaks the change of the number -->
+
+					<button data-type="add" class="l-grid-25 btn-spinner btn-spinner-right js-spinner-horizontal-add" title="Add 1" aria-controls="spinner-input">+</button>
+
+				</fieldset>
+			</form>
+			<h2>Implementing this component</h2>
+
+			<h3>The Markup</h3>
+			<pre class="codeblock">
+				<code class="language-markup">
+  &lt;form id="number-spinner-horizontal" class="t-white">
+    &lt;fieldset class="spinner-horizontal">
+      &lt;label for="spinner-horizontal-vertical" class="spinner-horizontal-label">Quantity&lt;/label>
+      &lt;button data-type="subtract" title="Subtract 1" class="l-grid-25 btn-spinner btn-spinner-left" aria-controls="spinner-input">-&lt;/button>
+      &lt;input type="number" class="l-grid-50 spinner-input js-spinner-input-horizontal" id="spinner-input" value="1" min="0" max="20" step="1" pattern="[0-9]*" role="alert" aria-live="assertlive" />
+      &lt;!-- Assert live speaks the change of the number -->
+      &lt;button data-type="add" class="l-grid-25 btn-spinner btn-spinner-right" title="Add 1" aria-controls="spinner-input">+&lt;/button>
+    &lt;/fieldset>
+  &lt;/form>
+				</code>
+			</pre>
+			<h3>The CSS: Theming</h3>
+			<pre class="codeblock">
+				<code class="language-css">
+/* Theming */
+.t-white .btn-spinner {
+    background: #222;
+    color: #fff;
+}
+.t-white .btn-spinner:hover,
+.t-white .btn-spinner:focus,
+.t-white .btn-spinner:active {
+	background: #555;
+}
+.t-white .spinner-input {
+    background: #eee;
+}</code>
+			</pre>
+			<h3>The CSS: Layout</h3>
+			<pre class="codeblock">
+				<code class="language-css">
+/* For this implementation, the spinner buttons,
+have been given 25% width, and the input 50%
+*/
+.l-grid-50 {
+    float: left;
+    width: 50%;
+}
+.l-grid-25 {
+    float: left;
+    width: 25%;
+}
+				</code>
+			</pre>
+      <h3>The CSS: Resets</h3>
+      <pre class="codeblock">
+        <code class="language-css">
+/* Aggressive reset to remove the initial spinner */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance:none;
+  margin: 0;
+}
+input[type="number"]:hover::-webkit-inner-spin-button,
+input[type="number"]:hover::-webkit-outer-spin-button {
+ -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance:none;
+  margin:0;
+}
+        </code>
+      </pre>
+			<h3>The CSS: Component</h3>
+			<pre class="codeblock">
+				<code class="language-css">
+
+.spinner-horizontal-label {
+    display:block;
+    text-align:center;
+    width:100%;
+}
+/* The rounded corners of each of the buttons */
+.btn-spinner-left {
+	border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.btn-spinner-right {
+	border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.btn-spinner {
+    cursor: pointer;
+    display: block;
+    font-size: 1em;
+    font-weight: 700;
+    padding: 1.1em 1em 1.15em;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.4s ease;
+}
+.spinner-input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: none;
+    border: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    border-radius: none;
+    box-sizing: border-box;
+    display: block;
+    font-size: 1em;
+    line-height: 1.5;
+    padding: 1.1em 1em 1.05em 1em;
+    text-align: center;
+}
+				</code>
+			</pre>
+
+			<h3>The Javascript (1kb minified)</h3>
+			<pre class="codeblock">
+				<code class="language-javascript">
+    //gets the input by element Id, gets min, max, and step from the markup. Gets the subtract and add buttons either by optional classnames, or by the next or last element sibling.
+  var NumberSpinner = function(elemId, subtractClassName, addClassName) {
+    'use strict';
+    var spinnerInput = document.getElementById(elemId);
+    var btnSubtract = document.querySelector(addClassName) || spinnerInput.previousElementSibling;
+    var btnAdd = document.querySelector(subtractClassName) || spinnerInput.nextElementSibling;
+    var minLimit, maxLimit, step;
+
+    function init(){
+      minLimit = makeNumber(getAttribute(spinnerInput, 'min')) || 0,
+      maxLimit = makeNumber(getAttribute(spinnerInput, 'max')) || false,
+      step = makeNumber(getAttribute(spinnerInput, 'step') || '1');
+
+      btnSubtract.addEventListener('click', changeSpinner, false);
+      btnAdd.addEventListener('click', changeSpinner, false);
+      btnSubtract.addEventListener('keyup', keySpinner, false);
+      btnAdd.addEventListener('keyup', keySpinner, false);
+      if(supportsTouch()) {
+        btnSubtract.addEventListener('touchend', removeClickDelay, false);
+        btnAdd.addEventListener('touchend', removeClickDelay, false);
+      }
+      if(supportsPointer()) {
+        btnSubtract.addEventListener('pointerup', removeClickDelay, false);
+        btnAdd.addEventListener('pointerup', removeClickDelay, false);
+      }
+    }
+    function removeClickDelay(e) {
+      e.preventDefault();
+      e.target.click();
+    }
+    function makeNumber(inputString){
+      return parseInt(inputString, 10);
+    }
+    function update(direction){
+      var num = makeNumber(spinnerInput.value);
+      if(direction === 'add'){
+        spinnerInput.value = ((num + step) &lt;= maxLimit) ? (num + step) : spinnerInput.value;
+      } else if(direction === 'subtract') {
+        spinnerInput.value = ((num - step) >= minLimit) ? (num - step) : spinnerInput.value;
+      }
+    }
+    function getAttribute(el, attr){
+      var hasGetAttr = (el.getAttribute &amp;&amp; el.getAttribute(attr)) || null;
+      if(!hasGetAttr) {
+        var attrs = el.attributes;
+        for(var i = 0, len = attrs.length; i &lt; len; i++){
+          if(attrs[i].nodeName === attr) {
+            hasGetAttr = attrs[i].nodeValue;
+          }
+        }
+      }
+      return hasGetAttr;
+    }
+    /* Touch and Pointer support */
+    function supportsTouch(){
+      return ('ontouchstart' in window);
+    }
+    function supportsPointer(){
+      return ('pointerdown' in window);
+    }
+    /* Keyboard support */
+    function keySpinner(e){
+      switch(e.keyCode){
+        case 40:
+        case 37: // Down, Left
+          update('subtract');
+          btnSubtract.focus();
+          break;
+        case 38:
+        case 39: // Top, Right
+          update('add');
+          btnAdd.focus();
+          break;
+      }
+    }
+    function changeSpinner(e) {
+      e.preventDefault();
+      var increment = getAttribute(e.target, 'data-type');
+      update(increment);
+    }
+    init();
+  };
+
+				</code>
+			</pre>
+
+			<h2>About the component</h2>
+			<p>TBD.</p>
+
+			<h3>Screen Readers</h3>
+			<h4>Apple Voiceover</h4>
+			<p>TBD.</p>
+			<h4>JAWS</h4>
+			<p>TBD.</p>
+			<h4>NVDA</h4>
+			<p>TBD.</p>
+
+			<h3>Keyboard control</h3>
+			<p>TBD.</p>
+
+			<h3>High Contrast</h3>
+			<p>TBD.</p>
+
+			<h3>Inputs</h3>
+			<p>TBD.</p>
+
+			<h3>Cross browser notes</h3>
+			<p>TBD.</p>
+
+			<h3>Cross device notes</h3>
+			<p>TBD.</p>
+
+
+		</div>
+
+		<script>
+			function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("script")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||"all"})}
+			loadCSS('../style/main.min.css');
+		</script>
+
+		<script src="../scripts/prism.js"></script>
+    <script src="../scripts/numberspinner.min.js"></script>
+		<script>
+			NumberSpinner('spinner-input');
+		</script>
+
+
+
+	</body>
+</html>

@@ -1,0 +1,11 @@
+<svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="47.4px" height="19.4px" viewBox="-455 271.6 47.4 19.4" enable-background="new -455 271.6 47.4 19.4" xml:space="preserve">
+     <style type="text/css">
+        .svg-tick {
+            fill:#fff;
+        }
+     </style>
+    <g>
+    	<rect class="svg-tick" x="-443.4" y="271" transform="matrix(-0.7026 -0.7116 0.7116 -0.7026 -950.1357 163.6479)"  width="5" height="18.8"/>
+    	<rect class="svg-tick" x="-450.6" y="277" transform="matrix(0.7116 -0.7026 0.7026 0.7116 -327.969 -233.2623)" width="5" height="11.7"/>
+    </g>
+</svg>

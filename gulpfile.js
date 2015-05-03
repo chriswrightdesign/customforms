@@ -48,8 +48,8 @@ gulp.task('scripts', function() {
 });
 //copies the html to the dist folder
 gulp.task('html', function () {
-    return gulp.src('src/html/*.html')
-    .pipe(gulp.dest('dist'))
+    return gulp.src('src/html/**/*.html')
+    .pipe(gulp.dest('dist/'))
     .pipe(notify({ message: 'HTML'}));
 });
 gulp.task('copystyles', function () {
@@ -100,8 +100,10 @@ gulp.task('default', ['clean'], function() {
     gulp.start('styles', 'scripts', 'images');
 });
 gulp.task('watch', function() {
+  livereload.listen();
   gulp.watch('src/sass/**/*.scss', ['styles']);
   gulp.watch('src/js/**/*.js', ['scripts']);
   gulp.watch('src/img/**/*', ['images']);
-  gulp.watch('src/html/**/*', ['html']);
+  gulp.watch('src/html/**/*.html', ['html']);
+  gulp.watch('dist/style/**').on('change', livereload.changed);
 });

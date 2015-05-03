@@ -1,8 +1,20 @@
+
+.t-grey-white .card-link {
+    background: #222;
+    color: #fff;
+    &:hover {
+        background: #444;
+    }
+
+}
+.t-grey-white .card {
+     background: #fff;
+      color:#222;
+}
+
 .card {
-    background: #fff;
     border-radius: 5px;
     padding: 1em;
-    color:#371805;
 }
 .card-heading {
 
@@ -11,24 +23,16 @@
     line-height: 1.2;
 
 }
-.card-description {
 
-}
-.card-status {
 
-}
 .card-link {
+    margin:1em 0 0 0;
     border-radius: 5px;
     display: block;
-    background: #371805;
     text-decoration: none;
-    color: #fff;
     padding: 0.75em 1em;
     text-align: center;
     transition: background 300ms ease;
-    &:hover {
-        background: #5f2d0f;
-    }
 }
 .form-component {
 

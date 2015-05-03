@@ -1,72 +1,80 @@
+var NumberSpinner = function(elemId, subtractClassName, addClassName) {
+  'use strict';
+    //gets the input by element Id, gets min, max, and step from the markup. Gets the subtract and add buttons either by optional classnames, or by the next or last element sibling.
+  var spinnerInput = document.getElementById(elemId);
+  var btnSubtract = document.querySelector(addClassName) || spinnerInput.previousElementSibling;
+  var btnAdd = document.querySelector(subtractClassName) || spinnerInput.nextElementSibling;
+  var minLimit, maxLimit, step;
 
-(function(){
-  "use strict";
+  function init(){
+    minLimit = makeNumber(getAttribute(spinnerInput, "min")) || 0,
+    maxLimit = makeNumber(getAttribute(spinnerInput, "max")) || false,
+    step = makeNumber(getAttribute(spinnerInput, "step") || "1");
 
-  var d = document, $, init;
-
-  var btnSpinnerSubtract,
-      btnSpinnerAdd,
-      spinnerInput,
-      changeSpinner;
-
-  //feature support
-  var supportsTextContent = ('textContent' in document.body),
-  supportsTouch = ('ontouchstart' in window),
-  supportsPointer = ('pointerdown' in window);
-  //touch or pointer supported
-  var removeClickDelay, getDataAttribute;
-
-  $ = function(selector){
-    return d.querySelector(selector);
-  };
-
-  removeClickDelay = function(e) {
+    btnSubtract.addEventListener('click', changeSpinner, false);
+    btnAdd.addEventListener('click', changeSpinner, false);
+    btnSubtract.addEventListener('keyup', keySpinner, false);
+    btnAdd.addEventListener('keyup', keySpinner, false);
+    if(supportsTouch()) {
+      btnSubtract.addEventListener('touchend', removeClickDelay, false);
+      btnAdd.addEventListener('touchend', removeClickDelay, false);
+    }
+    if(supportsPointer()) {
+      btnSubtract.addEventListener('pointerup', removeClickDelay, false);
+      btnAdd.addEventListener('pointerup', removeClickDelay, false);
+      }
+  }
+  function removeClickDelay(e) {
     e.preventDefault();
     e.target.click();
-  };
-
-  //js hooks
-  btnSpinnerSubtract = $(".js-spinner-horizontal-subtract");
-  btnSpinnerAdd = $(".js-spinner-horizontal-add");
-  spinnerInput = $(".js-spinner-input-horizontal");
-
-  getDataAttribute = function(el, attr){
+  }
+  function makeNumber(inputString){
+    return parseInt(inputString, 10);
+  }
+  function update(direction){
+    var num = makeNumber(spinnerInput.value);
+    if(direction === 'add'){
+      spinnerInput.value = ((num + step) <= maxLimit) ? (num + step) : spinnerInput.value;
+    } else if(direction === 'subtract') {
+      spinnerInput.value = ((num - step) >= minLimit) ? (num - step) : spinnerInput.value;
+    }
+  }
+  function getAttribute(el, attr){
     var hasGetAttr = (el.getAttribute && el.getAttribute(attr)) || null;
     if(!hasGetAttr) {
-        var attrs = el.attributes;
-        for(var i = 0, len = attrs.length; i < len; i++){
-            if(attrs[i].nodeName === attr) {
-                hasGetAttr = attrs[i].nodeValue;
-            }
-        }
-    }
-    return hasGetAttr;
-  };
-  //refactor this
-  changeSpinner = function(e){
-    e.preventDefault();
-    var tmp = getDataAttribute(e.target, "data-type");
-    if(tmp === "add"){
-     spinnerInput.value++;
-    } else {
-        if(spinnerInput.value > 0){
-          spinnerInput.value--;
+      var attrs = el.attributes;
+      for(var i = 0, len = attrs.length; i < len; i++){
+        if(attrs[i].nodeName === attr) {
+          hasGetAttr = attrs[i].nodeValue;
         }
       }
-  };
-  init = function(){
-    //add click events, if other input types are available, enhance to those
-    btnSpinnerSubtract.addEventListener('click', changeSpinner, false);
-    btnSpinnerAdd.addEventListener('click', changeSpinner, false);
-    if(supportsTouch) {
-      btnSpinnerSubtract.addEventListener('touchend', removeClickDelay, false);
-      btnSpinnerAdd.addEventListener('touchend', removeClickDelay, false);
     }
-    if(supportsPointer) {
-      btnSpinnerSubtract.addEventListener('pointerup', removeClickDelay, false);
-      btnSpinnerAdd.addEventListener('pointerup', removeClickDelay, false);
+    return hasGetAttr;
+  }
+  /* Touch and Pointer support */
+  function supportsTouch(){
+    return ('ontouchstart' in window);
+  }
+  function supportsPointer(){
+    return ('pointerdown' in window);
+  }
+  /* Keyboard support */
+  function keySpinner(e){
+    switch(e.keyCode){
+      case 40:
+      case 37: // Down, Left
+        update('subtract');
+        break;
+      case 38:
+      case 39: // Top, Right
+        update('add');
+        break;
     }
-  };
+  }
+  function changeSpinner(e) {
+    e.preventDefault();
+    var tmp = getAttribute(e.target, "data-type");
+    update(tmp);
+  }
   init();
-
-})();
+};

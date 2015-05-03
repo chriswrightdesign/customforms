@@ -1,0 +1,62 @@
+.t-white .btn-vertical-spinner {
+	background: #222;
+	color: #fff;
+}
+
+.t-white .btn-vertical-spinner:hover,
+.t-white .btn-vertical-spinner:focus,
+.t-white .btn-vertical-spinner:active {
+	background: #555;
+}
+
+.t-white .vertical-spinner-input {
+	background: #eee;
+}
+
+.spinner-vertical {
+	max-width: 5em;
+}
+
+.spinner-vertical-label {
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+.vertical-spinner-input {
+	border-radius: 0;
+	background: none;
+	border: none;
+	padding: 1.5em 1em 1.5em 1em;
+	text-align: center;
+	font-size: 1em;
+	width: 100%;
+}
+
+.vertical-spinner-input:hover,
+.vertical-spinner-input:focus,
+.vertical-spinner-input:active {
+	font-size: 1em;
+}
+
+.btn-vertical-spinner {
+	cursor: pointer;
+	text-align: center;
+	padding: 2em 1em;
+	width: 100%;
+	text-decoration: none;
+	display: block;
+	-webkit-transition: background 0.4s ease;
+	        transition: background 0.4s ease;
+}
+
+.btn-vertical-spinner-top {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.btn-vertical-spinner-bottom {
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+

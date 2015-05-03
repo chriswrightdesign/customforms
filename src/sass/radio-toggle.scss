@@ -1,0 +1,117 @@
+$switchToggleSize: 3.3em;
+$paddedDistance: 4.5em;
+$translatedDistance: 4em;
+$componentWidth: 6.5em;
+$componentHeight: 3.75em;
+
+//the only thing missing is a keyboard focus state
+
+/* Theming */
+.t-white .radio-switch-label {
+    color: #000;
+}
+.t-white .radio-switch + label:before {
+    background: #fff;
+    border: 1px solid #ddd;
+}
+.t-white .radio-switch:nth-of-type(1) + label {
+    background: #eee;
+    color: #222;
+}
+.t-white .radio-switch:nth-of-type(2) + label {
+    background: #222;
+    color: #fff;
+}
+/* set keyboard focus for each to be slightly different */
+
+/* On Button */
+.t-white .radio-switch:focus ~ label:nth-of-type(1) {
+    background: #ccc;
+    color: #222;
+}
+/* Off Button */
+.t-white .radio-switch:focus ~ label:nth-of-type(2) {
+    background: #444;
+    color: #fff;
+}
+
+/* Component */
+.radio-toggle {
+    display: block;
+    height: 3.75em;
+    max-width: 6.5em;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 1;
+}
+.radio-toggle:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+.radio-toggle-title ~ .radio-toggle .radio-switch {
+    left: -9999px;
+    opacity: 0;
+    position: absolute;
+    visibility: none;
+}
+
+.radio-switch-label {
+    border-radius: 40px;
+    cursor: pointer;
+    display: block;
+    float: left;
+    opacity: 0;
+    padding: 1em;
+    position: absolute;
+    transition: opacity 0.2s ease;
+    -webkit-user-select: none;
+            user-select: none;
+    width: 100%;
+}
+
+/* The circular switch */
+.radio-switch + label:before {
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 3.3em;
+    position: absolute;
+    top: 0;
+    transition: transform 0.3s ease-in-out;
+    width: 3.3em;
+}
+
+.radio-switch:nth-of-type(1) + label {
+    text-align: right;
+}
+
+.radio-switch:nth-of-type(1) + label:before {
+    left: 0;
+    transform: translateX(4em);
+}
+
+.radio-switch:nth-of-type(2) + label {
+    text-align: left;
+}
+.radio-switch:nth-of-type(2) + label:before {
+    right: 0;
+    transform: translateX(-4em);
+}
+
+/* our transition for each radio button,
+        move the 'switch' left or right, and fade out
+        the not currently active button
+    */
+
+.radio-switch + label {
+    z-index: 5;
+}
+.radio-switch:checked + label {
+    opacity: 1;
+    z-index: 1;
+}
+.radio-switch:checked + label:before {
+    transform: translateX(0);
+}
+

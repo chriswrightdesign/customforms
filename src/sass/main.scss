@@ -1,28 +1,16 @@
 @import "partials/reset";
 @import "partials/layout";
-@import "partials/select-box";
-@import "partials/select-box-svg";
-@import "partials/range-input";
-@import "partials/radio-switch";
-@import "partials/spinner-horizontal";
-@import "partials/spinner-vertical";
-@import "partials/segmented-control";
-@import "partials/password-switch";
-@import "partials/fullscreen-select-box";
 @import "partials/card";
-@import "partials/radio-options";
-@import "partials/check-options";
-@import "partials/radio-toggle-switch";
-@import "partials/radio-toggle-switch-onoff";
-
-$brownbg: #291C15;
 
 body {
-    background: $brownbg;
-    color: #fff;
+    background: #fff;
+    color: #333;
     font-family: "effra",sans-serif;
     font-size: 100%;
     line-height: 1.5;
+}
+.heading-primary {
+    padding:0 0 0 0.5em;
 }
 h1, h2, h3 {
     margin:1em 0 0.5em 0;
