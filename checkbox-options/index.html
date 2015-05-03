@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Custom forms - Checkbox options</title>
+		<script>
+		  (function(d) {
+		    var config = {
+		      kitId: 'tmv0kmr',
+		      scriptTimeout: 3000
+		    },
+		    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+		  })(document);
+		</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="../style/check-options.min.css" rel="stylesheet" />
+		<link href="../style/prism.min.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="container">
+
+
+			<h2>Checkbox options</h2>
+			<p>v.02a</p>
+
+			<form id="check-options-group">
+				<fieldset class="check-options t-white">
+					<legend class="check-options-title">Favourite animals? (select any that apply)</legend>
+					<input class="check-options-input" id="check_option1" type="checkbox" name="animals" value="Dogs" />
+					<label class="check-options-label" for="check_option1">Dogs</label>
+					<input class="check-options-input" id="check_option2" type="checkbox" name="animals" value="Cats" />
+					<label class="check-options-label" for="check_option2">Cats
+					</label>
+					<input class="check-options-input" id="check_option3" type="checkbox" name="animals" value="Donkeys" />
+					<label class="check-options-label" for="check_option3">Donkeys</label>
+					<input class="check-options-input" id="check_option4" type="checkbox" name="animals" value="Horses" />
+					<label class="check-options-label" for="check_option4">Horses</label>
+					<input class="check-options-input" id="check_option5" type="checkbox" name="animals" value="Dolphins" />
+					<label class="check-options-label" for="check_option5">Dolphins</label>
+					<input class="check-options-input" id="check_option6" type="checkbox" name="animals" value="Sharks" />
+					<label class="check-options-label" for="check_option6">Sharks</label>
+				</fieldset>
+			</form>
+			<h2>Implementing this component</h2>
+
+			<h3>The Markup</h3>
+			<pre class="codeblock">
+				<code class="language-markup">
+	&lt;form id="check-options-group">
+		&lt;fieldset class="check-options t-white">
+			&lt;legend class="check-options-title">Favourite animals? (select any that apply)&lt;/legend>
+			&lt;input class="check-options-input" id="check_option1" type="checkbox" name="animals" value="Dogs" />
+			&lt;label class="check-options-label" for="check_option1">Dogs&lt;/label>
+			&lt;input class="check-options-input" id="check_option2" type="checkbox" name="animals" value="Cats" />
+			&lt;label class="check-options-label" for="check_option2">Cats&lt;/label>
+			&lt;input class="check-options-input" id="check_option3" type="checkbox" name="animals" value="Donkeys" />
+			&lt;label class="check-options-label" for="check_option3">Donkeys&lt;/label>
+			&lt;input class="check-options-input" id="check_option4" type="checkbox" name="animals" value="Horses" />
+			&lt;label class="check-options-label" for="check_option4">Horses&lt;/label>
+			&lt;input class="check-options-input" id="check_option5" type="checkbox" name="animals" value="Dolphins" />
+			&lt;label class="check-options-label" for="check_option5">Dolphins&lt;/label>
+			&lt;input class="check-options-input" id="check_option6" type="checkbox" name="animals" value="Sharks" />
+			&lt;label class="check-options-label" for="check_option6">Sharks&lt;/label>
+		&lt;/fieldset>
+	&lt;/form>
+				</code>
+			</pre>
+			<h3>The CSS: Theming</h3>
+			<pre class="codeblock">
+				<code class="language-css">
+	/* Theming */
+	.t-white.check-options input[type="checkbox"]:checked + label {
+		background:#222;
+		color:#fff;
+		border-color:#333;
+	}
+	.t-white.check-options input[type="checkbox"]:active + label {
+		color:#fff;
+		background:#444;
+	}
+	.t-white.check-options input[type="checkbox"]:focus + label {
+		background:#444;
+		color:#fff;
+	}
+
+	.t-white .check-options-label {
+		background:#eee;
+		border-color: #111;
+		color:#111;
+	}
+	.t-white .check-options-label:hover {
+		background:#333;
+		color:#fff;
+	}
+				</code>
+			</pre>
+			<h3>The CSS: Component</h3>
+			<pre class="codeblock">
+				<code class="language-css">
+	.check-options-label {
+		cursor:pointer;
+		padding:0.5em 0.75em;
+		display:inline-block;
+		border:1px solid;
+		text-align:center;
+		text-decoration:none;
+		transition:background 0.3s ease;
+	}
+	@media all and (min-width: 40em){
+		.check-options-label {
+			padding: 3em;
+		}
+	}
+	/* Qualifier, since technique requires
+	adjacent selector,
+		we use sibling to cut the mustard
+	*/
+	.check-options-title ~ .check-options-input {
+	   position:absolute;
+	   visibility:none;
+	   opacity:0;
+	   left:-9999px;
+	}
+				</code>
+			</pre>
+			<h3>The SVG background image</h3>
+			<pre class="codeblock">
+				<code class="language-markup">
+&lt;svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="47.4px" height="19.4px" viewBox="-455 271.6 47.4 19.4" enable-background="new -455 271.6 47.4 19.4" xml:space="preserve">
+     &lt;style type="text/css">
+        .svg-tick {
+            fill:#fff;
+        }
+     &lt;/style>
+    &lt;g>
+    	&lt;rect class="svg-tick" x="-443.4" y="271" transform="matrix(-0.7026 -0.7116 0.7116 -0.7026 -950.1357 163.6479)"  width="5" height="18.8"/>
+    	&lt;rect class="svg-tick" x="-450.6" y="277" transform="matrix(0.7116 -0.7026 0.7026 0.7116 -327.969 -233.2623)" width="5" height="11.7"/>
+    &lt;/g>
+&lt;/svg>
+
+				</code>
+			</pre>
+			<h2>About the component</h2>
+			<p>TBD.</p>
+
+			<h3>Screen Readers</h3>
+			<h4>Apple Voiceover</h4>
+			<p>TBD.</p>
+			<h4>JAWS</h4>
+			<p>TBD.</p>
+			<h4>NVDA</h4>
+			<p>TBD.</p>
+
+			<h3>Keyboard control</h3>
+			<p>TBD.</p>
+
+			<h3>High Contrast</h3>
+			<p>TBD.</p>
+
+			<h3>Inputs</h3>
+			<p>TBD.</p>
+
+			<h3>Cross browser notes</h3>
+			<p>TBD.</p>
+
+			<h3>Cross device notes</h3>
+			<p>TBD.</p>
+		</div>
+		<script>
+			function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("script")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||"all"})}
+			loadCSS('../style/main.min.css');
+		</script>
+		<script src="../scripts/prism.js"></script>
+
+	</body>
+</html>

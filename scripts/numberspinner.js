@@ -1,15 +1,15 @@
+  //gets the input by element Id, gets min, max, and step from the markup. Gets the subtract and add buttons either by optional classnames, or by the next or last element sibling.
 var NumberSpinner = function(elemId, subtractClassName, addClassName) {
   'use strict';
-    //gets the input by element Id, gets min, max, and step from the markup. Gets the subtract and add buttons either by optional classnames, or by the next or last element sibling.
   var spinnerInput = document.getElementById(elemId);
   var btnSubtract = document.querySelector(addClassName) || spinnerInput.previousElementSibling;
   var btnAdd = document.querySelector(subtractClassName) || spinnerInput.nextElementSibling;
   var minLimit, maxLimit, step;
 
   function init(){
-    minLimit = makeNumber(getAttribute(spinnerInput, "min")) || 0,
-    maxLimit = makeNumber(getAttribute(spinnerInput, "max")) || false,
-    step = makeNumber(getAttribute(spinnerInput, "step") || "1");
+    minLimit = makeNumber(getAttribute(spinnerInput, 'min')) || 0,
+    maxLimit = makeNumber(getAttribute(spinnerInput, 'max')) || false,
+    step = makeNumber(getAttribute(spinnerInput, 'step') || '1');
 
     btnSubtract.addEventListener('click', changeSpinner, false);
     btnAdd.addEventListener('click', changeSpinner, false);
@@ -22,7 +22,7 @@ var NumberSpinner = function(elemId, subtractClassName, addClassName) {
     if(supportsPointer()) {
       btnSubtract.addEventListener('pointerup', removeClickDelay, false);
       btnAdd.addEventListener('pointerup', removeClickDelay, false);
-      }
+    }
   }
   function removeClickDelay(e) {
     e.preventDefault();
@@ -64,17 +64,19 @@ var NumberSpinner = function(elemId, subtractClassName, addClassName) {
       case 40:
       case 37: // Down, Left
         update('subtract');
+        btnSubtract.focus();
         break;
       case 38:
       case 39: // Top, Right
         update('add');
+        btnAdd.focus();
         break;
     }
   }
   function changeSpinner(e) {
     e.preventDefault();
-    var tmp = getAttribute(e.target, "data-type");
-    update(tmp);
+    var increment = getAttribute(e.target, 'data-type');
+    update(increment);
   }
   init();
 };
