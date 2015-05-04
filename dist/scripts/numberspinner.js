@@ -1,9 +1,17 @@
   //gets the input by element Id, gets min, max, and step from the markup. Gets the subtract and add buttons either by optional classnames, or by the next or last element sibling.
-var NumberSpinner = function(elemId, subtractClassName, addClassName) {
+var NumberSpinner = function(elemId, order, subtractClassName, addClassName) {
   'use strict';
+  var spinnerOrder = order || 'forward';
   var spinnerInput = document.getElementById(elemId);
-  var btnSubtract = document.querySelector(addClassName) || spinnerInput.previousElementSibling;
-  var btnAdd = document.querySelector(subtractClassName) || spinnerInput.nextElementSibling;
+  var btnSubtract, btnAdd;
+
+  if(spinnerOrder === 'reverse'){
+    btnSubtract = spinnerInput.nextElementSibling;
+    btnAdd = spinnerInput.previousElementSibling;
+  } else {
+    btnSubtract = document.querySelector(addClassName) || spinnerInput.previousElementSibling;
+    btnAdd = document.querySelector(subtractClassName) || spinnerInput.nextElementSibling;
+  }
   var minLimit, maxLimit, step;
 
   function init(){
@@ -67,7 +75,8 @@ var NumberSpinner = function(elemId, subtractClassName, addClassName) {
         btnSubtract.focus();
         break;
       case 38:
-      case 39: // Top, Right
+      case 39:
+         // Top, Right
         update('add');
         btnAdd.focus();
         break;
