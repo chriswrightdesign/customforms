@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<title>Custom forms</title>
+		<title>Custom forms - Number spinner vertical</title>
 		<script>
 		  (function(d) {
 		    var config = {
@@ -29,7 +29,7 @@
 				<fieldset class="spinner-vertical">
 					<label for="spinner-input-vertical" class="spinner-vertical-label">How many</label>
 
-					<button data-type="add" class="btn-vertical-spinner btn-vertical-spinner-top" title="Add1 1" aria-controls="spinner-input-vertical">+</button>
+					<button data-type="add" class="btn-vertical-spinner btn-vertical-spinner-top" title="Add 1" aria-controls="spinner-input-vertical">+</button>
 
 					<input type="number" class="vertical-spinner-input js-spinner-input-vertical" id="spinner-input-vertical" value="1" step="1"  max="30" min="0" pattern="[0-9]*" role="alert" aria-live="assertlive" />
 
@@ -45,7 +45,7 @@
 &lt;form id="number-spinner-vertical" class="t-white">
 	&lt;fieldset class="spinner-vertical">
 		&lt;label for="spinner-input-vertical" class="spinner-vertical-label">How many&lt;/label>
-		&lt;button data-type="add" class="btn-vertical-spinner btn-vertical-spinner-top" title="Add1 1" aria-controls="spinner-input-vertical">+&lt;/button>
+		&lt;button data-type="add" class="btn-vertical-spinner btn-vertical-spinner-top" title="Add 1" aria-controls="spinner-input-vertical">+&lt;/button>
 		&lt;input type="number" class="vertical-spinner-input js-spinner-input-vertical" id="spinner-input-vertical" value="1" step="1"  max="30" min="0" pattern="[0-9]*" role="alert" aria-live="assertlive" />
 		&lt;button data-type="subtract" class="btn-vertical-spinner btn-vertical-spinner-bottom" title="Subtract 1" aria-controls="spinner-input-vertical">-&lt;/button>
 	&lt;/fieldset>
@@ -261,7 +261,7 @@ var NumberSpinner = function(elemId, subtractClassName, addClassName) {
 		<script src="../scripts/prism.js"></script>
 		 <script src="../scripts/numberspinner.min.js"></script>
 		<script>
-			NumberSpinner('spinner-input-vertical');
+			NumberSpinner('spinner-input-vertical', 'reverse');
 		</script>
 
 	</body>
