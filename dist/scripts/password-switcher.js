@@ -1,4 +1,5 @@
 //initialise with the id
+//TODO: Add keyboard support to both input and button
 function PasswordSwitcher(elemId) {
   'use strict';
   //password switcher
@@ -8,6 +9,8 @@ function PasswordSwitcher(elemId) {
 
   function init(){
     btnPasswordSwitch.addEventListener('click', togglePasswordReveal, false);
+    btnPasswordSwitch.addEventListener('keyup', keyBack, false);
+    passwordInput.addEventListener('keyup', keyReveal, false);
     if(supportsTouch){
       btnPasswordSwitch.addEventListener('touchend', removeClickDelay, false);
     }
@@ -25,10 +28,34 @@ function PasswordSwitcher(elemId) {
   function supportsPointer(){
     return ('pointerdown' in window);
   }
-  function togglePasswordReveal(e){
-     e.preventDefault();
+  //if the user wants to change their password,
+  //after it has been revealed
+  //let them focus back on the input
+  function keyReveal(e){
+    switch(e.keyCode){
+      case 40:
+      case 38:
+        revealPassword();
+        break;
+    }
+  }
+  function keyBack(e){
+    switch(e.keyCode){
+      case 37:
+        passwordInput.focus();
+        break;
+
+    }
+
+  }
+  function revealPassword(){
     (btnPasswordSwitch.classList.contains('is-active')) ? passwordInput.setAttribute('type', 'password') :  passwordInput.setAttribute('type', 'text');
     btnPasswordSwitch.classList.toggle('is-active');
+  }
+  function togglePasswordReveal(){
+     e.preventDefault();
+
+
   }
   init();
 };
