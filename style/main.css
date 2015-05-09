@@ -98,10 +98,6 @@ input {
 	border-radius: 0;
 }
 
-fieldset {
-	border: none;
-}
-
 input:focus,
 input:hover,
 select:focus,
@@ -193,6 +189,10 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 	max-width: 1000px;
 }
 
+.l-width-25 {
+	width: 25%;
+}
+
 .l-flex-25 {
 	width: 100%;
 }
@@ -202,6 +202,7 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 }
 
 .l-flexrow-wrap {
+	border: 1px solid #f0f;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -326,6 +327,10 @@ body {
 	padding: 0 0 0 0.5em;
 }
 
+.l-contained-1000 {
+	max-width: 1000px;
+}
+
 h1,
 h2,
 h3 {
@@ -356,6 +361,11 @@ h3 {
 
 p {
 	margin: 0 0 1em 0;
+}
+
+.form-controls {
+	max-width: 1000px;
+	margin: 0 auto;
 }
 
 @media all and (min-width: 40em) {

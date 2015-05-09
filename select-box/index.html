@@ -201,24 +201,30 @@ instead it leaves it up to the user.
 			</pre>
 
 			<h2>About the component</h2>
-			<p>TBD.</p>
+			<p>This is a customized version of the native select element, allowing you to style the initial (unopened) select box.</p>
 
 			<h3>Screen Readers</h3>
+            <p>This select box behaves exactly like an unstyled select box would.</p>
+
+            <h4>JAWS</h4>
+            <p>Announces the label, and announces any change to the select box selected option.</p>
+            <h4>NVDA</h4>
+            <p>Announces the label, and announces any change to the select box selected option.</p>
 			<h4>Apple Voiceover</h4>
-			<p>TBD.</p>
-			<h4>JAWS</h4>
-			<p>TBD.</p>
-			<h4>NVDA</h4>
-			<p>TBD.</p>
+			<p>Announces the label, but does not announce any change.</p>
+
+            <h4>Voiceover on iPhone</h4>
+            <p>Tbd.</p>
 
 			<h3>Keyboard control</h3>
-			<p>TBD.</p>
+			<p>Standard control for a select box. Down arrow and up arrow change options.</p>
 
 			<h3>High Contrast</h3>
-			<p>TBD.</p>
+			<p>Requires a class, or media query to deal with high contrast mode, the &lsquo;caret&rsquo; or down arrow icon is a background-image, so in high contrast mode will be made invisible. In high contrast mode we'll need to make the width of the select 100% to restore the initial state.
+            </p>
 
 			<h3>Inputs</h3>
-			<p>TBD.</p>
+			<p>Nothing special has been done to enhance input modes.</p>
 
 			<h3>Cross browser notes</h3>
 			<p>TBD.</p>
