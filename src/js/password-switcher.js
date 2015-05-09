@@ -52,8 +52,9 @@ function PasswordSwitcher(elemId) {
     (btnPasswordSwitch.classList.contains('is-active')) ? passwordInput.setAttribute('type', 'password') :  passwordInput.setAttribute('type', 'text');
     btnPasswordSwitch.classList.toggle('is-active');
   }
-  function togglePasswordReveal(){
+  function togglePasswordReveal(e){
      e.preventDefault();
+     revealPassword();
 
 
   }

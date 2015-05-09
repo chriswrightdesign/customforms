@@ -2,6 +2,7 @@
 @import "partials/layout";
 @import "partials/card";
 
+
 body {
     background: #fff;
     color: #333;
@@ -11,6 +12,9 @@ body {
 }
 .heading-primary {
     padding:0 0 0 0.5em;
+}
+.l-contained-1000 {
+    max-width: 1000px;
 }
 h1, h2, h3 {
     margin:1em 0 0.5em 0;
@@ -38,5 +42,9 @@ p {
     margin:0 0 1em 0;
 }
 
+.form-controls {
+    max-width:1000px;
+    margin:0 auto;
 
+}
 

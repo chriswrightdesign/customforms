@@ -58,7 +58,7 @@
 	border: 1px solid;
 	cursor: pointer;
 	display: inline-block;
-	padding: 0.5em 0.75em;
+	padding: 3em;
 	position: relative;
 	text-align: center;
 	text-decoration: none;
@@ -85,10 +85,10 @@
 	        transition: background 0.3s ease;
 }
 
-@media all and (min-width: 40em) {
+@media all and (max-width: 48em) {
 
 .check-options-label {
-	padding: 3em;
+	width: 100%;
 }
 
 }

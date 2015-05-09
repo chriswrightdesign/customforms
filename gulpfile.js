@@ -23,7 +23,7 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('dist/style'))
     .pipe(cmq({ log: false }))
     .pipe(gulp.dest('dist/style'))
-    .pipe(autoprefixer('last 2 version'))
+    .pipe(autoprefixer('last 3 version'))
     .pipe(gulp.dest('dist/style'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(minifycss())

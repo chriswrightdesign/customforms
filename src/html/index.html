@@ -12,9 +12,8 @@
 		    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
 		  })(document);
 		</script>
-
-		<link href="style/site.css" rel="stylesheet" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="style/main.min.css" rel="stylesheet">
 		<script src="scripts/modernizr.js"></script>
 	</head>
 	<body>
@@ -23,9 +22,9 @@
 				Custom themable form components
 			</h1>
 			<div class="form-controls t-grey-white">
-				<ul class="form-list l-flexrow-wrap">
+				<ul class="form-list l-flexrow-wrap l-contained-1000">
 
-					<li class="form-listitem l-flex l-flex-25">
+					<li class="form-listitem l-flex l-width-25">
 
 						<div class="card form-component l-flex-column">
 
@@ -36,14 +35,14 @@
 								A custom select box using a wrapper to provide the background image to the select box
 							</p>
 
-							<a href="select-box/" class="card-link">
+							<a href="select-box/" class="card-link" title="View select box with background image">
 								View
 							</a>
 						</div>
 
 					</li>
 
-					<li class="form-listitem l-flex l-flex-25">
+					<li class="form-listitem l-flex l-width-25">
 
 						<div class="card form-component l-flex-column">
 
@@ -54,14 +53,14 @@
 								A version of the select box that uses an SVG for the arrow, easier to theme and style, and works better with high contrast mode.
 							</p>
 
-							<a href="select-box-svg" class="card-link">
+							<a href="select-box-svg" class="card-link" title="View select box with inline SVG">
 								View
 							</a>
 						</div>
 
 					</li>
 
-					<li class="form-listitem l-flex l-flex-25">
+					<li class="form-listitem l-flex l-width-25">
 
 						<div class="card form-component l-flex-column">
 
@@ -71,12 +70,12 @@
 							<p class="card-description l-flex-grow-1">
 								A horizontal touch friendly version of the number input spinner
 							</p>
-							<a href="number-spinner/" class="card-link">View</a>
+							<a href="number-spinner/" class="card-link" title="View Horizontal spinner">View</a>
 						</div>
 
 					</li>
 
-					<li class="form-listitem l-flex l-flex-25">
+					<li class="form-listitem l-flex l-width-25">
 
 						<div class="card form-component l-flex-column">
 
@@ -87,14 +86,14 @@
 								A vertical touch friendly number spinner
 							</p>
 
-							<a href="number-spinner-vertical/" class="card-link">
+							<a href="number-spinner-vertical/" class="card-link" title="View number spinner vertical">
 								View
 							</a>
 						</div>
 
 					</li>
 
-					<li class="form-listitem l-flex l-flex-25">
+					<li class="form-listitem l-flex l-width-25">
 
 						<div class="card form-component l-flex-column">
 
@@ -105,11 +104,11 @@
 								A horizontal range slider that falls back to a simple text input in browser that don't support the range slider
 							</p>
 
-							<a href="range-slider/" class="card-link">View</a>
+							<a href="range-slider/" class="card-link" title="View horizontal slider">View</a>
 						</div>
 
 					</li>
-					<li class="form-listitem l-flex l-flex-25">
+					<li class="form-listitem l-flex l-width-25">
 						<div class="card form-component l-flex-column">
 
 							<h3 class="card-heading">
@@ -119,10 +118,10 @@
 								A segmented radio control
 							</p>
 
-							<a href="segmented-control/" class="card-link">View</a>
+							<a href="segmented-control/" class="card-link" title="View radio segment controller">View</a>
 						</div>
 					</li>
-					<li class="form-listitem l-flex l-flex-25">
+					<li class="form-listitem l-flex l-width-25">
 
 						<div class="card form-component l-flex-column">
 
@@ -133,14 +132,14 @@
 								This is a component that you might see on a donate form, radios presented as a group of buttons
 							</p>
 
-							<a href="radio-options/" class="card-link">
+							<a href="radio-options/" class="card-link" title="View radio options">
 								View
 							</a>
 						</div>
 
 					</li>
 
-					<li class="form-listitem l-flex l-flex-25">
+					<li class="form-listitem l-flex l-width-25">
 
 						<div class="card form-component l-flex-column">
 
@@ -151,13 +150,13 @@
 								Similar to the radio options, this provides us
 							</p>
 
-							<a href="checkbox-options/" class="card-link">
+							<a href="checkbox-options/" class="card-link" title="View checkbox options">
 								View
 							</a>
 						</div>
 
 					</li>
-					<li class="form-listitem l-flex l-flex-25">
+					<li class="form-listitem l-flex l-width-25">
 
 						<div class="card form-component l-flex-column">
 
@@ -167,13 +166,13 @@
 							<p class="card-description l-flex-grow-1">
 								A version of the radio toggle, made popular by IOS using a radio and labels.
 							</p>
-							<a href="radio-toggle/" class="card-link">View</a>
+							<a href="radio-toggle/" class="card-link" title="View radio toggle">View</a>
 						</div>
 
 					</li>
 
 
-					<li class="form-listitem l-flex l-flex-25">
+					<li class="form-listitem l-flex l-width-25">
 
 						<div class="card form-component l-flex-column">
 
@@ -183,11 +182,11 @@
 							<p class="card-description l-flex-grow-1">
 								A switch to toggle the input type between password and text.
 							</p>
-							<a href="password-show-switch/" class="card-link">View</a>
+							<a href="password-show-switch/" class="card-link" title="View password switch">View</a>
 						</div>
 
 					</li>
-					<li class="form-listitem l-flex l-flex-25">
+					<li class="form-listitem l-flex">
 
 						<div class="card form-component l-flex-column">
 
@@ -197,7 +196,7 @@
 							<p class="card-description l-flex-grow-1">
 								A calendar component to enhance date entry.
 							</p>
-							<a href="/calendar/" class="card-link">View</a>
+							<a href="/calendar/" class="card-link" title="View Calendar">View</a>
 						</div>
 
 					</li>
@@ -230,11 +229,11 @@
 
 		</div>
 
-		<script>
+	<!--	<script>
 			function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("script")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||"all"})}
 			loadCSS('style/main.min.css');
-		</script>
-		<script src="scripts/main.min.js"></script>
+		</script>-->
+
 
 
 	</body>
