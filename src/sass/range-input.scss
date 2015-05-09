@@ -17,6 +17,12 @@ $trackBorderRadius: 5px;
 .form-range input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
+  //background:#333;
+  height:20px;
+  margin:0;
+  //attempt to deal with bloody android
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(51,51,51,1)), color-stop(100%, rgba(51,51,51,1)));
+  background: -webkit-linear-gradient(left, rgba(51,51,51,1) 0%, rgba(51,51,51,1) 100%);
   font-size: 1em;
 
   /* Hides the slider so that custom slider can be made */
@@ -84,21 +90,13 @@ $trackBorderRadius: 5px;
 
 .form-range input[type="range"]::-ms-track {
   cursor: pointer;
-  border-top: 16px;
-  border-bottom: 17px;
-  border-left: 10px;
-  border-right: 10px;
-  border-color: transparent;
-  border-style: solid;
+  border: inherit;
   height: $trackHeight;
   background: transparent;
   color: transparent;
 }
 
-.form-range input[type="range"]::-ms-fill-lower {
-  border-radius: 15px;
-}
-
+.form-range input[type="range"]::-ms-fill-lower,
 .form-range input[type="range"]::-ms-fill-upper {
   border-radius: 15px;
 }

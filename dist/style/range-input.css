@@ -8,6 +8,10 @@
 .form-range input[type="range"] {
 	-webkit-appearance: none;
 	appearance: none;
+	height: 20px;
+	margin: 0;
+	background: -webkit-gradient(left top, right top, color-stop(0%, #333333), color-stop(100%, #333333));
+	background: -webkit-linear-gradient(left, #333333 0%, #333333 100%);
 	font-size: 1em; /* Hides the slider so that custom slider can be made */
 	width: 100%; /* Specific width is required for Firefox. */
 }
@@ -73,21 +77,13 @@
 
 .form-range input[type="range"]::-ms-track {
 	cursor: pointer;
-	border-top: 16px;
-	border-bottom: 17px;
-	border-left: 10px;
-	border-right: 10px;
-	border-color: transparent;
-	border-style: solid;
+	border: inherit;
 	height: 10px;
 	background: transparent;
 	color: transparent;
 }
 
-.form-range input[type="range"]::-ms-fill-lower {
-	border-radius: 15px;
-}
-
+.form-range input[type="range"]::-ms-fill-lower,
 .form-range input[type="range"]::-ms-fill-upper {
 	border-radius: 15px;
 }
