@@ -1,40 +1,25 @@
-//range input
-
-$trackHeight: 10px;
-$thumbDimension: 2em;
-$msThumbDimension: $thumbDimension;
-$webkitThumbPosition: -10px;
-$trackBorderRadius: 5px;
-
-
+/* Reset */
+fieldset {
+  border:0;
+}
 .range-label {
+  font-family: "Helvetica Neue", Helvetica, Verdana, arial, sans-serif;
   display: block;
   margin: 1em 0;
+  text-align:left;
 }
-
-
-/* Style up the range input to look like the iOS slider */
 .form-range input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
-  //background:#333;
-  height:20px;
-  margin:0;
-  //attempt to deal with bloody android
-  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(51,51,51,1)), color-stop(100%, rgba(51,51,51,1)));
-  background: -webkit-linear-gradient(left, rgba(51,51,51,1) 0%, rgba(51,51,51,1) 100%);
-  font-size: 1em;
-
-  /* Hides the slider so that custom slider can be made */
+  /* This property are needed to allow Android to display the background at all */
+  border-radius:10px;
   width: 100%;
-  /* Specific width is required for Firefox. */
+  font-size: 1em;
 }
 
 .form-range input[type="range"]:focus {
   outline: dotted thin;
-
 }
-
 
 /* Special styling for WebKit/Blink */
 .form-range input[type="range"]::-webkit-slider-thumb {
@@ -43,55 +28,58 @@ $trackBorderRadius: 5px;
   height: 30px;
   width: 30px;
   border-radius: 100%;
-  background-color: #fff;
   cursor: pointer;
-  margin-top: -10px;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  margin-top: -6px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
   border: none;
 }
 
-.form-range input[type=range]::-webkit-slider-runnable-track {
+.form-range input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
-  height: $trackHeight;
+  height: 15px;
   cursor: pointer;
-  background-color: #333;
+  background-color: inherit;
   border-radius: 15px;
+
 }
 
 /* All the same stuff for Firefox */
 .form-range input[type="range"]::-moz-range-thumb {
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
   height: 30px;
   width: 30px;
   border-radius: 100%;
-  background: #fff;
   cursor: pointer;
   border: none;
 }
 
 .form-range input[type="range"]::-moz-range-track {
   width: 100%;
-  height: $trackHeight;
+  height: 15px;
   cursor: pointer;
-  background-color: #a9acb1;
   border-radius: 15px;
 }
 
 /* All the same stuff for IE */
 .form-range input[type="range"]::-ms-thumb {
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
   height: 30px;
   width: 30px;
   border-radius: 100%;
   cursor: pointer;
   border: none;
-  margin: $trackHeight;
+  margin: 10px;
 }
 
 .form-range input[type="range"]::-ms-track {
+//ms needs a border hack to make it appear to have the thumb outside of the track
   cursor: pointer;
-  border: inherit;
-  height: $trackHeight;
+  border-top: 16px;
+  border-bottom: 17px;
+  border-left: 10px;
+  border-right: 10px;
+  border-style: solid;
+  height: 15px;
   background: transparent;
   color: transparent;
 }
@@ -105,66 +93,70 @@ $trackBorderRadius: 5px;
 .form-range input[type="range"]::-ms-tooltip {
   display: none;
 }
+//fallback for IE8/9 when range is a text input
+.form-range input[type="text"] {
+  font-size: 1em;
+  padding: 0.5em;
+}
+
 /* Theming styles */
-.t-white .form-range input[type="range"] {
-    border-color: #eee;
-}
-.t-white .form-range input[type="range"]:focus {
-    /* Any styles specific that need to be changed when this is focused due to the initial state */
-    border-color: rgba(249, 241, 155, 0.5);
-}
+  .t-white .form-range input[type="range"] {
+      background: -webkit-linear-gradient(left, rgba(51,51,51,1) 0%, rgba(51,51,51,1) 100%);
+      border-color: #eee;
+  }
+ .t-white .form-range input[type="text"] {
+   background: #fff;
+ }
+  .t-white .form-range input[type="range"]:focus {
+      /* Any styles specific that need to be changed when this is focused due to the initial state */
+      border-color: rgba(249, 241, 155, 0.5);
+  }
 
-/* Focus states for all thumbs */
-.t-white .form-range input[type="range"]:focus::-webkit-slider-thumb {
-    background-color: rgba(249, 241, 155, 1);
-    outline: 2px #686546 thin dotted;
-}
-.t-white .form-range input[type="range"]:focus::-moz-range-thumb {
-    background-color: rgba(249, 241, 155, 1);
-    outline: 2px #686546 thin dotted;
-    -moz-outline-radius:100%;
-}
-
-/* Thumb colors */
-
-.t-white .form-range input[type="range"]::-moz-range-thumb {
-  background: #fff;
-}
-.t-white .form-range input[type="range"]::-webkit-slider-thumb {
-  background-color: #fff;
-}
-
-/* Theme slider color */
-.t-white .form-range input[type="range"]::-webkit-slider-runnable-track {
-  background-color: #444;
-}
-.t-white .form-range input[type="range"]::-moz-range-track {
-   background-color: #444;
-}
-.t-white .form-range input[type="range"]::-ms-fill-upper {
-    background-color: #333;
-}
+  /* Focus states for all thumbs */
+  .t-white .form-range input[type="range"]:focus::-webkit-slider-thumb {
+      background-color: rgba(249, 241, 155, 1);
+      outline: 2px #686546 thin dotted;
+  }
+  .t-white .form-range input[type="range"]:focus::-moz-range-thumb {
+      background-color: rgba(249, 241, 155, 1);
+      outline: 2px #686546 thin dotted;
+      -moz-outline-radius:100%;
+  }
+  .t-white .form-range input[type="range"]:focus::-ms-thumb {
+      background-color: rgba(249, 241, 155, 1);
+      outline: 2px #686546 thin dotted;
+  }
+  /* Thumb colors */
+  .t-white .form-range input[type="range"]::-ms-thumb {
+    background: #fff;
+  }
+  .t-white .form-range input[type="range"]::-moz-range-thumb {
+    background: #fff;
+  }
+  .t-white .form-range input[type="range"]::-webkit-slider-thumb {
+    background-color: #fff;
+  }
+  /* Theme slider color */
+  .t-white .form-range input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #444;
+  }
+  .t-white .form-range input[type="range"]::-moz-range-track {
+     background-color: #444;
+  }
+  .t-white .form-range input[type="range"]::-ms-fill-upper,
 .t-white .form-range input[type="range"]::-ms-fill-lower {
- background-color: #333;
-}
-/* Theme slider focus colors */
-.t-white .form-range input[type="range"]:focus::-ms-fill-upper {
-     background-color: rgba(249, 241, 155, 0.6);
-}
-.t-white .form-range input[type="range"]:focus::-webkit-slider-runnable-track {
-    background-color: rgba(249, 241, 155, 0.5);
-}
-.t-white .form-range input[type="range"]:focus::-moz-range-track {
-    background-color: rgba(249, 241, 155, 0.5);
-}
-.t-white .form-range input[type="range"]:focus::-ms-fill-lower {
-     background-color: rgba(249, 241, 155, 0.5);
-}
-.t-white .form-range input[type="range"]:focus::-ms-thumb {
-    background-color: rgba(249, 241, 155, 1);
-    outline: 2px #686546 thin dotted;
-}
-.t-white .form-range input[type="range"]::-ms-thumb {
-  background: #fff;
-
-}
+    background-color: #333;
+  }
+  /* Theme slider focus colors */
+  .t-white .form-range input[type="range"]:focus::-ms-fill-upper {
+      background-color: #555;
+  }
+  .t-white .form-range input[type="range"]:focus::-webkit-slider-runnable-track {
+      background-color: rgba(249, 241, 155, 0.5);
+  }
+  .t-white .form-range input[type="range"]:focus::-moz-range-track {
+      background-color: rgba(249, 241, 155, 0.5);
+  }
+  .t-white .form-range input[type="range"]:focus::-ms-fill-lower {
+      background-color: #017afd;
+  }
