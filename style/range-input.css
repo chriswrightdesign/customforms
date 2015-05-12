@@ -1,105 +1,18 @@
-.range-label {
-	display: block;
-	margin: 1em 0;
-}
+/* Reset */
 
-/* Style up the range input to look like the iOS slider */
-
-.form-range input[type="range"] {
-	-webkit-appearance: none;
-	appearance: none;
-	font-size: 1em; /* Hides the slider so that custom slider can be made */
-	width: 100%; /* Specific width is required for Firefox. */
-}
-
-.form-range input[type="range"]:focus {
-	outline: dotted thin;
-}
-
-/* Special styling for WebKit/Blink */
-
-.form-range input[type="range"]::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	appearance: none;
-	height: 30px;
-	width: 30px;
-	border-radius: 100%;
-	background-color: #fff;
-	cursor: pointer;
-	margin-top: -10px;
-	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
-	border: none;
-}
-
-.form-range input[type=range]::-webkit-slider-runnable-track {
-	width: 100%;
-	height: 10px;
-	cursor: pointer;
-	background-color: #333;
-	border-radius: 15px;
-}
-
-/* All the same stuff for Firefox */
-
-.form-range input[type="range"]::-moz-range-thumb {
-	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
-	height: 30px;
-	width: 30px;
-	border-radius: 100%;
-	background: #fff;
-	cursor: pointer;
-	border: none;
-}
-
-.form-range input[type="range"]::-moz-range-track {
-	width: 100%;
-	height: 10px;
-	cursor: pointer;
-	background-color: #a9acb1;
-	border-radius: 15px;
-}
-
-/* All the same stuff for IE */
-
-.form-range input[type="range"]::-ms-thumb {
-	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
-	height: 30px;
-	width: 30px;
-	border-radius: 100%;
-	cursor: pointer;
-	border: none;
-	margin: 10px;
-}
-
-.form-range input[type="range"]::-ms-track {
-	cursor: pointer;
-	border-top: 16px;
-	border-bottom: 17px;
-	border-left: 10px;
-	border-right: 10px;
-	border-color: transparent;
-	border-style: solid;
-	height: 10px;
-	background: transparent;
-	color: transparent;
-}
-
-.form-range input[type="range"]::-ms-fill-lower {
-	border-radius: 15px;
-}
-
-.form-range input[type="range"]::-ms-fill-upper {
-	border-radius: 15px;
-}
-
-.form-range input[type="range"]::-ms-tooltip {
-	display: none;
+fieldset {
+	border: 0;
 }
 
 /* Theming styles */
 
 .t-white .form-range input[type="range"] {
+	background: -webkit-linear-gradient(left, #333333 0%, #333333 100%);
 	border-color: #eee;
+}
+
+.t-white .form-range input[type="text"] {
+	background: #fff;
 }
 
 .t-white .form-range input[type="range"]:focus { /* Any styles specific that need to be changed when this is focused due to the initial state */
@@ -119,7 +32,16 @@
 	-moz-outline-radius: 100%;
 }
 
+.t-white .form-range input[type="range"]:focus::-ms-thumb {
+	background-color: #f9f19b;
+	outline: 2px #686546 thin dotted;
+}
+
 /* Thumb colors */
+
+.t-white .form-range input[type="range"]::-ms-thumb {
+	background: #fff;
+}
 
 .t-white .form-range input[type="range"]::-moz-range-thumb {
 	background: #fff;
@@ -139,10 +61,7 @@
 	background-color: #444;
 }
 
-.t-white .form-range input[type="range"]::-ms-fill-upper {
-	background-color: #333;
-}
-
+.t-white .form-range input[type="range"]::-ms-fill-upper,
 .t-white .form-range input[type="range"]::-ms-fill-lower {
 	background-color: #333;
 }
@@ -150,7 +69,7 @@
 /* Theme slider focus colors */
 
 .t-white .form-range input[type="range"]:focus::-ms-fill-upper {
-	background-color: rgba(249, 241, 155, 0.6);
+	background-color: #555;
 }
 
 .t-white .form-range input[type="range"]:focus::-webkit-slider-runnable-track {
@@ -162,15 +81,101 @@
 }
 
 .t-white .form-range input[type="range"]:focus::-ms-fill-lower {
-	background-color: rgba(249, 241, 155, 0.5);
+	background-color: #017afd;
 }
 
-.t-white .form-range input[type="range"]:focus::-ms-thumb {
-	background-color: #f9f19b;
-	outline: 2px #686546 thin dotted;
+/* Component */
+
+.range-label {
+	font-family: "Helvetica Neue", Helvetica, Verdana, arial, sans-serif;
+	display: block;
+	margin: 1em 0;
+	text-align: left;
 }
 
-.t-white .form-range input[type="range"]::-ms-thumb {
-	background: #fff;
+.form-range input[type="range"] {
+	-webkit-appearance: none;
+	appearance: none; /* This property are needed to allow Android to display the background at all */
+	border-radius: 10px;
+	width: 100%;
+	font-size: 1em;
+}
+
+.form-range input[type="range"]:focus {
+	outline: dotted thin;
+}
+
+.form-range input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	height: 30px;
+	width: 30px;
+	border-radius: 100%;
+	cursor: pointer;
+	margin-top: -6px;
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+	border: none;
+}
+
+.form-range input[type="range"]::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 15px;
+	cursor: pointer;
+	background-color: inherit;
+	border-radius: 15px;
+}
+
+.form-range input[type="range"]::-moz-range-thumb {
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+	height: 30px;
+	width: 30px;
+	border-radius: 100%;
+	cursor: pointer;
+	border: none;
+}
+
+.form-range input[type="range"]::-moz-range-track {
+	width: 100%;
+	height: 15px;
+	cursor: pointer;
+	border-radius: 15px;
+}
+
+.form-range input[type="range"]::-ms-thumb {
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+	height: 30px;
+	width: 30px;
+	border-radius: 100%;
+	cursor: pointer;
+	border: none;
+	margin: 10px;
+}
+
+.form-range input[type="range"]::-ms-track { /* IE needs a border hack to make it appear to have the thumb outside of the track */
+	cursor: pointer;
+	border-top: 16px;
+	border-bottom: 17px;
+	border-left: 10px;
+	border-right: 10px;
+	border-style: solid;
+	height: 15px;
+	background: transparent;
+	color: transparent;
+}
+
+.form-range input[type="range"]::-ms-fill-lower,
+.form-range input[type="range"]::-ms-fill-upper {
+	border-radius: 15px;
+}
+
+.form-range input[type="range"]::-ms-tooltip {
+	display: none;
+}
+
+/* fallback for IE8/9 when range is a text input */
+
+.form-range input[type="text"] {
+	font-size: 1em;
+	padding: 0.5em;
 }
 

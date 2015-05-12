@@ -12,11 +12,11 @@
 		    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
 		  })(document);
 		</script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link href="../style/select-box-svg.min.css" rel="stylesheet" />
-		<link href="../style/site.css" rel="stylesheet" />
+		<link href="../style/main.min.css" rel="stylesheet" />
 		<link href="../style/prism.min.css" rel="stylesheet" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="../scripts/modernizr.js"></script>
 	</head>
 	<body>
@@ -220,10 +220,6 @@ if the browser doesn't support MQs, just use the standard select arrow */
 
 		</div>
 
-		<script>
-			function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("script")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||"all"})}
-			loadCSS('../style/main.min.css');
-		</script>
 		<script src="../scripts/prism.js"></script>
 
 	</body>
