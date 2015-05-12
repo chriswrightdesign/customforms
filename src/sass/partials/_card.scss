@@ -1,34 +1,10 @@
-
-.t-grey-white .card__link {
-    background: #222;
-    color: #fff;
-    &:hover {
-        background: #444;
-    }
-
-}
-.t-grey-white .card {
-     background: #fff;
-      color:#222;
-}
+//Card module
 
 .card {
     border-radius: 5px;
     padding: 1em;
+}
 
-}
-.flexbox .card--flex {
-    display:flex;
-    flex-direction:column;
-    width:100%;
-}
-.flexbox .card--flex .card__description {
-    display:flex;
-    flex:1;
-}
-.card__description {
-
-}
 .card__heading {
 
     margin: 0 0 1em 0;
@@ -36,7 +12,6 @@
     line-height: 1.2;
 
 }
-
 
 .card__link {
     margin:1em 0 0 0;
@@ -46,5 +21,31 @@
     padding: 0.75em 1em;
     text-align: center;
     transition: background 300ms ease;
+}
+
+//flexbox modifiers for the card module
+.flexbox .card--flex {
+    display:flex;
+    flex-direction:column;
+    width:100%;
+}
+.flexbox .card--flex .card__description {
+    display:flex;
+    flex:1;
+}
+
+//themes for the card module
+.t-grey-white .card {
+     background: #fff;
+      color:#222;
+}
+
+.t-grey-white .card__link {
+    background: #222;
+    color: #fff;
+    &:hover {
+        background: #444;
+    }
+
 }
 

@@ -1,5 +1,6 @@
 @import "partials/reset";
 @import "partials/layout";
+@import "partials/components";
 @import "partials/card";
 
 
@@ -13,12 +14,12 @@ body {
 .heading-primary {
     padding:0 0 0 0.5em;
 }
-.l-contained-1000 {
-    max-width: 1000px;
-}
+
+// bunch of rubbish that needs to be classes
 h1, h2, h3 {
     margin:1em 0 0.5em 0;
 }
+
 form {
     margin:1em 0 1em 0;
 }
@@ -42,29 +43,3 @@ p {
     margin:0 0 1em 0;
 }
 
-.components {
-    max-width:1000px;
-    margin:0 auto;
-
-}
-.components__list {
-
-
-}
-.flexbox .components__list--flex {
-    display:flex;
-    flex-direction:row;
-    flex-wrap:wrap;
-}
-.flexbox .components__list--flex .components__list-item {
-     display: flex;
-}
-.components__list-item {
-
-   float:left;
-    margin:0 0 1em 0;
-
-}
-.components__list-item:nth-child(4n+1){
-    clear:left;
-}
