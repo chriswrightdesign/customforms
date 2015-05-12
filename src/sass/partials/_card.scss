@@ -1,5 +1,5 @@
 
-.t-grey-white .card-link {
+.t-grey-white .card__link {
     background: #222;
     color: #fff;
     &:hover {
@@ -15,8 +15,21 @@
 .card {
     border-radius: 5px;
     padding: 1em;
+
 }
-.card-heading {
+.flexbox .card--flex {
+    display:flex;
+    flex-direction:column;
+    width:100%;
+}
+.flexbox .card--flex .card__description {
+    display:flex;
+    flex:1;
+}
+.card__description {
+
+}
+.card__heading {
 
     margin: 0 0 1em 0;
     font-weight: 700;
@@ -25,7 +38,7 @@
 }
 
 
-.card-link {
+.card__link {
     margin:1em 0 0 0;
     border-radius: 5px;
     display: block;
@@ -34,9 +47,4 @@
     text-align: center;
     transition: background 300ms ease;
 }
-.form-component {
 
-}
-.form-listitem {
-    margin:0 0 1em 0;
-}

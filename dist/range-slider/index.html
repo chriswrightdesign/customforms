@@ -13,7 +13,7 @@
 		  })(document);
 		</script>
 
-		<link href="../style/site.css" rel="stylesheet" />
+		<link href="../style/main.min.css" rel="stylesheet" />
         <link href="../style/range-input.min.css" rel="stylesheet" />
 		<link href="../style/prism.min.css" rel="stylesheet" />
 
@@ -52,65 +52,72 @@
 			<pre class="codeblock">
 				<code class="language-css">
 	/* Theming styles */
-	.t-white .form-range input[type="range"] {
-	    background: #444;
-	    border-color: #eee;
-	}
-	.t-white .form-range input[type="range"]:focus {
-	    /* Any styles specific that need to be changed when this is focused due to the initial state */
-	    border-color: rgba(249, 241, 155, 0.5);
-	}
+  .t-white .form-range input[type="range"] {
+  /*
+    This gradient is to solve a no range-track background problem on older Android devices,
+   it requires a background on the input range,
+   which then causes every other browser to be terrible.
+   By making this an older gradient syntax we can workaround it a bit.
+   */
+      background: -webkit-linear-gradient(left, rgba(51,51,51,1) 0%, rgba(51,51,51,1) 100%);
+      border-color: #eee;
+  }
+ .t-white .form-range input[type="text"] {
+   background: #fff;
+ }
+  .t-white .form-range input[type="range"]:focus {
+      /* Any styles specific that need to be changed when this is focused due to the initial state */
+      border-color: rgba(249, 241, 155, 0.5);
+  }
 
-	/* Focus states for all thumbs */
-	.t-white .form-range input[type="range"]:focus::-webkit-slider-thumb {
-	    background-color: rgba(249, 241, 155, 1);
-	    outline: 2px #686546 thin dotted;
-	}
-	.t-white .form-range input[type="range"]:focus::-moz-range-thumb {
-	    background-color: rgba(249, 241, 155, 1);
-	    outline: 2px #686546 thin dotted;
-	    -moz-outline-radius:100%;
-	}
-	.t-white .form-range input[type="range"]:focus::-ms-thumb {
-	    background-color: rgba(249, 241, 155, 1);
-	    outline: 2px #686546 thin dotted;
-	}
-	/* Thumb colors */
-	.t-white .form-range input[type="range"]::-ms-thumb {
-	  background: #fff;
-	}
-	.t-white .form-range input[type="range"]::-moz-range-thumb {
-	  background: #fff;
-	}
-	.t-white .form-range input[type="range"]::-webkit-slider-thumb {
-	  background-color: #fff;
-	}
-	/* Theme slider color */
-	.t-white .form-range input[type="range"]::-webkit-slider-runnable-track {
-	  background-color: #444;
-	}
-	.t-white .form-range input[type="range"]::-moz-range-track {
-	   background-color: #444;
-	}
-	.t-white .form-range input[type="range"]::-ms-fill-upper {
-	    background-color: #a9acb1;
-	}
-	.t-white .form-range input[type="range"]::-ms-fill-lower {
-	  background-color: #017afd;
-	}
-	/* Theme slider focus colors */
-	.t-white .form-range input[type="range"]:focus::-ms-fill-upper {
-	    background-color: #a9acb1;
-	}
-	.t-white .form-range input[type="range"]:focus::-webkit-slider-runnable-track {
-	    background-color: rgba(249, 241, 155, 0.5);
-	}
-	.t-white .form-range input[type="range"]:focus::-moz-range-track {
-	    background-color: rgba(249, 241, 155, 0.5);
-	}
-	.t-white .form-range input[type="range"]:focus::-ms-fill-lower {
-	    background-color: #017afd;
-	}
+  /* Focus states for all thumbs */
+  .t-white .form-range input[type="range"]:focus::-webkit-slider-thumb {
+      background-color: rgba(249, 241, 155, 1);
+      outline: 2px #686546 thin dotted;
+  }
+  .t-white .form-range input[type="range"]:focus::-moz-range-thumb {
+      background-color: rgba(249, 241, 155, 1);
+      outline: 2px #686546 thin dotted;
+      -moz-outline-radius:100%;
+  }
+  .t-white .form-range input[type="range"]:focus::-ms-thumb {
+      background-color: rgba(249, 241, 155, 1);
+      outline: 2px #686546 thin dotted;
+  }
+  /* Thumb colors */
+  .t-white .form-range input[type="range"]::-ms-thumb {
+    background: #fff;
+  }
+  .t-white .form-range input[type="range"]::-moz-range-thumb {
+    background: #fff;
+  }
+  .t-white .form-range input[type="range"]::-webkit-slider-thumb {
+    background-color: #fff;
+  }
+  /* Theme slider color */
+  .t-white .form-range input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #444;
+  }
+  .t-white .form-range input[type="range"]::-moz-range-track {
+     background-color: #444;
+  }
+  .t-white .form-range input[type="range"]::-ms-fill-upper,
+.t-white .form-range input[type="range"]::-ms-fill-lower {
+    background-color: #333;
+  }
+  /* Theme slider focus colors */
+  .t-white .form-range input[type="range"]:focus::-ms-fill-upper {
+      background-color: #555;
+  }
+  .t-white .form-range input[type="range"]:focus::-webkit-slider-runnable-track {
+      background-color: rgba(249, 241, 155, 0.5);
+  }
+  .t-white .form-range input[type="range"]:focus::-moz-range-track {
+      background-color: rgba(249, 241, 155, 0.5);
+  }
+  .t-white .form-range input[type="range"]:focus::-ms-fill-lower {
+      background-color: #017afd;
+  }
 
 				</code>
 			</pre>
@@ -128,148 +135,134 @@ you could keep the tooltip */
 			<h3>The CSS: Component</h3>
 			<pre class="codeblock">
 				<code class="language-css">
-/* Component */
+ /* Component */
+.range-label {
+  font-family: "Helvetica Neue", Helvetica, Verdana, arial, sans-serif;
+  display: block;
+  margin: 1em 0;
+  text-align:left;
+}
 .form-range input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
-  border-bottom-width: 8px;
-  border-left-width: 4px;
-  border-radius: $trackBorderRadius;
-  border-right-width: 4px;
-  border-style: solid;
-  border-top-width: 8px;
-  box-sizing: border-box;
-  font-size: 1em;
-  height: $trackHeight;
-  margin: 0 0 0 -0.25em;
-  padding: 0;
-  /* Hides the slider so that custom slider can be made */
+  /* This property are needed to allow Android to display the background at all */
+  border-radius:10px;
   width: 100%;
-  /* Specific width is required for Firefox. */
-}
-
-//Thumb tracks
-/* Special styling for WebKit/Blink */
-.form-range input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  border: none;
-  border-radius: 100%;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  cursor: pointer;
-  height: $thumbDimension;
-  margin-top: $webkitThumbPosition;
-  transition: background 0.3s ease;
-  width: $thumbDimension;
-}
-
-/* All the same stuff for Firefox */
-.form-range input[type="range"]::-moz-range-thumb {
-  border: none;
-  border-radius: 100%;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  cursor: pointer;
-  height: $thumbDimension;
-  transition: background 0.3s ease;
-  width: $thumbDimension;
-}
-
-/* All the same stuff for IE */
-.form-range input[type="range"]::-ms-thumb {
-  border: none;
-  border-radius: 100%;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-  cursor: pointer;
-  height: $msThumbDimension;
-  margin: 10px;
-  transition: background 0.3s ease;
-  width: $msThumbDimension;
+  font-size: 1em;
 }
 
 .form-range input[type="range"]:focus {
-  outline: 1px #ddd thin dotted;
+  outline: dotted thin;
 }
-.form-range input[type="range"]:hover::-moz-range-track {
-  height: $trackHeight;
+
+.form-range input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  cursor: pointer;
+  margin-top: -6px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  border: none;
 }
+
 .form-range input[type="range"]::-webkit-slider-runnable-track {
-  border-radius: $trackBorderRadius;
-  cursor: pointer;
-  height: $trackHeight;
-  transition: background 0.3s ease;
   width: 100%;
+  height: 15px;
+  cursor: pointer;
+  background-color: inherit;
+  border-radius: 15px;
+
 }
+
+.form-range input[type="range"]::-moz-range-thumb {
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  cursor: pointer;
+  border: none;
+}
+
 .form-range input[type="range"]::-moz-range-track {
-  border-radius: $trackBorderRadius;
-  cursor: pointer;
-  height: $trackHeight;
-  transition: background 0.3s ease;
   width: 100%;
+  height: 15px;
+  cursor: pointer;
+  border-radius: 15px;
 }
+
+.form-range input[type="range"]::-ms-thumb {
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  cursor: pointer;
+  border: none;
+  margin: 10px;
+}
+
 .form-range input[type="range"]::-ms-track {
-  background: transparent;
+/* IE needs a border hack to make it appear to have the thumb outside of the track */
+  cursor: pointer;
+  border-top: 16px;
   border-bottom: 17px;
-  border-color: transparent;
   border-left: 10px;
   border-right: 10px;
   border-style: solid;
-  border-top: 16px;
+  height: 15px;
+  background: transparent;
   color: transparent;
-  cursor: pointer;
-  height: $trackHeight;
-  transition: background 0.3s ease;
 }
-.form-range input[type="range"]::-ms-fill-lower {
-  border-radius: $trackBorderRadius;
-}
+
+.form-range input[type="range"]::-ms-fill-lower,
 .form-range input[type="range"]::-ms-fill-upper {
-  border-radius: $trackBorderRadius;
+  border-radius: 15px;
 }
-//fallback for IE8/9 when range is a text input
+
+
+.form-range input[type="range"]::-ms-tooltip {
+  display: none;
+}
+/* fallback for IE8/9 when range is a text input */
 .form-range input[type="text"] {
-  background: #fff;
   font-size: 1em;
   padding: 0.5em;
-}
-.range-label {
-  display: block;
-  margin: 1em 0;
 }
 				</code>
 			</pre>
 
 			<h2>About the component</h2>
-			<p>TBD.</p>
+			<p>This is a range slider for inputting number values that don't need the precision of an input type number.</p>
 
-			<h3>Screen Readers</h3>
+			<h3>Screen Reader notes</h3>
+
 			<h4>Apple Voiceover</h4>
-			<p>TBD.</p>
+
+			<p>Alerts the label and the input's value as it would the unstyled element.</p>
+
 			<h4>JAWS</h4>
-			<p>TBD.</p>
+			<p>Alerts the label, the input's value, and any changes made to the value as the thumb track on the input move.</p>
+
 			<h4>NVDA</h4>
-			<p>TBD.</p>
+			<p>Alerts the label, the input's value, and any changes made to the value as the thumb track on the input move.</p>
 
 			<h3>Keyboard control</h3>
-			<p>TBD.</p>
+			<p>Just like the native element, the left key lowers the value, the right key increases the value. As the native outline keyboard focus was a bit janky, changing the entire track and thumb on keyboard focus will make it easier to see it has keyboard focus.</p>
 
 			<h3>High Contrast</h3>
-			<p>TBD.</p>
+			<p>Switches contrast easily in high contrast mode.</p>
 
 			<h3>Inputs</h3>
-			<p>TBD.</p>
+			<p>As long as the thumb track is large enough it should be fine for touch and pointers natively.</p>
 
 			<h3>Cross browser notes</h3>
-			<p>TBD.</p>
+			<p>Similar appearance on all modern browsers, IE9 and 8 fall back to an input type text.</p>
 
 			<h3>Cross device notes</h3>
-			<p>TBD.</p>
+			<p>Android 4.12 and older android devices receive a slightly fatter range track.</p>
 
 		</div>
-
-		<script>
-			function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("script")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||"all"})}
-			loadCSS('../style/main.min.css');
-		</script>
 		<script src="../scripts/prism.js"></script>
 
 	</body>
