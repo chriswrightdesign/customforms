@@ -6,94 +6,94 @@ fieldset {
 
 /* Theming styles */
 
-.t-white .form-range input[type="range"] {
+.t-neutral .range-slider input[type="range"] {
 	background: -webkit-linear-gradient(left, #333333 0%, #333333 100%);
 	border-color: #eee;
 }
 
-.t-white .form-range input[type="text"] {
+.t-neutral .range-slider input[type="text"] {
 	background: #fff;
 }
 
-.t-white .form-range input[type="range"]:focus { /* Any styles specific that need to be changed when this is focused due to the initial state */
+.t-neutral .range-slider input[type="range"]:focus { /* Any styles specific that need to be changed when this is focused due to the initial state */
 	border-color: rgba(249, 241, 155, 0.5);
 }
 
 /* Focus states for all thumbs */
 
-.t-white .form-range input[type="range"]:focus::-webkit-slider-thumb {
+.t-neutral .range-slider input[type="range"]:focus::-webkit-slider-thumb {
 	background-color: #f9f19b;
 	outline: 2px #686546 thin dotted;
 }
 
-.t-white .form-range input[type="range"]:focus::-moz-range-thumb {
+.t-neutral .range-slider input[type="range"]:focus::-moz-range-thumb {
 	background-color: #f9f19b;
 	outline: 2px #686546 thin dotted;
 	-moz-outline-radius: 100%;
 }
 
-.t-white .form-range input[type="range"]:focus::-ms-thumb {
+.t-neutral .range-slider input[type="range"]:focus::-ms-thumb {
 	background-color: #f9f19b;
 	outline: 2px #686546 thin dotted;
 }
 
 /* Thumb colors */
 
-.t-white .form-range input[type="range"]::-ms-thumb {
+.t-neutral .range-slider input[type="range"]::-ms-thumb {
 	background: #fff;
 }
 
-.t-white .form-range input[type="range"]::-moz-range-thumb {
+.t-neutral .range-slider input[type="range"]::-moz-range-thumb {
 	background: #fff;
 }
 
-.t-white .form-range input[type="range"]::-webkit-slider-thumb {
+.t-neutral .range-slider input[type="range"]::-webkit-slider-thumb {
 	background-color: #fff;
 }
 
 /* Theme slider color */
 
-.t-white .form-range input[type="range"]::-webkit-slider-runnable-track {
+.t-neutral .range-slider input[type="range"]::-webkit-slider-runnable-track {
 	background-color: #444;
 }
 
-.t-white .form-range input[type="range"]::-moz-range-track {
+.t-neutral .range-slider input[type="range"]::-moz-range-track {
 	background-color: #444;
 }
 
-.t-white .form-range input[type="range"]::-ms-fill-upper,
-.t-white .form-range input[type="range"]::-ms-fill-lower {
+.t-neutral .range-slider input[type="range"]::-ms-fill-upper,
+.t-neutral .range-slider input[type="range"]::-ms-fill-lower {
 	background-color: #333;
 }
 
 /* Theme slider focus colors */
 
-.t-white .form-range input[type="range"]:focus::-ms-fill-upper {
+.t-neutral .range-slider input[type="range"]:focus::-ms-fill-upper {
 	background-color: #555;
 }
 
-.t-white .form-range input[type="range"]:focus::-webkit-slider-runnable-track {
+.t-neutral .range-slider input[type="range"]:focus::-webkit-slider-runnable-track {
 	background-color: rgba(249, 241, 155, 0.5);
 }
 
-.t-white .form-range input[type="range"]:focus::-moz-range-track {
+.t-neutral .range-slider input[type="range"]:focus::-moz-range-track {
 	background-color: rgba(249, 241, 155, 0.5);
 }
 
-.t-white .form-range input[type="range"]:focus::-ms-fill-lower {
+.t-neutral .range-slider input[type="range"]:focus::-ms-fill-lower {
 	background-color: #017afd;
 }
 
 /* Component */
 
-.range-label {
+.range-slider__label {
 	font-family: "Helvetica Neue", Helvetica, Verdana, arial, sans-serif;
 	display: block;
 	margin: 1em 0;
 	text-align: left;
 }
 
-.form-range input[type="range"] {
+.range-slider input[type="range"] {
 	-webkit-appearance: none;
 	appearance: none; /* This property are needed to allow Android to display the background at all */
 	border-radius: 10px;
@@ -101,11 +101,11 @@ fieldset {
 	font-size: 1em;
 }
 
-.form-range input[type="range"]:focus {
+.range-slider input[type="range"]:focus {
 	outline: dotted thin;
 }
 
-.form-range input[type="range"]::-webkit-slider-thumb {
+.range-slider input[type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	appearance: none;
 	height: 30px;
@@ -117,7 +117,7 @@ fieldset {
 	border: none;
 }
 
-.form-range input[type="range"]::-webkit-slider-runnable-track {
+.range-slider input[type="range"]::-webkit-slider-runnable-track {
 	width: 100%;
 	height: 15px;
 	cursor: pointer;
@@ -125,7 +125,7 @@ fieldset {
 	border-radius: 15px;
 }
 
-.form-range input[type="range"]::-moz-range-thumb {
+.range-slider input[type="range"]::-moz-range-thumb {
 	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
 	height: 30px;
 	width: 30px;
@@ -134,14 +134,14 @@ fieldset {
 	border: none;
 }
 
-.form-range input[type="range"]::-moz-range-track {
+.range-slider input[type="range"]::-moz-range-track {
 	width: 100%;
 	height: 15px;
 	cursor: pointer;
 	border-radius: 15px;
 }
 
-.form-range input[type="range"]::-ms-thumb {
+.range-slider input[type="range"]::-ms-thumb {
 	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
 	height: 30px;
 	width: 30px;
@@ -151,7 +151,7 @@ fieldset {
 	margin: 10px;
 }
 
-.form-range input[type="range"]::-ms-track { /* IE needs a border hack to make it appear to have the thumb outside of the track */
+.range-slider input[type="range"]::-ms-track { /* IE needs a border hack to make it appear to have the thumb outside of the track */
 	cursor: pointer;
 	border-top: 16px;
 	border-bottom: 17px;
@@ -163,18 +163,18 @@ fieldset {
 	color: transparent;
 }
 
-.form-range input[type="range"]::-ms-fill-lower,
-.form-range input[type="range"]::-ms-fill-upper {
+.range-slider input[type="range"]::-ms-fill-lower,
+.range-slider input[type="range"]::-ms-fill-upper {
 	border-radius: 15px;
 }
 
-.form-range input[type="range"]::-ms-tooltip {
+.range-slider input[type="range"]::-ms-tooltip {
 	display: none;
 }
 
 /* fallback for IE8/9 when range is a text input */
 
-.form-range input[type="text"] {
+.range-slider input[type="text"] {
 	font-size: 1em;
 	padding: 0.5em;
 }

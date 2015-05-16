@@ -25,9 +25,16 @@
 	background: #eee;
 }
 
+.l-contain--small {
+	max-width: 8em;
+}
+
+.l-contain--medium {
+	max-width: 15em;
+}
+
 .spinner {
 	margin: 0 0 5em 0;
-	max-width: 15em;
 }
 
 .spinner:after {
@@ -54,6 +61,31 @@
 	        transition: background 0.4s ease;
 }
 
+.spinner__button--left {
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+}
+
+.spinner__button--right {
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.spinner__button--top {
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.spinner__button--bottom {
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.spinner--vertical .spinner__button {
+	padding: 2em 1em;
+	width: 100%;
+}
+
 .spinner__input {
 	appearance: none;
 	-webkit-appearance: none;
@@ -66,18 +98,16 @@
 	display: block;
 	font-size: 1em;
 	line-height: 1.5;
-	padding: 1em 1em 1.05em 1em;
 	text-align: center;
 }
 
-.spinner__button--left {
-	border-bottom-left-radius: 5px;
-	border-top-left-radius: 5px;
+.spinner--horizontal .spinner__input {
+	padding: 1em 1em 1.05em 1em;
 }
 
-.spinner__button--right {
-	border-bottom-right-radius: 5px;
-	border-top-right-radius: 5px;
+.spinner--vertical .spinner__input {
+	padding: 1.5em 1em 1.5em 1em;
+	width: 100%;
 }
 
 .spinner--horizontal .spinner__button {
@@ -92,7 +122,7 @@
 
 @media all and (min-width: 40em) {
 
-.spinner__input {
+.spinner--horizontal .spinner__input {
 	padding: 1.1em 1em 1.05em 1em;
 }
 

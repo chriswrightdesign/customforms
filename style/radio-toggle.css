@@ -1,20 +1,20 @@
 /* Theming */
 
-.t-white .radio-switch-label {
+.t-neutral .toggle-switch__label {
 	color: #000;
 }
 
-.t-white .radio-switch + label:before {
+.t-neutral .toggle-switch__radio + label:before {
 	background: #fff;
 	border: 1px solid #ddd;
 }
 
-.t-white .radio-switch:nth-of-type(1) + label {
+.t-neutral .toggle-switch__radio:nth-of-type(1) + label {
 	background: #eee;
 	color: #222;
 }
 
-.t-white .radio-switch:nth-of-type(2) + label {
+.t-neutral .toggle-switch__radio:nth-of-type(2) + label {
 	background: #222;
 	color: #fff;
 }
@@ -23,21 +23,21 @@
 
 /* On Button */
 
-.t-white .radio-switch:focus ~ label:nth-of-type(1) {
+.t-neutral .toggle-switch__radio:focus ~ label:nth-of-type(1) {
 	background: #ccc;
 	color: #222;
 }
 
 /* Off Button */
 
-.t-white .radio-switch:focus ~ label:nth-of-type(2) {
+.t-neutral .toggle-switch__radio:focus ~ label:nth-of-type(2) {
 	background: #444;
 	color: #fff;
 }
 
 /* Component */
 
-.radio-toggle {
+.toggle-switch__inner {
 	display: block;
 	height: 3.75em;
 	max-width: 6.5em;
@@ -46,20 +46,20 @@
 	z-index: 1;
 }
 
-.radio-toggle:after {
+.toggle-switch:after {
 	clear: both;
 	content: "";
 	display: table;
 }
 
-.radio-toggle-title ~ .radio-toggle .radio-switch {
+.toggle-switch__title ~ .toggle-switch__inner .toggle-switch__radio {
 	left: -9999px;
 	opacity: 0;
 	position: absolute;
 	visibility: none;
 }
 
-.radio-switch-label {
+.toggle-switch__label {
 	border-radius: 40px;
 	cursor: pointer;
 	display: block;
@@ -78,7 +78,7 @@
 
 /* The circular switch */
 
-.radio-switch + label:before {
+.toggle-switch__radio + label:before {
 	border-radius: 50%;
 	content: "";
 	display: block;
@@ -90,22 +90,22 @@
 	width: 3.3em;
 }
 
-.radio-switch:nth-of-type(1) + label {
+.toggle-switch__radio:nth-of-type(1) + label {
 	text-align: right;
 }
 
-.radio-switch:nth-of-type(1) + label:before {
+.toggle-switch__radio:nth-of-type(1) + label:before {
 	left: 0;
 	-webkit-transform: translateX(4em);
 	    -ms-transform: translateX(4em);
 	        transform: translateX(4em);
 }
 
-.radio-switch:nth-of-type(2) + label {
+.toggle-switch__radio:nth-of-type(2) + label {
 	text-align: left;
 }
 
-.radio-switch:nth-of-type(2) + label:before {
+.toggle-switch__radio:nth-of-type(2) + label:before {
 	right: 0;
 	-webkit-transform: translateX(-4em);
 	    -ms-transform: translateX(-4em);
@@ -117,16 +117,16 @@
         the not currently active button
     */
 
-.radio-switch + label {
+.toggle-switch__radio + label {
 	z-index: 5;
 }
 
-.radio-switch:checked + label {
+.toggle-switch__radio:checked + label {
 	opacity: 1;
 	z-index: 1;
 }
 
-.radio-switch:checked + label:before {
+.toggle-switch__radio:checked + label:before {
 	-webkit-transform: translateX(0);
 	    -ms-transform: translateX(0);
 	        transform: translateX(0);

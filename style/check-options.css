@@ -1,44 +1,49 @@
 /* Theming */
 
-.t-white.check-options input[type="checkbox"]:checked + label {
+.t-neutral.checkbox-options input[type="checkbox"]:checked + label {
 	background: #222;
 	border-color: #333;
 	color: #fff;
 }
 
-.high-contrast .check-options input[type="checkbox"]:checked + label:before {
+.high-contrast .checkbox-options input[type="checkbox"]:checked + label:before {
 	background: #eee;
 }
 
-.t-white.check-options input[type="checkbox"]:checked + label:before {
+.t-neutral.checkbox-options input[type="checkbox"]:checked + label:before {
 	-webkit-transform: scale(1);
 	    -ms-transform: scale(1);
 	        transform: scale(1);
 }
 
-.t-white.check-options input[type="checkbox"]:active + label {
+.t-neutral.checkbox-options input[type="checkbox"]:active + label {
 	background: #444;
 	color: #fff;
 }
 
-.t-white.check-options input[type="checkbox"]:focus + label {
+.t-neutral.checkbox-options input[type="checkbox"]:focus + label {
 	background: #444;
 	color: #fff;
 }
 
-.t-white .check-options-label {
+.t-neutral .checkbox-options__label:before {
+	background-image: url("../img/check_tick.svg");
+	background-repeat: no-repeat;
+	background-position: 0 0;
+}
+
+.t-neutral .checkbox-options__label {
 	background: #eee;
 	border-color: #111;
 	color: #111;
 }
 
-.t-white .check-options-label:hover {
+.t-neutral .checkbox-options__label:hover {
 	background: #333;
 	color: #fff;
 }
 
-.check-options-label:before {
-	background: url("../img/check_tick.svg") no-repeat 0 0;
+.checkbox-options__label:before {
 	content: "";
 	display: block;
 	height: 1em;
@@ -54,7 +59,7 @@
 	width: 1.35em;
 }
 
-.check-options-label {
+.checkbox-options__label {
 	border: 1px solid;
 	cursor: pointer;
 	display: inline-block;
@@ -71,14 +76,14 @@
 		we use sibling to cut the mustard
 	*/
 
-.check-options-title ~ .check-options-input {
+.checkbox-options__title ~ .checkbox-options__input {
 	left: -9999px;
 	opacity: 0;
 	position: absolute;
 	visibility: none;
 }
 
-.high-contrast .check-options-label:before {
+.high-contrast .checkbox-options__label:before {
 	border: 1px solid #fff;
 	background: #222;
 	-webkit-transition: background 0.3s ease;
@@ -87,7 +92,7 @@
 
 @media all and (max-width: 48em) {
 
-.check-options-label {
+.checkbox-options__label {
 	width: 100%;
 }
 

@@ -25,20 +25,18 @@
 			<h1>Select box</h1>
 			<p>v0.1a</p>
 
-			<form id="form-select" class="t-white">
-				<label for="select-box" class="select-box-label">Custom select</label>
-
-				<div class="select-box-wrapper">
-
-					<select id="select-box" class="select-box">
-						<option>Option 1</option>
-						<option>Option 2</option>
-						<option>Option 3</option>
-						<option>Option 4</option>
-					</select>
-
-				</div>
-
+			<form id="form-select" class="t-neutral">
+                <fieldset class="select-box">
+				    <label class="select-box__label" for="select-box">Custom select</label>
+    				<div class="select-box__inner">
+    					<select id="select-box" class="select-box__select">
+    						<option>Option 1</option>
+    						<option>Option 2</option>
+    						<option>Option 3</option>
+    						<option>Option 4</option>
+    					</select>
+    				</div>
+                </fieldset>
 			</form>
 
 
@@ -47,81 +45,58 @@
 			<h3>The Markup</h3>
 			<pre class="codeblock">
 				<code class="language-markup">
-&lt;form id="form-select" class="t-white">
-	&lt;label for="select-box" class="select-box-label">Custom select&lt;/label>
-	&lt;div class="select-box-wrapper">
-		&lt;select id="select-box" class="select-box">
-			&lt;option>Option 1&lt;/option>
-			&lt;option>Option 2&lt;/option>
-			&lt;option>Option 3&lt;/option>
-			&lt;option>Option 4&lt;/option>
-		&lt;/select>
-	&lt;/div>
-&lt;/form></code>
+    &lt;form id="form-select" class="t-neutral">
+        &lt;fieldset class="select-box">
+            &lt;label class="select-box__label" for="select-box">Custom select&lt;/label>
+            &lt;div class="select-box__inner">
+                &lt;select id="select-box" class="select-box__select">
+                    &lt;option>Option 1&lt;/option>
+                    &lt;option>Option 2&lt;/option>
+                    &lt;option>Option 3&lt;/option>
+                    &lt;option>Option 4&lt;/option>
+                &lt;/select>
+            &lt;/div>
+        &lt;/fieldset>
+    &lt;/form>
+</code>
 			</pre>
 
 			<h3>The CSS: Theming</h3>
 			<pre class="codeblock">
 				<code class="language-css">
 /*
-//Select Box theming
-*/
-.t-white .select-box-wrapper {
-    background: #fff url('../img/icon-arrow.svg') no-repeat 97% 50%;
+ * Theming
+/*
+
+.t-neutral .select-box__inner {
+    background: $c-select-box-background-color url("../img/arrow_down.svg") no-repeat 97% 50%;
     border: 1px solid #2a1244;
 }
-.no-svg .t-white .select-box-wrapper {
-/* fall back for no SVG, using modernizr */
-    background-image: url('../img/icon-arrow.png');
+.no-svg .t-neutral .select-box__inner {
+    background-image: url("../img/arrow_down.png");
 }
-/* the option needs to be styled for Internet Explorer 10/11 */
-.t-white .select-box-wrapper select,
-.t-white .select-box-wrapper select option {
+.t-neutral .select-box__inner select option {
+    color: #111;
+}
+.t-neutral .select-box__inner select {
     color: #697070;
 }
-/* In some browsers you won't see the outline
-(seems to be fine in Chrome but others not so much)
-so we need to communicate keyboard focus state to the user.
-*/
-.t-white .select-box-wrapper select:active,
-.t-white .select-box-wrapper select:focus {
-/* this is transparent so you can still see the arrow when it hilights */
- background-color: rgba(249, 241, 155, 0.5);
+.t-neutral .select-box__inner select:active,
+.t-neutral .select-box__inner select:focus {
+    background-color: rgba(249, 241, 155, 0.5);
 }
+
 				</code>
 			</pre>
 			<h3>The CSS: Component</h3>
 			<pre class="codeblock">
 				<code class="language-css">
-                /*
-Optional reset of auto-zoom
-What this snippet does is: stop the automatic focus zoom on small screen devices,
-this doesn't take away the option to zoom,
-instead it leaves it up to the user.
-*/
-@media all and (max-width:60em) {
-    select:focus,
-    select:hover {
-        font-size:1em;
-    }
-}
-.select-box-wrapper input::-ms-clear,
-.select-box-wrapper input::-ms-reveal {
-    display:none; /* Aggressively resetting IE's default for this */
+ .select-box__label {
+    display:block;
+    margin:1em 0;
 }
 
-.select-box-label {
-	display:block;
-	margin:1em 0;
-}
-.select-box-wrapper:hover,
-.select-box-wrapper:focus,
-.select-box-wrapper:active {
-	cursor: pointer;
-}
-
-//needs to house the select in order to work
-.select-box-wrapper {
+.select-box__inner {
     border-radius: 5px;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1em;
@@ -132,15 +107,21 @@ instead it leaves it up to the user.
     transition: background-color 0.4s ease-in-out;
     width: 100%;
 }
+.select-box__inner:hover,
+.select-box__inner:focus,
+.select-box__inner:active {
+    cursor: pointer;
+}
 
-.select-box-wrapper select option {
-
+.select-box__inner select option {
     padding:0.5em;
     line-height:1.5;
     font-size:1em;
 }
-.select-box-wrapper select {
-
+.select-box__inner select:hover {
+    cursor: pointer;
+}
+.select-box__inner select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -152,10 +133,9 @@ instead it leaves it up to the user.
     font-size: 1em;
     padding: 1em;
     transition: background 0.4s ease;
-    width: 115%; /* This is what hides the default arrow */
-
-
+    width: 115%;
 }
+
 
 </code>
 </pre>
@@ -164,7 +144,7 @@ instead it leaves it up to the user.
 <pre class="codeblock">
 	<code class="language-css">
 	/*
-	High contrast mode disables background images,
+	High contrast mode on PC disables background images,
 	since this example uses a background image
 	to replace a perceived affordance, we need to restore it if
 	high contrast mode is enabled.
@@ -172,28 +152,25 @@ instead it leaves it up to the user.
 	we have a media query available to detect the high contrast mode
 	unfortunately, it only works in IE.
 	You'll need a script to help you detect high contrast mode otherwise.
+    */
 
-	*/
 @media screen and (-ms-high-contrast: active) {
-     /* All high contrast styling rules */
-     .select-box-wrapper select {
-        width: 100%;
-     }
+    .select-box__inner select {
+         width: 100%;
     }
-    @media screen and (-ms-high-contrast: black-on-white) {
-     .select-box-wrapper select {
-        width: 100%;
-     }
+}
+@media screen and (-ms-high-contrast: black-on-white) {
+ .select-box__inner select {
+         width: 100%;
     }
-    @media screen and (-ms-high-contrast: white-on-black) {
-      .select-box-wrapper select {
-        width: 100%;
-     }
+}
+ @media screen and (-ms-high-contrast: white-on-black) {
+  .select-box__inner select {
+         width: 100%;
     }
-
-/* requires a script to detect a change */
-.high-contrast-mode .select-box-wrapper select {
-
+}
+//requires a script to detect a change
+.high-contrast-mode .select-box__inner select {
     width: 100%;
 }
 

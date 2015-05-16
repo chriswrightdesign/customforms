@@ -23,21 +23,21 @@
 			<h2>Radio options</h2>
 			<p>v.02a</p>
 			<form id="radio-options-group">
-				<fieldset>
-					<legend class="radio-options-title">Pick an amount to donate</legend>
-					<div class="radio-options t-white l-grid-parent">
-						<input class="radio-options-input" id="radio_option1" type="radio" name="amount" value="$15" checked />
-						<label class="radio-options-label" for="radio_option1">$15</label>
-						<input class="radio-options-input" id="radio_option2" type="radio" name="amount" value="$35" />
-						<label class="radio-options-label" for="radio_option2">$35</label>
-						<input class="radio-options-input" id="radio_option3" type="radio" name="amount" value="$50" />
-						<label class="radio-options-label" for="radio_option3">$50</label>
-						<input class="radio-options-input" id="radio_option4" type="radio" name="amount" value="$100" />
-						<label class="radio-options-label" for="radio_option4">$100</label>
-						<input class="radio-options-input" id="radio_option5" type="radio" name="amount" value="$250" />
-						<label class="radio-options-label" for="radio_option5">$250</label>
-						<input class="radio-options-input" id="radio_option6" type="radio" name="amount" value="$500" />
-						<label class="radio-options-label" for="radio_option6">$500</label>
+				<fieldset class="radio-options t-neutral">
+					<legend class="radio-options__title">Pick an amount to donate</legend>
+					<div class="radio-options__inner l-grid-parent">
+						<input class="radio-options__input" id="radio_option1" type="radio" name="amount" value="$15" checked />
+						<label class="radio-options__label" for="radio_option1">$15</label>
+						<input class="radio-options__input" id="radio_option2" type="radio" name="amount" value="$35" />
+						<label class="radio-options__label" for="radio_option2">$35</label>
+						<input class="radio-options__input" id="radio_option3" type="radio" name="amount" value="$50" />
+						<label class="radio-options__label" for="radio_option3">$50</label>
+						<input class="radio-options__input" id="radio_option4" type="radio" name="amount" value="$100" />
+						<label class="radio-options__label" for="radio_option4">$100</label>
+						<input class="radio-options__input" id="radio_option5" type="radio" name="amount" value="$250" />
+						<label class="radio-options__label" for="radio_option5">$250</label>
+						<input class="radio-options__input" id="radio_option6" type="radio" name="amount" value="$500" />
+						<label class="radio-options__label" for="radio_option6">$500</label>
 					</div>
 				</fieldset>
 			</form>
@@ -47,51 +47,52 @@
 			<pre class="codeblock">
 				<code class="language-markup">
 	&lt;form id="radio-options-group">
-		&lt;fieldset>
-			&lt;legend class="radio-options-title">Pick an amount to donate&lt;/legend>
-			&lt;div class="radio-options t-white l-grid-parent">
-				&lt;input class="radio-options-input" id="radio_option1" type="radio" name="amount" value="$15" checked />
-				&lt;label class="radio-options-label" for="radio_option1">$15&lt;/label>
-				&lt;input class="radio-options-input" id="radio_option2" type="radio" name="amount" value="$35" />
-				&lt;label class="radio-options-label" for="radio_option2">$35&lt;/label>
-				&lt;input class="radio-options-input" id="radio_option3" type="radio" name="amount" value="$50" />
-				&lt;label class="radio-options-label" for="radio_option3">$50&lt;/label>
-				&lt;input class="radio-options-input" id="radio_option4" type="radio" name="amount" value="$100" />
-				&lt;label class="radio-options-label" for="radio_option4">$100&lt;/label>
-				&lt;input class="radio-options-input" id="radio_option5" type="radio" name="amount" value="$250" />
-				&lt;label class="radio-options-label" for="radio_option5">$250&lt;/label>
-				&lt;input class="radio-options-input" id="radio_option6" type="radio" name="amount" value="$500" />
-				&lt;label class="radio-options-label" for="radio_option6">$500&lt;/label>
-			&lt;/div>
-		&lt;/fieldset>
-	&lt;/form>
+        &lt;fieldset class="radio-options t-neutral">
+            &lt;legend class="radio-options__title">Pick an amount to donate&lt;/legend>
+            &lt;div class="radio-options__inner l-grid-parent">
+                &lt;input class="radio-options__input" id="radio_option1" type="radio" name="amount" value="$15" checked />
+                &lt;label class="radio-options__label" for="radio_option1">$15&lt;/label>
+                &lt;input class="radio-options__input" id="radio_option2" type="radio" name="amount" value="$35" />
+                &lt;label class="radio-options__label" for="radio_option2">$35&lt;/label>
+                &lt;input class="radio-options__input" id="radio_option3" type="radio" name="amount" value="$50" />
+                &lt;label class="radio-options__label" for="radio_option3">$50&lt;/label>
+                &lt;input class="radio-options__input" id="radio_option4" type="radio" name="amount" value="$100" />
+                &lt;label class="radio-options__label" for="radio_option4">$100&lt;/label>
+                &lt;input class="radio-options__input" id="radio_option5" type="radio" name="amount" value="$250" />
+                &lt;label class="radio-options__label" for="radio_option5">$250&lt;/label>
+                &lt;input class="radio-options__input" id="radio_option6" type="radio" name="amount" value="$500" />
+                &lt;label class="radio-options__label" for="radio_option6">$500&lt;/label>
+            &lt;/div>
+        &lt;/fieldset>
+    &lt;/form>
 				</code>
 			</pre>
 			<h3>The CSS: Theming</h3>
 			<pre class="codeblock">
 				<code class="language-css">
-  	.t-white.radio-options input[type="radio"]:checked + label {
+  	/* Theming */
+    .t-neutral.radio-options input[type="radio"]:checked + label {
         background: #222;
         color: #fff;
     }
-    .t-white.radio-options input[type="radio"]:active + label {
+    .t-neutral.radio-options input[type="radio"]:active + label {
         color: #555;
     }
-    .t-white.radio-options input[type="radio"]:focus + label {
+    .t-neutral.radio-options input[type="radio"]:focus + label {
         color: #555;
     }
-    .t-white .radio-options-label {
-    	background: #ddd;
+    .t-neutral .radio-options__label {
+        background: #ddd;
         border-color: #222;
         color: #111;
     }
-    .t-white .radio-options-label:hover {
-    	background: #555;
+    .t-neutral .radio-options__label:hover {
+        background: #555;
         color: #fff;
     }
-    .t-white .radio-options-label:focus,
-    .t-white .radio-options-label:active {
-    	background: #555;
+    .t-neutral .radio-options__label:focus,
+    .t-neutral .radio-options__label:active {
+        background: #555;
         color: #fff;
     }
 				</code>
@@ -99,36 +100,31 @@
 			<h3>The CSS: Component</h3>
 			<pre class="codeblock">
 				<code class="language-css">
-	/* Component */
-    .radio-options-title {
-        font-family: "Lato", sans-serif;
-    }
-    .radio-options-label {
+    /* Component */
+    .radio-options__label {
         display: inline-block;
         cursor: pointer;
-        font-family: "Lato", sans-serif;
         padding: 0.5em 0.75em;
         border: 1px solid;
         text-align: center;
         text-decoration: none;
     }
     /*
-    This is a qualifier to make sure we don't
-    cut out browsers without adjacent/sibling selectors.
-    For those browsers they get default appearance.
+    this is a qualifier to make sure we don't cut out browsers
+    without adjacent/sibling selectors.
+    For those browsers they get the same label apperance but with a radio button next to it.
     */
-    .radio-options-title + .radio-options .radio-options-input {
+    .radio-options__title + .radio-options__inner .radio-options__input {
         left: -9999px;
         opacity: 0;
         position: absolute;
         visibility: none;
     }
 
-
     @media all and (min-width:40em){
-    	.radio-options-label {
-			padding: 3em;
-    	}
+        .radio-options__label {
+            padding: 3em;
+        }
     }
 				</code>
 			</pre>

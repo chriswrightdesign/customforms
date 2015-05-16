@@ -23,10 +23,10 @@
             <h1>Calendar</h1>
             <p>v.01a - Using a modified version of <a href="https://github.com/dbushell/Pikaday">Pikaday</a></p>
 
-        <div class="date-picker">
-            <label class="form-label" for="datepicker">Date calendar</label>
-             <button type="button" class="btn-datepicker" aria-controls="pika-calendar">Pick a date</button>
-            <input class="form-input" role="alert" aria-live="assertlive" type="text" id="datepicker" placeholder="Pick a date" />
+        <div class="date-picker t-neutral">
+            <label class="date-picker__label" for="date-picker">Date calendar</label>
+            <button type="button" class="date-picker__button js-date-picker-button" aria-controls="pika-calendar">Pick a date</button>
+            <input class="date-picker__input" role="alert" aria-live="assertlive" type="text" id="date-picker" placeholder="Pick a date" />
         </div>
 
     </div>
@@ -37,13 +37,13 @@
     var today = Date.now();
     var picker = new Pikaday(
     {
-        field: document.getElementById('datepicker'),
+        field: document.getElementById('date-picker'),
         firstDay: 1,
         minDate: new Date(today),
         maxDate: new Date('2016-12-31'),
-        theme: 't-white',
+        theme: 't-neutral',
         yearRange: [2015,2016],
-        trigger: document.querySelector('.btn-datepicker'),
+        trigger: document.querySelector('.js-date-picker-button'),
 
     });
     </script>
