@@ -14,7 +14,7 @@
 		</script>
 
 		<link href="../style/main.min.css" rel="stylesheet" />
-        <link href="../style/range-input.min.css" rel="stylesheet" />
+    <link href="../style/range-input.min.css" rel="stylesheet" />
 		<link href="../style/prism.min.css" rel="stylesheet" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,12 +27,12 @@
 			<h1>Range Slider</h1>
 			<p>v0.1a</p>
 
-			<form id="form-range" class="t-white">
-				<fieldset class="form-range">
-					<label for="input-width" class="range-label">
+			<form id="form-range" class="t-neutral">
+				<fieldset class="range-slider">
+					<label for="input-width" class="range-slider__label">
 						Form range
 					</label>
-					<input type="range" name="range" min="0" max="500" step="10" value="250" id="input-width" class="range-input">
+					<input type="range" name="range" min="0" max="500" step="10" value="250" id="input-width" class="range-slider__input">
 				</fieldset>
 			</form>
 			<h2>Implementing this component</h2>
@@ -40,85 +40,78 @@
 			<h3>The Markup</h3>
 			<pre class="codeblock">
 				<code class="language-markup">
-	&lt;form id="form-range" class="t-white">
-		&lt;fieldset class="form-range">
-			&lt;label for="input-width" class="range-label">Form range&lt;/label>
-			&lt;input type="range" name="range" min="0" max="500" step="10" value="250" id="input-width" class="range-input">
-		&lt;/fieldset>
-	&lt;/form>
+	&lt;form id="form-range" class="t-neutral">
+    &lt;fieldset class="range-slider">
+      &lt;label for="input-width" class="range-slider__label">Form range&lt;/label>
+      &lt;input type="range" name="range" min="0" max="500" step="10" value="250" id="input-width" class="range-slider__input">
+    &lt;/fieldset>
+  &lt;/form>
 				</code>
 			</pre>
 			<h3>The CSS: Theming</h3>
 			<pre class="codeblock">
 				<code class="language-css">
 	/* Theming styles */
-  .t-white .form-range input[type="range"] {
-  /*
-    This gradient is to solve a no range-track background problem on older Android devices,
-   it requires a background on the input range,
-   which then causes every other browser to be terrible.
-   By making this an older gradient syntax we can workaround it a bit.
-   */
+  .t-neutral .range-slider input[type="range"] {
       background: -webkit-linear-gradient(left, rgba(51,51,51,1) 0%, rgba(51,51,51,1) 100%);
       border-color: #eee;
   }
- .t-white .form-range input[type="text"] {
+  .t-neutral .range-slider input[type="text"] {
    background: #fff;
- }
-  .t-white .form-range input[type="range"]:focus {
+  }
+  .t-neutral .range-slider input[type="range"]:focus {
       /* Any styles specific that need to be changed when this is focused due to the initial state */
       border-color: rgba(249, 241, 155, 0.5);
   }
 
   /* Focus states for all thumbs */
-  .t-white .form-range input[type="range"]:focus::-webkit-slider-thumb {
+  .t-neutral .range-slider input[type="range"]:focus::-webkit-slider-thumb {
       background-color: rgba(249, 241, 155, 1);
       outline: 2px #686546 thin dotted;
   }
-  .t-white .form-range input[type="range"]:focus::-moz-range-thumb {
+  .t-neutral .range-slider input[type="range"]:focus::-moz-range-thumb {
       background-color: rgba(249, 241, 155, 1);
       outline: 2px #686546 thin dotted;
       -moz-outline-radius:100%;
   }
-  .t-white .form-range input[type="range"]:focus::-ms-thumb {
+  .t-neutral .range-slider input[type="range"]:focus::-ms-thumb {
       background-color: rgba(249, 241, 155, 1);
       outline: 2px #686546 thin dotted;
   }
   /* Thumb colors */
-  .t-white .form-range input[type="range"]::-ms-thumb {
+  .t-neutral .range-slider input[type="range"]::-ms-thumb {
     background: #fff;
   }
-  .t-white .form-range input[type="range"]::-moz-range-thumb {
+  .t-neutral .range-slider input[type="range"]::-moz-range-thumb {
     background: #fff;
   }
-  .t-white .form-range input[type="range"]::-webkit-slider-thumb {
+  .t-neutral .range-slider input[type="range"]::-webkit-slider-thumb {
     background-color: #fff;
   }
   /* Theme slider color */
-  .t-white .form-range input[type="range"]::-webkit-slider-runnable-track {
+  .t-neutral .range-slider input[type="range"]::-webkit-slider-runnable-track {
     background-color: #444;
   }
-  .t-white .form-range input[type="range"]::-moz-range-track {
+  .t-neutral .range-slider input[type="range"]::-moz-range-track {
      background-color: #444;
   }
-  .t-white .form-range input[type="range"]::-ms-fill-upper,
-.t-white .form-range input[type="range"]::-ms-fill-lower {
+  .t-neutral .range-slider input[type="range"]::-ms-fill-upper,
+  .t-neutral .range-slider input[type="range"]::-ms-fill-lower {
     background-color: #333;
   }
   /* Theme slider focus colors */
-  .t-white .form-range input[type="range"]:focus::-ms-fill-upper {
+  .t-neutral .range-slider input[type="range"]:focus::-ms-fill-upper {
       background-color: #555;
   }
-  .t-white .form-range input[type="range"]:focus::-webkit-slider-runnable-track {
+  .t-neutral .range-slider input[type="range"]:focus::-webkit-slider-runnable-track {
       background-color: rgba(249, 241, 155, 0.5);
   }
-  .t-white .form-range input[type="range"]:focus::-moz-range-track {
+  .t-neutral .range-slider input[type="range"]:focus::-moz-range-track {
       background-color: rgba(249, 241, 155, 0.5);
   }
-  .t-white .form-range input[type="range"]:focus::-ms-fill-lower {
+  .t-neutral .range-slider input[type="range"]:focus::-ms-fill-lower {
       background-color: #017afd;
   }
-
 				</code>
 			</pre>
 			<h3>The CSS: Reset</h3>
@@ -136,13 +129,13 @@ you could keep the tooltip */
 			<pre class="codeblock">
 				<code class="language-css">
  /* Component */
-.range-label {
+.range-slider__label {
   font-family: "Helvetica Neue", Helvetica, Verdana, arial, sans-serif;
   display: block;
   margin: 1em 0;
   text-align:left;
 }
-.form-range input[type="range"] {
+.range-slider input[type="range"] {
   -webkit-appearance: none;
   appearance: none;
   /* This property are needed to allow Android to display the background at all */
@@ -151,11 +144,11 @@ you could keep the tooltip */
   font-size: 1em;
 }
 
-.form-range input[type="range"]:focus {
+.range-slider input[type="range"]:focus {
   outline: dotted thin;
 }
 
-.form-range input[type="range"]::-webkit-slider-thumb {
+.range-slider input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   height: 30px;
@@ -167,7 +160,7 @@ you could keep the tooltip */
   border: none;
 }
 
-.form-range input[type="range"]::-webkit-slider-runnable-track {
+.range-slider input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: 15px;
   cursor: pointer;
@@ -176,7 +169,7 @@ you could keep the tooltip */
 
 }
 
-.form-range input[type="range"]::-moz-range-thumb {
+.range-slider input[type="range"]::-moz-range-thumb {
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
   height: 30px;
   width: 30px;
@@ -185,14 +178,14 @@ you could keep the tooltip */
   border: none;
 }
 
-.form-range input[type="range"]::-moz-range-track {
+.range-slider input[type="range"]::-moz-range-track {
   width: 100%;
   height: 15px;
   cursor: pointer;
   border-radius: 15px;
 }
 
-.form-range input[type="range"]::-ms-thumb {
+.range-slider input[type="range"]::-ms-thumb {
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
   height: 30px;
   width: 30px;
@@ -202,7 +195,7 @@ you could keep the tooltip */
   margin: 10px;
 }
 
-.form-range input[type="range"]::-ms-track {
+.range-slider input[type="range"]::-ms-track {
 /* IE needs a border hack to make it appear to have the thumb outside of the track */
   cursor: pointer;
   border-top: 16px;
@@ -215,20 +208,17 @@ you could keep the tooltip */
   color: transparent;
 }
 
-.form-range input[type="range"]::-ms-fill-lower,
-.form-range input[type="range"]::-ms-fill-upper {
+.range-slider input[type="range"]::-ms-fill-lower,
+.range-slider input[type="range"]::-ms-fill-upper {
   border-radius: 15px;
 }
 
-
-.form-range input[type="range"]::-ms-tooltip {
-  display: none;
-}
 /* fallback for IE8/9 when range is a text input */
-.form-range input[type="text"] {
+.range-slider input[type="text"] {
   font-size: 1em;
   padding: 0.5em;
 }
+
 				</code>
 			</pre>
 

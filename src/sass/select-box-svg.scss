@@ -1,55 +1,54 @@
 //
 // theming variables
 //
-$selectBoxBgColor: #eee;
-$selectBoxTextColor: #697070;
-$selectBoxFocusActiveBgColor: rgba(249, 241, 155, 0.5);
-$selectBoxOptionTextColor: #111;
-$selectBoxArrowBoxBgColor: #222;
-$selectBoxArrowColor: #fff;
+$c-select-box-background-color: #eee;
+$c-select-box-text-color: #697070;
+$c-select-box-background-color-focus-active: rgba(249, 241, 155, 0.5);
+$c-select-box-option-text-color: #111;
+$c-select-box-arrow-box-background-color: #222;
+$c-select-box-arrow-caret-color: #fff;
 
 //
 // theming
 //
 
-.t-white .select-box-wrapper-svg {
-     background-color:$selectBoxBgColor;
+.t-neutral .select-box-svg__inner {
+     background-color: $c-select-box-background-color;
 }
-.t-white .select-box-wrapper-svg select {
-    color: $selectBoxTextColor;
+.t-neutral .select-box-svg__inner select option {
+    color: $c-select-box-option-text-color;
+}
+.t-neutral .select-box-svg__inner select {
+    color: $c-select-box-text-color;
 
     &:active,
     &:focus {
-        background-color: $selectBoxFocusActiveBgColor;
+        background-color: $c-select-box-background-color-focus-active;
     }
 }
-.t-white .svg-arrow-box {
-   fill: $selectBoxArrowBoxBgColor;
+.t-neutral .icon--arrow .icon__box {
+   fill: $c-select-box-arrow-box-background-color;
 }
-.t-white .svg-arrow-icon {
-    fill: $selectBoxArrowColor;
-}
-.t-white .select-box-wrapper-svg select option {
-    color: $selectBoxOptionTextColor;
+.t-neutral .icon--arrow .icon__caret {
+    fill: $c-select-box-arrow-caret-color;
 }
 
 //
 // component
 //
 
-.select-box-wrapper-svg input::-ms-clear,
-.select-box-wrapper-svg input::-ms-reveal {
+.select-box-svg__inner input::-ms-clear,
+.select-box-svg__inner input::-ms-reveal {
     display:none;
 }
 
-.select-box-label {
+.select-box-svg__label {
 	display:block;
 	margin:1em 0 0.5em;
     color: #555;
 }
 
-//needs to house the select in order to work
-.select-box-wrapper-svg {
+.select-box-svg__inner {
     border: none;
     border-radius: 5px;
     font-family: Helvetica, sans-serif;
@@ -67,7 +66,7 @@ $selectBoxArrowColor: #fff;
     }
 }
 
-.svg-arrow {
+.icon--arrow {
     z-index:1;
     position:absolute;
     right:0;
@@ -78,14 +77,14 @@ $selectBoxArrowColor: #fff;
 }
 
 
-.select-box-wrapper-svg select option {
+.select-box-svg__inner select option {
     display:block;
     line-height:1.5;
     font-size:1em;
     border:none;
 }
 
-.select-box-wrapper-svg select {
+.select-box-svg__inner select {
     position:relative;
     z-index:2;
     -webkit-appearance: none;
@@ -117,14 +116,13 @@ $selectBoxArrowColor: #fff;
       width: 100%;
     }
 }
-@media all {
-    .select-box-wrapper-svg select {
-        width: 115%;
-    }
+.select-box-svg__label ~ .select-box-svg__inner select {
+    width: 115%;
 }
 
+
 //requires a script to detect a change
-.high-contrast-mode .select-box-wrapper-svg select {
+.high-contrast-mode .select-box-svg__inner select {
 
     width: 100%;
 }

@@ -18,11 +18,11 @@
 	display: table;
 }
 
-.form-label {
+.date-picker__label {
 	display: block;
 }
 
-.form-input {
+.date-picker__input {
 	border: 1px solid #ddd;
 	float: left;
 	font-size: 1em;
@@ -31,7 +31,7 @@
 	padding: 0.75em;
 }
 
-.btn-datepicker {
+.date-picker__button {
 	background: #459ac2;
 	border: 1px solid #ddd;
 	border-bottom-left-radius: 5px;

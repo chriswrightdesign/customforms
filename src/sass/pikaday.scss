@@ -78,11 +78,10 @@ $calendarDefaultColor: #333;
     content: "";
     display: table;
 }
-.form-label {
+.date-picker__label {
     display: block;
-    //padding:0.5em;
 }
-.form-input {
+.date-picker__input {
     border: 1px solid #ddd;
     float: left;
     font-size: 1em;
@@ -90,7 +89,7 @@ $calendarDefaultColor: #333;
     margin: 0;
     padding: 0.75em;
 }
-.btn-datepicker {
+.date-picker__button {
     background: #459ac2;
     border: 1px solid #ddd;
     border-bottom-left-radius: 5px;

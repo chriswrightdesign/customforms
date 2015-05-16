@@ -25,21 +25,21 @@
 			<p>v.02a</p>
 
 			<form id="check-options-group">
-				<fieldset class="check-options t-white">
-					<legend class="check-options-title">Favourite animals? (select any that apply)</legend>
-					<input class="check-options-input" id="check_option1" type="checkbox" name="animals" value="Dogs" />
-					<label class="check-options-label" for="check_option1">Dogs</label>
-					<input class="check-options-input" id="check_option2" type="checkbox" name="animals" value="Cats" />
-					<label class="check-options-label" for="check_option2">Cats
+				<fieldset class="checkbox-options t-neutral">
+					<legend class="checkbox-options__title">Favourite animals? (select any that apply)</legend>
+					<input class="checkbox-options__input" id="check_option1" type="checkbox" name="animals" value="Dogs" />
+					<label class="checkbox-options__label" for="check_option1">Dogs</label>
+					<input class="checkbox-options__input" id="check_option2" type="checkbox" name="animals" value="Cats" />
+					<label class="checkbox-options__label" for="check_option2">Cats
 					</label>
-					<input class="check-options-input" id="check_option3" type="checkbox" name="animals" value="Donkeys" />
-					<label class="check-options-label" for="check_option3">Donkeys</label>
-					<input class="check-options-input" id="check_option4" type="checkbox" name="animals" value="Horses" />
-					<label class="check-options-label" for="check_option4">Horses</label>
-					<input class="check-options-input" id="check_option5" type="checkbox" name="animals" value="Dolphins" />
-					<label class="check-options-label" for="check_option5">Dolphins</label>
-					<input class="check-options-input" id="check_option6" type="checkbox" name="animals" value="Sharks" />
-					<label class="check-options-label" for="check_option6">Sharks</label>
+					<input class="checkbox-options__input" id="check_option3" type="checkbox" name="animals" value="Donkeys" />
+					<label class="checkbox-options__label" for="check_option3">Donkeys</label>
+					<input class="checkbox-options__input" id="check_option4" type="checkbox" name="animals" value="Horses" />
+					<label class="checkbox-options__label" for="check_option4">Horses</label>
+					<input class="checkbox-options__input" id="check_option5" type="checkbox" name="animals" value="Dolphins" />
+					<label class="checkbox-options__label" for="check_option5">Dolphins</label>
+					<input class="checkbox-options__input" id="check_option6" type="checkbox" name="animals" value="Sharks" />
+					<label class="checkbox-options__label" for="check_option6">Sharks</label>
 				</fieldset>
 			</form>
 			<h2>Implementing this component</h2>
@@ -48,20 +48,21 @@
 			<pre class="codeblock">
 				<code class="language-markup">
 	&lt;form id="check-options-group">
-		&lt;fieldset class="check-options t-white">
-			&lt;legend class="check-options-title">Favourite animals? (select any that apply)&lt;/legend>
-			&lt;input class="check-options-input" id="check_option1" type="checkbox" name="animals" value="Dogs" />
-			&lt;label class="check-options-label" for="check_option1">Dogs&lt;/label>
-			&lt;input class="check-options-input" id="check_option2" type="checkbox" name="animals" value="Cats" />
-			&lt;label class="check-options-label" for="check_option2">Cats&lt;/label>
-			&lt;input class="check-options-input" id="check_option3" type="checkbox" name="animals" value="Donkeys" />
-			&lt;label class="check-options-label" for="check_option3">Donkeys&lt;/label>
-			&lt;input class="check-options-input" id="check_option4" type="checkbox" name="animals" value="Horses" />
-			&lt;label class="check-options-label" for="check_option4">Horses&lt;/label>
-			&lt;input class="check-options-input" id="check_option5" type="checkbox" name="animals" value="Dolphins" />
-			&lt;label class="check-options-label" for="check_option5">Dolphins&lt;/label>
-			&lt;input class="check-options-input" id="check_option6" type="checkbox" name="animals" value="Sharks" />
-			&lt;label class="check-options-label" for="check_option6">Sharks&lt;/label>
+		&lt;fieldset class="checkbox-options t-neutral">
+			&lt;legend class="checkbox-options__title">Favourite animals? (select any that apply)&lt;/legend>
+			&lt;input class="checkbox-options__input" id="check_option1" type="checkbox" name="animals" value="Dogs" />
+			&lt;label class="checkbox-options__label" for="check_option1">Dogs&lt;/label>
+			&lt;input class="checkbox-options__input" id="check_option2" type="checkbox" name="animals" value="Cats" />
+			&lt;label class="checkbox-options__label" for="check_option2">Cats
+			&lt;/label>
+			&lt;input class="checkbox-options__input" id="check_option3" type="checkbox" name="animals" value="Donkeys" />
+			&lt;label class="checkbox-options__label" for="check_option3">Donkeys&lt;/label>
+			&lt;input class="checkbox-options__input" id="check_option4" type="checkbox" name="animals" value="Horses" />
+			&lt;label class="checkbox-options__label" for="check_option4">Horses&lt;/label>
+			&lt;input class="checkbox-options__input" id="check_option5" type="checkbox" name="animals" value="Dolphins" />
+			&lt;label class="checkbox-options__label" for="check_option5">Dolphins&lt;/label>
+			&lt;input class="checkbox-options__input" id="check_option6" type="checkbox" name="animals" value="Sharks" />
+			&lt;label class="checkbox-options__label" for="check_option6">Sharks&lt;/label>
 		&lt;/fieldset>
 	&lt;/form>
 				</code>
@@ -70,58 +71,97 @@
 			<pre class="codeblock">
 				<code class="language-css">
 	/* Theming */
-	.t-white.check-options input[type="checkbox"]:checked + label {
-		background:#222;
-		color:#fff;
-		border-color:#333;
-	}
-	.t-white.check-options input[type="checkbox"]:active + label {
-		color:#fff;
-		background:#444;
-	}
-	.t-white.check-options input[type="checkbox"]:focus + label {
-		background:#444;
-		color:#fff;
-	}
+.t-neutral.checkbox-options input[type="checkbox"]:checked + label {
+    background: #222;
+    border-color: #333;
+    color: #fff;
+}
 
-	.t-white .check-options-label {
+.high-contrast .checkbox-options input[type="checkbox"]:checked + label:before {
 		background:#eee;
-		border-color: #111;
-		color:#111;
-	}
-	.t-white .check-options-label:hover {
-		background:#333;
-		color:#fff;
-	}
+}
+
+.t-neutral.checkbox-options input[type="checkbox"]:checked + label:before {
+    transform: scale(1);
+}
+
+.t-neutral.checkbox-options input[type="checkbox"]:active + label {
+    background: #444;
+    color: #fff;
+}
+
+.t-neutral.checkbox-options input[type="checkbox"]:focus + label {
+    background: #444;
+    color: #fff;
+}
+.t-neutral .checkbox-options__label:before {
+    background-image: url("../img/check_tick.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+.t-neutral .checkbox-options__label {
+    background: #eee;
+    border-color: #111;
+    color: #111;
+}
+
+.t-neutral .checkbox-options__label:hover {
+    background: #333;
+    color: #fff;
+}
+
 				</code>
 			</pre>
 			<h3>The CSS: Component</h3>
 			<pre class="codeblock">
 				<code class="language-css">
-	.check-options-label {
-		cursor:pointer;
-		padding:0.5em 0.75em;
-		display:inline-block;
-		border:1px solid;
-		text-align:center;
-		text-decoration:none;
-		transition:background 0.3s ease;
-	}
-	@media all and (min-width: 40em){
-		.check-options-label {
-			padding: 3em;
-		}
-	}
-	/* Qualifier, since technique requires
+	.checkbox-options__label:before {
+    content: "";
+    display: block;
+    height: 1em;
+    left: 1em;
+    /* This is a bit of a magic number here, you could vertically center any number of ways */
+    top:42%;
+    position: absolute;
+    transform: scale(0);
+    z-index:2;
+    transition: transform 0.4s cubic-bezier(.59,-0.44,.4,1.47);
+    width: 1.35em;
+}
+
+.checkbox-options__label {
+    border: 1px solid;
+    cursor: pointer;
+    display: inline-block;
+    padding: 3em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.3s ease;
+
+    @media all and (max-width:48em) {
+        width: 100%;
+    }
+}
+
+
+/* Qualifier, since technique requires
 	adjacent selector,
 		we use sibling to cut the mustard
 	*/
-	.check-options-title ~ .check-options-input {
-	   position:absolute;
-	   visibility:none;
-	   opacity:0;
-	   left:-9999px;
-	}
+
+.checkbox-options__title ~ .checkbox-options__input {
+    left: -9999px;
+    opacity: 0;
+    position: absolute;
+    visibility: none;
+}
+
+.high-contrast .checkbox-options__label:before {
+	border:1px solid #fff;
+	background:#222;
+	transition:background 0.3s ease;
+}
 				</code>
 			</pre>
 			<h3>The SVG background image</h3>

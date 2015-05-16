@@ -1,30 +1,35 @@
-$bgSelectBoxImage: "../img/arrow_down";
-$bgSelectBoxImageSVG: $bgSelectBoxImage + ".svg";
-$bgSelectBoxImagePNG: $bgSelectBoxImage + ".png";
-$selectBoxBgColor: #fff;
-$optionTextColor: #111;
-$selectBoxBorder: 1px solid #2a1244;
-$selectBoxActiveFocusBgColor: rgba(249, 241, 155, 0.5);
-//
+/*****************
+  * Component: Select box with background image
+  */
+
+$c-background-image: "../img/arrow_down";
+$c-background-image-svg: $c-background-image + ".svg";
+$c-background-image-png: $c-background-image + ".png";
+
+$c-select-box-background-color: #fff;
+$c-select-box-option-text-color: #111;
+$c-select-box-border: 1px solid #2a1244;
+$c-select-box-background-color-focus-active: rgba(249, 241, 155, 0.5);
+
 //Select Box theming
 //
-.t-white .select-box-wrapper {
-    background: $selectBoxBgColor url($bgSelectBoxImageSVG) no-repeat 97% 50%;
-    border: $selectBoxBorder;
+.t-neutral .select-box__inner {
+    background: $c-select-box-background-color url($c-background-image-svg) no-repeat 97% 50%;
+    border: $c-select-box-border;
 }
-.no-svg .t-white .select-box-wrapper {
-    background-image: url($bgSelectBoxImagePNG);
+.no-svg .t-neutral .select-box__inner {
+    background-image: url($c-background-image-png);
 }
-.t-white .select-box-wrapper select option {
-    color: $optionTextColor;
+.t-neutral .select-box__inner select option {
+    color: $c-select-box-option-text-color;
 }
-.t-white .select-box-wrapper select {
+.t-neutral .select-box__inner select {
 
     color: #697070;
 
     &:active,
     &:focus {
-        background-color: $selectBoxActiveFocusBgColor; //this is transparent so you can still see the arrow when it hilights
+        background-color: $c-select-box-background-color-focus-active; //this is transparent so you can still see the arrow when it hilights
     }
 }
 
@@ -33,18 +38,18 @@ $selectBoxActiveFocusBgColor: rgba(249, 241, 155, 0.5);
 //select box component
 //
 //
-.select-box-wrapper input::-ms-clear,
-.select-box-wrapper input::-ms-reveal {
+.select-box__inner input::-ms-clear,
+.select-box__inner input::-ms-reveal {
     display:none;
 }
 
-.select-box-label {
+.select-box__label {
 	display:block;
 	margin:1em 0;
 }
 
 //needs to house the select in order to work
-.select-box-wrapper {
+.select-box__inner {
     border-radius: 5px;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1em;
@@ -54,6 +59,7 @@ $selectBoxActiveFocusBgColor: rgba(249, 241, 155, 0.5);
     position: relative;
     transition: background-color 0.4s ease-in-out;
     width: 100%;
+
     &:hover,
     &:focus,
     &:active {
@@ -61,12 +67,12 @@ $selectBoxActiveFocusBgColor: rgba(249, 241, 155, 0.5);
     }
 }
 
-.select-box-wrapper select option {
+.select-box__inner select option {
     padding:0.5em;
     line-height:1.5;
     font-size:1em;
 }
-.select-box-wrapper select {
+.select-box__inner select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -89,15 +95,14 @@ $selectBoxActiveFocusBgColor: rgba(249, 241, 155, 0.5);
         //appearance: menu-list;
     }
     @media screen and (-ms-high-contrast: black-on-white) {
-     width: 100%;
+        width: 100%;
     }
     @media screen and (-ms-high-contrast: white-on-black) {
       width: 100%;
     }
 }
 //requires a script to detect a change
-.high-contrast-mode .select-box-wrapper select {
-
+.high-contrast-mode .select-box__inner select {
     width: 100%;
 }
 

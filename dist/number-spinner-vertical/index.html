@@ -14,7 +14,7 @@
 		</script>
 
 		<link href="../style/main.min.css" rel="stylesheet" />
-        <link href="../style/spinner-vertical.min.css" rel="stylesheet" />
+        <link href="../style/spinner.min.css" rel="stylesheet" />
 		<link href="../style/prism.min.css" rel="stylesheet" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,15 +25,12 @@
 
 			<h2>Number spinner Vertical</h2>
 
-			<form id="number-spinner-vertical" class="t-white">
-				<fieldset class="spinner-vertical">
-					<label for="spinner-input-vertical" class="spinner-vertical-label">How many</label>
-
-					<button data-type="add" class="btn-vertical-spinner btn-vertical-spinner-top" title="Add 1" aria-controls="spinner-input-vertical">+</button>
-
-					<input type="number" class="vertical-spinner-input js-spinner-input-vertical" id="spinner-input-vertical" value="1" step="1"  max="30" min="0" pattern="[0-9]*" role="alert" aria-live="assertlive" />
-
-					<button data-type="subtract" class="btn-vertical-spinner btn-vertical-spinner-bottom" title="Subtract 1" aria-controls="spinner-input-vertical">-</button>
+			<form id="number-spinner-vertical" class="t-neutral">
+				<fieldset class="spinner spinner--vertical l-contain--small">
+					<label for="spinner-input" class="spinner__label">How many</label>
+					<button data-type="add" class="spinner__button spinner__button--top" title="Add 1" aria-controls="spinner-input">+</button>
+					<input type="number" class="spinner__input js-spinner-input-vertical" id="spinner-input" value="1" step="1"  max="30" min="0" pattern="[0-9]*" role="alert" aria-live="assertlive" />
+					<button data-type="subtract" class="spinner__button spinner__button--bottom" title="Subtract 1" aria-controls="spinner-input">-</button>
 				</fieldset>
 			</form>
 
@@ -42,39 +39,41 @@
 			<h3>The Markup</h3>
 			<pre class="codeblock">
 				<code class="language-markup">
-&lt;form id="number-spinner-vertical" class="t-white">
-	&lt;fieldset class="spinner-vertical">
-		&lt;label for="spinner-input-vertical" class="spinner-vertical-label">How many&lt;/label>
-		&lt;button data-type="add" class="btn-vertical-spinner btn-vertical-spinner-top" title="Add 1" aria-controls="spinner-input-vertical">+&lt;/button>
-		&lt;input type="number" class="vertical-spinner-input js-spinner-input-vertical" id="spinner-input-vertical" value="1" step="1"  max="30" min="0" pattern="[0-9]*" role="alert" aria-live="assertlive" />
-		&lt;button data-type="subtract" class="btn-vertical-spinner btn-vertical-spinner-bottom" title="Subtract 1" aria-controls="spinner-input-vertical">-&lt;/button>
-	&lt;/fieldset>
+&lt;form id="number-spinner-vertical" class="t-neutral">
+    &lt;fieldset class="spinner spinner--vertical">
+        &lt;label for="spinner-input" class="spinner__label">How many&lt;/label>
+        &lt;button data-type="add" class="spinner__button spinner__button--top" title="Add 1" aria-controls="spinner-input">+&lt;/button>
+        &lt;input type="number" class="spinner__input js-spinner-input-vertical" id="spinner-input" value="1" step="1"  max="30" min="0" pattern="[0-9]*" role="alert" aria-live="assertlive" />
+        &lt;button data-type="subtract" class="spinner__button spinner__button--bottom" title="Subtract 1" aria-controls="spinner-input">-&lt;/button>
+    &lt;/fieldset>
 &lt;/form>
 				</code>
 			</pre>
 			<h3>The CSS: Theming</h3>
-			<pre class="codeblock">
-				<code class="language-css">
-.t-white .btn-vertical-spinner {
+            <pre class="codeblock">
+                <code class="language-css">
+/* Theming */
+
+.t-neutral .spinner__button {
     background: #222;
-    color: #fff;
+    color: $#fff;
 }
-.t-white .btn-vertical-spinner:hover,
-.t-white .btn-vertical-spinner:focus,
-.t-white .btn-vertical-spinner:active {
-	background: #555;
+.t-neutral .spinner__button:hover,
+.t-neutral .spinner__button:focus,
+.t-neutral .spinner__button:active {
+  background: #444;
 }
-.t-white .vertical-spinner-input {
-    background:#eee;
+.t-neutral .spinner__input {
+    background: #eee;
 }
-				</code>
-			</pre>
-			<h3>The CSS: Reset</h3>
-			<pre class="codeblock">
-				<code class="language-css">
+  </code>
+            </pre>
+      <h3>The CSS: Resets</h3>
+      <pre class="codeblock">
+        <code class="language-css">
 /* Aggressive reset to remove the initial spinner */
 input[type="number"] {
-	-moz-appearance: textfield;
+  -moz-appearance: textfield;
 }
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -90,53 +89,105 @@ input[type="number"]:hover::-webkit-outer-spin-button {
   appearance:none;
   margin:0;
 }
+        </code>
+      </pre>
+            <h3>The CSS: Component</h3>
+            <pre class="codeblock">
+                <code class="language-css">
 
-				</code>
-			</pre>
-			<h3>The CSS: Component</h3>
-			<pre class="codeblock">
-				<code class="language-css">
-.spinner-vertical {
-	max-width:5em;
+/* The component (also includes vertical) */
+
+.spinner {
+    margin: 0 0 5em 0;
 }
-.spinner-vertical-label {
-    display:block;
-    text-align:center;
+
+.spinner:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.spinner__label {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.spinner__button {
+    cursor: pointer;
+    display: block;
+    font-size: 1em;
+    font-weight: 700;
+    padding: 1.1em 1em 1.15em;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.4s ease;
+}
+
+.spinner__button--left {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.spinner__button--right {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.spinner__button--top {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.spinner__button--bottom {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.spinner--vertical .spinner__button {
+    padding:2em 1em;
     width:100%;
 }
-.vertical-spinner-input {
-	border-radius:0;
+
+.spinner__input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     background: none;
     border: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    border-radius: none;
+    box-sizing: border-box;
+    display: block;
+    font-size: 1em;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.spinner--horizontal .spinner__input {
+    padding: 1em 1em 1.05em 1em;
+     @media all and (min-width:40em) {
+        padding: 1.1em 1em 1.05em 1em;
+    }
+}
+
+.spinner--vertical .spinner__input {
     padding:1.5em 1em 1.5em 1em;
-    text-align:center;
-    font-size:1em;
     width:100%;
 }
-.vertical-spinner-input:hover,
-.vertical-spinner-input:focus,
-.vertical-spinner-input:active {
-	font-size:1em;
+
+.spinner--horizontal .spinner__button {
+    float: left;
+    width: 25%;
 }
-.btn-vertical-spinner {
-    cursor:pointer;
-	text-align:center;
-	padding:2em 1em;
-	width:100%;
-	text-decoration:none;
-	display: block;
-	transition: background 0.4s ease;
+
+.spinner--horizontal .spinner__input {
+    float: left;
+    width: 50%;
 }
-.btn-vertical-spinner-top {
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-}
-.btn-vertical-spinner-bottom {
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
-}
-				</code>
-			</pre>
+                </code>
+            </pre>
 			<h3>The Javascript</h3>
 			<pre class="codeblock">
 				<code class="language-javascript">
@@ -257,7 +308,7 @@ var NumberSpinner = function(elemId, subtractClassName, addClassName) {
 		<script src="../scripts/prism.js"></script>
 		 <script src="../scripts/numberspinner.min.js"></script>
 		<script>
-			NumberSpinner('spinner-input-vertical', 'reverse');
+			NumberSpinner('spinner-input', 'reverse');
 		</script>
 
 	</body>

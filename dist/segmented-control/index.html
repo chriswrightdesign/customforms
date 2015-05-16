@@ -23,18 +23,18 @@
 		<div class="container">
 
 
-			<h1>Segmented Radio control</h1>
-			<p>v0.1a</p>
+			<h1>Segmented control</h1>
+			<p>v0.2a</p>
 
-			<form id="radio-segmented-control" class="t-white">
-				<fieldset class="radio-fieldset segmented-control">
-					<legend class="segmented-control-label">Pick an option</legend>
-					<input class="segment-switch-input" id="radio_option1" type="radio" name="segment" value="Option 1" />
-					<label class="segment-switch-label segment-start l-grid-33" for="radio_option1">Option 1</label>
-					<input class="segment-switch-input" id="radio_option2" type="radio" name="segment" value="Option 2" />
-					<label class="segment-switch-label l-grid-33" for="radio_option2">Option 2</label>
-					<input class="segment-switch-input" id="radio_option3" type="radio" name="segment" value="Option 3" checked="true" />
-					<label class="segment-switch-label segment-end l-grid-33" for="radio_option3">Option 3</label>
+			<form id="radio-segmented-control" class="t-neutral">
+				<fieldset class="segmented-control">
+					<legend class="segmented-control__title">Pick an option</legend>
+					<input class="segmented-control__input" id="radio_option1" type="radio" name="segment" value="Option 1" />
+					<label class="segmented-control__label segmented-control__label--start l-grid-33" for="radio_option1">Option 1</label>
+					<input class="segmented-control__input" id="radio_option2" type="radio" name="segment" value="Option 2" />
+					<label class="segmented-control__label l-grid-33" for="radio_option2">Option 2</label>
+					<input class="segmented-control__input" id="radio_option3" type="radio" name="segment" value="Option 3" checked="true" />
+					<label class="segmented-control__label segmented-control__label--end l-grid-33" for="radio_option3">Option 3</label>
 				</fieldset>
 			</form>
 			<h2>Implementing this component</h2>
@@ -42,15 +42,15 @@
 			<h3>The Markup</h3>
 			<pre class="codeblock">
 				<code class="language-markup">
-	&lt;form id="radio-segmented-control" class="t-white">
-		&lt;fieldset class="radio-fieldset segmented-control">
-			&lt;legend class="segmented-control-label">Pick an option&lt;/legend>
-			&lt;input class="segment-switch-input" id="radio_option1" type="radio" name="segment" value="Option 1" />
-			&lt;label class="segment-switch-label segment-start l-grid-33" for="radio_option1">Option 1&lt;/label>
-			&lt;input class="segment-switch-input" id="radio_option2" type="radio" name="segment" value="Option 2" />
-			&lt;label class="segment-switch-label l-grid-33" for="radio_option2">Option 2&lt;/label>
-			&lt;input class="segment-switch-input" id="radio_option3" type="radio" name="segment" value="Option 3" checked="true" />
-			&lt;label class="segment-switch-label segment-end l-grid-33" for="radio_option3">Option 3&lt;/label>
+	&lt;form id="radio-segmented-control" class="t-neutral">
+		&lt;fieldset class="segmented-control">
+			&lt;legend class="segmented-control__title">Pick an option&lt;/legend>
+			&lt;input class="segmented-control__input" id="radio_option1" type="radio" name="segment" value="Option 1" />
+			&lt;label class="segmented-control__label segmented-control__label--start l-grid-33" for="radio_option1">Option 1&lt;/label>
+			&lt;input class="segmented-control__input" id="radio_option2" type="radio" name="segment" value="Option 2" />
+			&lt;label class="segmented-control__label l-grid-33" for="radio_option2">Option 2&lt;/label>
+			&lt;input class="segmented-control__input" id="radio_option3" type="radio" name="segment" value="Option 3" checked="true" />
+			&lt;label class="segmented-control__label segmented-control__label--end l-grid-33" for="radio_option3">Option 3&lt;/label>
 		&lt;/fieldset>
 	&lt;/form>
 				</code>
@@ -59,42 +59,34 @@
 			<pre class="codeblock">
 				<code class="language-css">
 	/* Theming */
-	.t-white .segment-switch-label {
-		border-bottom: 1px solid #180f0b;
-	    border-top: 1px solid #180f0b;
-		background: #eee;
-		color: #111;
-	}
 
 	/* If the current object is clicked/tapped */
-	.t-white .segmented-control input[type="radio"]:checked + label {
-	    background: #180f0b;
-	    border-color: #20120a;
-	    color: #fff;
-	}
+.t-neutral .segmented-control input[type="radio"]:checked + label {
+    background: #180f0b;
+    border-color: #20120a;
+    color: #fff;
+}
 
-	/* If the control has keyboard focus */
-	.t-white .segmented-control input[type="radio"]:focus + label {
-	    background: #444;
-	    color: #fff;
-	    outline:thin dotted;
-	}
-	.t-white .segmented-control input[type="radio"]:active + label {
-	    color: #fff;
-	}
-	.t-white .segment-switch-label {
-		border-color: #111;
-	}
+/* If the control has keyboard focus */
+.t-neutral .segmented-control input[type="radio"]:focus + label {
+    background: #444;
+    color: #fff;
+    outline:thin dotted;
+}
+.t-neutral .segmented-control input[type="radio"]:active + label {
+    color: #fff;
+}
 
-				</code>
-			</pre>
-			<h3>CSS: Resets</h3>
-			<pre class="codeblock">
-				<code class="language-css">
-	/* Resets */
-	.radio-fieldset {
-	    border: none;
-	}
+.t-neutral .segmented-control__label {
+	border-bottom: 1px solid #180f0b;
+    border-top: 1px solid #180f0b;
+	background: #eee;
+	color: #111;
+}
+
+.t-neutral .segmented-control__label {
+	border-color: #111;
+}
 				</code>
 			</pre>
 			<h3>CSS: Layout</h3>
@@ -111,48 +103,46 @@
 			<pre class="codeblock">
 				<code class="language-css">
 	/* Component */
-	.segment-switch-label {
-		box-sizing: border-box;
-	    cursor: pointer;
-	    display: block;
-	    font-family: "Lato", sans-serif;
-	    padding: 0.5em 0.75em;
-	    text-align: center;
-	    text-decoration: none;
-	    transition: background 0.4s ease, color 0.4s ease;
+.segmented-control__label {
+	box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    padding: 0.5em 0.75em;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+@media all and (min-width: 40em) {
+	.segmented-control__label {
+		padding: 0.75em;
 	}
-	@media all and (min-width: 40em) {
-		.segment-switch-label {
-			padding: 0.75em;
-		}
-	}
-	/*
-	We'll use a sibling selector here to make sure
-	that if we're going to hide the input,
-	it'll only be on browsers that can handle the styling
-	*/
-	.segmented-control-label ~ .segment-switch-input {
-	    left: -9999px;
-	    opacity: 0;
-	    position: absolute;
-	    visibility: none;
-	}
+}
 
+/* we'll use a sibling selector here to make sure
+ that if we're going to hide the input,
+ it'll only be on browsers that can handle the styling
+*/
+.segmented-control__title ~ .segmented-control__input {
+    left: -9999px;
+    opacity: 0;
+    position: absolute;
+    visibility: none;
+}
 
-	.segment-start {
-		border: 1px solid;
-	    border-bottom-left-radius: 5px;
-	    border-bottom-right-radius: 0;
-	    border-top-left-radius: 5px;
-	    border-top-right-radius: 0;
-	}
-	.segment-end {
-		border:1px solid;
-	    border-bottom-left-radius: 0;
-	    border-bottom-right-radius: 5px;
-	    border-top-left-radius: 0;
-	    border-top-right-radius: 5px;
-	}
+.segmented-control__label--start {
+	border: 1px solid;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 0;
+}
+.segmented-control__label--end {
+	border:1px solid;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 5px;
+}
 				</code>
 			</pre>
 

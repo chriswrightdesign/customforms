@@ -14,7 +14,7 @@
 		</script>
 
 		<link href="../style/main.min.css" rel="stylesheet" />
-    <link href="../style/spinner-horizontal.min.css" rel="stylesheet" />
+    <link href="../style/spinner.min.css" rel="stylesheet" />
 		<link href="../style/prism.min.css" rel="stylesheet" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,19 +24,15 @@
 	<body>
 		<div class="container">
 			<h1>Number spinner horizontal</h1>
-      <p>v0.2a</p>
+      <p>v0.3a</p>
 
-			<form id="number-spinner-horizontal" class="t-white">
-				<fieldset class="spinner-horizontal">
-					<label for="spinner-horizontal-vertical" class="spinner-horizontal-label">Quantity</label>
-
-					<button data-type="subtract" title="Subtract 1" class="l-grid-25 btn-spinner btn-spinner-left js-spinner-horizontal-subtract" aria-controls="spinner-input">-</button>
-
-					<input type="number" class="l-grid-50 spinner-input js-spinner-input-horizontal" id="spinner-input" value="1" min="0" max="20" step="1" pattern="[0-9]*" role="alert" aria-live="assertlive" />
+			<form id="number-spinner-horizontal" class="t-neutral">
+				<fieldset class="spinner spinner--horizontal l-contain--medium">
+					<label for="spinner-input" class="spinner__label">Quantity</label>
+					<button class="spinner__button spinner__button--left js-spinner-horizontal-subtract" data-type="subtract" title="Subtract 1" aria-controls="spinner-input">-</button>
+					<input type="number" class="spinner__input js-spinner-input-horizontal" id="spinner-input" value="1" min="0" max="20" step="1" pattern="[0-9]*" role="alert" aria-live="assertlive" />
           <!-- Assert live speaks the change of the number -->
-
-					<button data-type="add" class="l-grid-25 btn-spinner btn-spinner-right js-spinner-horizontal-add" title="Add 1" aria-controls="spinner-input">+</button>
-
+					<button data-type="add" class="spinner__button spinner__button--right js-spinner-horizontal-add" title="Add 1" aria-controls="spinner-input">+</button>
 				</fieldset>
 			</form>
 			<h2>Implementing this component</h2>
@@ -44,49 +40,34 @@
 			<h3>The Markup</h3>
 			<pre class="codeblock">
 				<code class="language-markup">
-  &lt;form id="number-spinner-horizontal" class="t-white">
-    &lt;fieldset class="spinner-horizontal">
-      &lt;label for="spinner-horizontal-vertical" class="spinner-horizontal-label">Quantity&lt;/label>
-      &lt;button data-type="subtract" title="Subtract 1" class="l-grid-25 btn-spinner btn-spinner-left" aria-controls="spinner-input">-&lt;/button>
-      &lt;input type="number" class="l-grid-50 spinner-input js-spinner-input-horizontal" id="spinner-input" value="1" min="0" max="20" step="1" pattern="[0-9]*" role="alert" aria-live="assertlive" />
-      &lt;!-- Assert live speaks the change of the number -->
-      &lt;button data-type="add" class="l-grid-25 btn-spinner btn-spinner-right" title="Add 1" aria-controls="spinner-input">+&lt;/button>
-    &lt;/fieldset>
-  &lt;/form>
+  &lt;form id="number-spinner-horizontal" class="t-neutral">
+    &lt;fieldset class="spinner spinner--horizontal l-contain--medium">
+       &lt;label for="spinner-input" class="spinner__label">Quantity &lt;/label>
+       &lt;button class="spinner__button spinner__button--left js-spinner-horizontal-subtract" data-type="subtract" title="Subtract 1" aria-controls="spinner-input">- &lt;/button>
+       &lt;input type="number" class="spinner__input js-spinner-input-horizontal" id="spinner-input" value="1" min="0" max="20" step="1" pattern="[0-9]*" role="alert" aria-live="assertlive" />
+       &lt;button data-type="add" class="spinner__button spinner__button--right js-spinner-horizontal-add" title="Add 1" aria-controls="spinner-input">+ &lt;/button>
+     &lt;/fieldset>
+   &lt;/form>
 				</code>
 			</pre>
 			<h3>The CSS: Theming</h3>
 			<pre class="codeblock">
 				<code class="language-css">
 /* Theming */
-.t-white .btn-spinner {
+
+.t-neutral .spinner__button {
     background: #222;
-    color: #fff;
+    color: $#fff;
 }
-.t-white .btn-spinner:hover,
-.t-white .btn-spinner:focus,
-.t-white .btn-spinner:active {
-	background: #555;
+.t-neutral .spinner__button:hover,
+.t-neutral .spinner__button:focus,
+.t-neutral .spinner__button:active {
+  background: #444;
 }
-.t-white .spinner-input {
+.t-neutral .spinner__input {
     background: #eee;
-}</code>
-			</pre>
-			<h3>The CSS: Layout</h3>
-			<pre class="codeblock">
-				<code class="language-css">
-/* For this implementation, the spinner buttons,
-have been given 25% width, and the input 50%
-*/
-.l-grid-50 {
-    float: left;
-    width: 50%;
 }
-.l-grid-25 {
-    float: left;
-    width: 25%;
-}
-				</code>
+  </code>
 			</pre>
       <h3>The CSS: Resets</h3>
       <pre class="codeblock">
@@ -115,22 +96,25 @@ input[type="number"]:hover::-webkit-outer-spin-button {
 			<pre class="codeblock">
 				<code class="language-css">
 
-.spinner-horizontal-label {
-    display:block;
-    text-align:center;
-    width:100%;
-}
-/* The rounded corners of each of the buttons */
-.btn-spinner-left {
-	border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-}
-.btn-spinner-right {
-	border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
+/* The component (also includes vertical) */
+
+.spinner {
+    margin: 0 0 5em 0;
 }
 
-.btn-spinner {
+.spinner:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.spinner__label {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.spinner__button {
     cursor: pointer;
     display: block;
     font-size: 1em;
@@ -140,7 +124,33 @@ input[type="number"]:hover::-webkit-outer-spin-button {
     text-decoration: none;
     transition: background 0.4s ease;
 }
-.spinner-input {
+
+.spinner__button--left {
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.spinner__button--right {
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.spinner__button--top {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.spinner__button--bottom {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.spinner--vertical .spinner__button {
+    padding:2em 1em;
+    width:100%;
+}
+
+.spinner__input {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -153,8 +163,29 @@ input[type="number"]:hover::-webkit-outer-spin-button {
     display: block;
     font-size: 1em;
     line-height: 1.5;
-    padding: 1.1em 1em 1.05em 1em;
     text-align: center;
+}
+
+.spinner--horizontal .spinner__input {
+    padding: 1em 1em 1.05em 1em;
+     @media all and (min-width:40em) {
+        padding: 1.1em 1em 1.05em 1em;
+    }
+}
+
+.spinner--vertical .spinner__input {
+    padding:1.5em 1em 1.5em 1em;
+    width:100%;
+}
+
+.spinner--horizontal .spinner__button {
+    float: left;
+    width: 25%;
+}
+
+.spinner--horizontal .spinner__input {
+    float: left;
+    width: 50%;
 }
 				</code>
 			</pre>

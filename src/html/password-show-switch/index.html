@@ -26,12 +26,11 @@
 			<p>v0.1a</p>
 
 			<form id="password-switch">
-				<fieldset class="t-white password-switcher">
-					<label class="password-label" for="password-control">Your password</label>
-
-					<div class="password-wrapper">
-						<input type="password" class="password-input js-password-input" id="password-control" />
-						<button type="button" title="Show Hide Password Toggle" class="btn-password-switch js-password-switch" aria-controls="password-control" />
+				<fieldset class="t-neutral password-switcher">
+					<label class="password-switcher__label" for="password-control">Your password</label>
+					<div class="password-switcher__inner">
+						<input type="password" class="password-switcher__input js-password-input" id="password-control" />
+						<button type="button" title="Show Hide Password Toggle" class="password-switcher__button js-password-switch" aria-controls="password-control" />
 					</div>
 				</fieldset>
 			</form>
@@ -41,27 +40,27 @@
 			<pre class="codeblock">
 				<code class="language-markup">
 	&lt;form id="password-switch">
-		&lt;fieldset class="t-white password-switcher">
-			&lt;label class="password-label" for="password-control">Your password&lt;/label>
-			&lt;div class="password-wrapper">
-				&lt;input type="password" class="password-input js-password-input" id="password-control" />
-				&lt;button type="button" title="Show Hide Password Toggle" class="btn-password-switch js-password-switch" aria-controls="password-control" />
-			&lt;/div>
-		&lt;/fieldset>
-	&lt;/form>
+        &lt;fieldset class="t-neutral password-switcher">
+            &lt;label class="password-switcher__label" for="password-control">Your password&lt;/label>
+            &lt;div class="password-switcher__inner">
+                &lt;input type="password" class="password-switcher__input js-password-input" id="password-control" />
+                &lt;button type="button" title="Show Hide Password Toggle" class="password-switcher__button js-password-switch" aria-controls="password-control" />
+            &lt;/div>
+        &lt;/fieldset>
+    &lt;/form>
 				</code>
 			</pre>
 			<h3>The CSS: Theming</h3>
 			<pre class="codeblock">
 				<code class="language-css">
-.t-white .password-input {
+.t-neutral .password-switcher__input {
     background: #fff;
     border: 1px solid #ddd;
 }
-/* Whatever icon you want on the button */
-.t-white .btn-password-switch {
+.t-neutral .password-switcher__button {
     background: url("../img/icon_view.svg") no-repeat 0 50%;
 }
+
 				</code>
 			</pre>
 			<h3>The CSS: Reset</h3>
@@ -72,53 +71,54 @@
 .password-switcher input::-ms-reveal {
     display: none;
 }
+
 				</code>
 			</pre>
 			<h3>The CSS: Component</h3>
 			<pre class="codeblock">
 				<code class="language-css">
 /* Component */
-.password-wrapper {
+.password-switcher__inner {
     margin: 1.5em 0 0 0;
     position: relative;
 }
-.password-input {
+.password-switcher__input {
     background: none;
     border: none;
     font-size: 1em;
     padding: 1em 3em 1em 1em;
     width: 100%;
 }
-.password-input:focus {
-	outline-offset:5px;
+.password-switcher__input:focus {
+    outline-offset:5px;
 }
-.password-input:hover,
-.password-input:focus,
-.password-input:active {
-	font-size: 1em;
+.password-switcher__input:hover,
+.password-switcher__input:focus,
+.password-switcher__input:active {
+    font-size: 1em;
 }
 
-.btn-password-switch {
+.password-switcher__button {
     display: block;
     height: 3.25em;
     overflow: hidden;
     position: absolute;
     right: 1.5em;
-    top: 0.75em; /* can't be 50% because of IE8 */
+    top: 0.75em;
     width: 2.5em;
     transition: opacity 0.3s ease;
     cursor:pointer;
 
 }
-.btn-password-switch:focus {
-	outline:thin dotted;
-	outline-offset:5px;
+.password-switcher__button:focus {
+    outline:thin dotted;
+    outline-offset:5px;
 }
-.btn-password-switch:hover {
-	opacity:0.8;
+.password-switcher__button:hover {
+    opacity:0.8;
 }
-/* is revealing */
-.btn-password-switch.is-active {
+//is revealing
+.password-switcher__button.is-active {
     background-position: -28px 50%;
 }
 				</code>

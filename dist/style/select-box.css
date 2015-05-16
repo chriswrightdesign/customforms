@@ -1,36 +1,40 @@
-.t-white .select-box-wrapper {
+/*****************
+  * Component: Select box with background image
+  */
+
+.t-neutral .select-box__inner {
 	background: #fff url("../img/arrow_down.svg") no-repeat 97% 50%;
 	border: 1px solid #2a1244;
 }
 
-.no-svg .t-white .select-box-wrapper {
+.no-svg .t-neutral .select-box__inner {
 	background-image: url("../img/arrow_down.png");
 }
 
-.t-white .select-box-wrapper select option {
+.t-neutral .select-box__inner select option {
 	color: #111;
 }
 
-.t-white .select-box-wrapper select {
+.t-neutral .select-box__inner select {
 	color: #697070;
 }
 
-.t-white .select-box-wrapper select:active,
-.t-white .select-box-wrapper select:focus {
+.t-neutral .select-box__inner select:active,
+.t-neutral .select-box__inner select:focus {
 	background-color: rgba(249, 241, 155, 0.5);
 }
 
-.select-box-wrapper input::-ms-clear,
-.select-box-wrapper input::-ms-reveal {
+.select-box__inner input::-ms-clear,
+.select-box__inner input::-ms-reveal {
 	display: none;
 }
 
-.select-box-label {
+.select-box__label {
 	display: block;
 	margin: 1em 0;
 }
 
-.select-box-wrapper {
+.select-box__inner {
 	border-radius: 5px;
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 1em;
@@ -43,19 +47,19 @@
 	width: 100%;
 }
 
-.select-box-wrapper:hover,
-.select-box-wrapper:focus,
-.select-box-wrapper:active {
+.select-box__inner:hover,
+.select-box__inner:focus,
+.select-box__inner:active {
 	cursor: pointer;
 }
 
-.select-box-wrapper select option {
+.select-box__inner select option {
 	padding: 0.5em;
 	line-height: 1.5;
 	font-size: 1em;
 }
 
-.select-box-wrapper select {
+.select-box__inner select {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -71,17 +75,17 @@
 	width: 115%;
 }
 
-.select-box-wrapper select:hover {
+.select-box__inner select:hover {
 	cursor: pointer;
 }
 
-.high-contrast-mode .select-box-wrapper select {
+.high-contrast-mode .select-box__inner select {
 	width: 100%;
 }
 
 @media screen and (-ms-high-contrast: active) {
 
-.select-box-wrapper select { /* All high contrast styling rules */
+.select-box__inner select { /* All high contrast styling rules */
 	width: 100%;
 }
 
@@ -89,7 +93,7 @@
 
 @media screen and (-ms-high-contrast: black-on-white) {
 
-.select-box-wrapper select {
+.select-box__inner select {
 	width: 100%;
 }
 
@@ -97,7 +101,7 @@
 
 @media screen and (-ms-high-contrast: white-on-black) {
 
-.select-box-wrapper select {
+.select-box__inner select {
 	width: 100%;
 }
 

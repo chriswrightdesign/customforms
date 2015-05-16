@@ -1,0 +1,139 @@
+/*
+* @ Component: Spinner horizontal
+*/
+
+/*
+* Settings
+*/
+$spinner-button-color: #222;
+$spinner-button-hover-color: #444;
+$spinner-button-radius: 5px;
+$spinner-button-text-color: #fff;
+$spinner-input-color: #eee;
+
+* {
+    box-sizing: border-box;
+}
+
+//theming
+.t-neutral .spinner__button {
+    background: $spinner-button-color;
+    color: $spinner-button-text-color;
+    &:hover,
+    &:focus,
+    &:active {
+        background: $spinner-button-hover-color;
+    }
+}
+.t-neutral .spinner__input {
+    background: $spinner-input-color;
+}
+
+.l-contain--small {
+    max-width: 8em;
+}
+.l-contain--medium {
+    max-width: 15em;
+}
+
+.spinner {
+    margin: 0 0 5em 0;
+}
+
+.spinner:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.spinner__label {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.spinner__button {
+    cursor: pointer;
+    display: block;
+    font-size: 1em;
+    font-weight: 700;
+    padding: 1.1em 1em 1.15em;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.4s ease;
+}
+
+.spinner__button--left {
+    border-bottom-left-radius: $spinner-button-radius;
+    border-top-left-radius: $spinner-button-radius;
+}
+.spinner__button--right {
+    border-bottom-right-radius: $spinner-button-radius;
+    border-top-right-radius: $spinner-button-radius;
+}
+
+.spinner__button--top {
+    border-top-left-radius: $spinner-button-radius;
+    border-top-right-radius: $spinner-button-radius;
+}
+.spinner__button--bottom {
+    border-bottom-left-radius: $spinner-button-radius;
+    border-bottom-right-radius: $spinner-button-radius;
+}
+
+.spinner--vertical .spinner__button {
+    padding:2em 1em;
+    width:100%;
+}
+
+.spinner__input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: none;
+    border: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    border-radius: none;
+    box-sizing: border-box;
+    display: block;
+    font-size: 1em;
+    line-height: 1.5;
+    text-align: center;
+
+}
+.spinner--horizontal .spinner__input {
+    padding: 1em 1em 1.05em 1em;
+     @media all and (min-width:40em) {
+        padding: 1.1em 1em 1.05em 1em;
+    }
+}
+.spinner--vertical .spinner__input {
+    padding:1.5em 1em 1.5em 1em;
+    width:100%;
+}
+.spinner--horizontal .spinner__button {
+    float: left;
+    width: 25%;
+}
+.spinner--horizontal .spinner__input {
+    float: left;
+    width: 50%;
+}
+
+
+
+
+
+
+@keyframes activateButton {
+    0% {
+        transform: scale(0.9);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.9);
+    }
+}
