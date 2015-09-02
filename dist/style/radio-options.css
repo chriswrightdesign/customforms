@@ -35,6 +35,7 @@
 	cursor: pointer;
 	padding: 0.5em 0.75em;
 	border: 1px solid;
+	border-radius: 50%;
 	text-align: center;
 	text-decoration: none;
 }

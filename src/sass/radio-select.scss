@@ -1,0 +1,126 @@
+
+$c-background-image: "../img/arrow_down";
+$c-background-image-svg: $c-background-image + ".svg";
+$c-background-image-png: $c-background-image + ".png";
+$c-select-box-background-color: #fff;
+$c-select-box-option-text-color: #111;
+$c-select-box-border: 1px solid #2a1244;
+$c-select-box-background-color-focus-active: rgba(249, 241, 155, 0.5);
+
+
+    .t-neutral.radio-select input[type="radio"]:checked + label {
+        background: #eee;
+        color: #111;
+
+    }
+
+    .t-neutral.radio-select input[type="radio"]:active + label {
+        color: #111;
+        background: rgba(249, 241, 155, 0.5);
+        opacity: 1;
+    }
+    .t-neutral.radio-select input[type="radio"]:focus + label {
+        color: #555;
+        background: rgba(249, 241, 155, 0.5);
+        opacity: 1;
+    }
+    .t-neutral .radio-select__label {
+    	background: #ddd;
+        border-color: #222;
+        color: #111;
+    }
+    .t-neutral .radio-select__label:hover {
+    	background: #555;
+        color: #fff;
+    }
+    .t-neutral .radio-select__label:focus,
+    .t-neutral .radio-select__label:active {
+    	background: #555;
+        color: #fff;
+    }
+
+    .radio-select__inner {
+        position: relative;
+        width:20em;
+    }
+    //if it's active you can see it - like a select box
+    .radio-select input[type="radio"]:checked + label {
+        opacity: 1;
+        position:relative;
+    }
+    .radio-select input[type="radio"]:checked + label {
+        z-index: 1;
+    }
+
+    .radio-select {
+        position: relative;
+        width: 20em;
+    }
+
+    /* Component */
+    .radio-select__label {
+        //z-index: 5;
+        display: block;
+        cursor: pointer;
+        padding: 0.5em 0.75em;
+        margin: 0;
+        text-align: center;
+        text-decoration: none;
+        transition: background 0.3s ease;
+
+    }
+    //this is a qualifier to make sure we don't cut out browsers without adjacent/sibling selectors. For those browsers they get the same label apperance but with a radio button next to it.
+    .radio-select__inner .radio-select__input {
+        left: -9999px;
+        opacity: 0;
+        position: absolute;
+        visibility: none;
+    }
+    .radio-select.is-active label {
+
+
+    }
+    .radio-select__inner {
+        position:absolute;
+        top:42px;
+        display:none;
+
+    }
+    .radio-select__inner:focus {
+        border: 1px solid #f0f;
+    }
+    .radio-select__inner.is-active {
+        display: block;
+    }
+    .radio-select__inner:focus > label {
+
+    }
+    .radio-select input[type="radio"] {
+
+    }
+
+    //#radio-select-open:target input[type="radio"] + label {
+       // opacity:1;
+        //position:relative;
+    //}
+
+    .radio-select__button {
+
+        z-index:10;
+        width:100%;
+        height:4em;
+        display :block;
+        color: #111;
+        border-radius:5px;
+        background: $c-select-box-background-color url($c-background-image-svg) no-repeat 97% 50%;
+        border: $c-select-box-border;
+        cursor:pointer;
+        outline: none;
+
+
+    }
+    .radio-select__button:active,
+    .radio-select__button:focus {
+        background-color: rgba(249, 241, 155, 0.5);
+        outline: none;
+    }

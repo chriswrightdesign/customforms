@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Custom forms - Radio select</title>
+		<script>
+		  (function(d) {
+		    var config = {
+		      kitId: 'tmv0kmr',
+		      scriptTimeout: 3000
+		    },
+		    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+		  })(document);
+		</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../style/main.min.css" rel="stylesheet" />
+        <link href="../style/radio-select.min.css" rel="stylesheet" />
+		<link href="../style/prism.min.css" rel="stylesheet" />
+		<script src="../scripts/modernizr.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h2>Radio select</h2>
+			<p>v.01a</p>
+			<form id="radio-select-group">
+				<div class="radio-select t-neutral">
+
+                    <button type="button" class="radio-select__button js-select-toggle">Select some stuff</button>
+					<div id="radio-select-open" class="radio-select__inner l-grid-parent js-select-dropdown">
+						<input data-name="$15" class="radio-select__input" id="radio_select1" type="radio" name="amount" value="$15" checked />
+						<label class="radio-select__label" for="radio_select1">$15</label>
+						<input data-name="$35" class="radio-select__input" id="radio_select2" type="radio" name="amount" value="$35" />
+						<label class="radio-select__label" for="radio_select2">$35</label>
+						<input data-name="$50" class="radio-select__input" id="radio_select3" type="radio" name="amount" value="$50" />
+						<label class="radio-select__label" for="radio_select3">$50</label>
+						<input data-name="$100" class="radio-select__input" id="radio_select4" type="radio" name="amount" value="$100" />
+						<label class="radio-select__label" for="radio_select4">$100</label>
+						<input data-name="$250" class="radio-select__input" id="radio_select5" type="radio" name="amount" value="$250" />
+						<label class="radio-select__label" for="radio_select5">$250</label>
+						<input data-name="$500" class="radio-select__input" id="radio_select6" type="radio" name="amount" value="$500" />
+						<label class="radio-select__label" for="radio_select6">$500</label>
+					</div>
+				</div>
+			</form>
+			<h2>Implementing this component</h2>
+
+			<h3>The Markup</h3>
+			<pre class="codeblock">
+				<code class="language-markup">
+	&lt;form id="radio-select-group">
+        &lt;fieldset class="radio-select t-neutral">
+            &lt;legend class="radio-select__title">Pick an amount to donate&lt;/legend>
+            &lt;div class="radio-select__inner l-grid-parent">
+                &lt;input class="radio-select__input" id="radio_select1" type="radio" name="amount" value="$15" checked />
+                &lt;label class="radio-select__label" for="radio_select1">$15&lt;/label>
+                &lt;input class="radio-select__input" id="radio_select2" type="radio" name="amount" value="$35" />
+                &lt;label class="radio-select__label" for="radio_select2">$35&lt;/label>
+                &lt;input class="radio-select__input" id="radio_select3" type="radio" name="amount" value="$50" />
+                &lt;label class="radio-select__label" for="radio_select3">$50&lt;/label>
+                &lt;input class="radio-select__input" id="radio_select4" type="radio" name="amount" value="$100" />
+                &lt;label class="radio-select__label" for="radio_select4">$100&lt;/label>
+                &lt;input class="radio-select__input" id="radio_select5" type="radio" name="amount" value="$250" />
+                &lt;label class="radio-select__label" for="radio_select5">$250&lt;/label>
+                &lt;input class="radio-select__input" id="radio_select6" type="radio" name="amount" value="$500" />
+                &lt;label class="radio-select__label" for="radio_select6">$500&lt;/label>
+            &lt;/div>
+        &lt;/fieldset>
+    &lt;/form>
+				</code>
+			</pre>
+			<h3>The CSS: Theming</h3>
+			<pre class="codeblock">
+				<code class="language-css">
+  	/* Theming */
+   .t-neutral.radio-select input[type="radio"]:checked + label {
+        background: #eee;
+        color: #111;
+
+    }
+    .t-neutral.radio-select input[type="radio"]:active + label {
+        color: #111;
+        background: rgba(249, 241, 155, 0.5);
+        opacity: 1;
+    }
+    .t-neutral.radio-select input[type="radio"]:focus + label {
+        color: #555;
+        background: rgba(249, 241, 155, 0.5);
+        opacity: 1;
+    }
+    .t-neutral .radio-select__label {
+        background: #ddd;
+        border-color: #222;
+        color: #111;
+    }
+    .t-neutral .radio-select__label:hover {
+        background: #555;
+        color: #fff;
+    }
+    .t-neutral .radio-select__label:focus,
+    .t-neutral .radio-select__label:active {
+        background: #555;
+        color: #fff;
+    }
+				</code>
+			</pre>
+			<h3>The CSS: Component</h3>
+			<pre class="codeblock">
+				<code class="language-css">
+    /* Component */
+    .radio-select input[type="radio"]:checked + label {
+        opacity: 1;
+        position:relative;
+    }
+
+    /* Component */
+    .radio-select__label {
+        display: block;
+        cursor: pointer;
+        padding: 0.5em 0.75em;
+        margin: 0;
+        position:absolute;
+        text-align: center;
+        text-decoration: none;
+        opacity:0;
+        transition: background 0.3s ease;
+    }
+    /* this is a qualifier to make sure we don't cut out
+    browsers without adjacent/sibling selectors.
+    For those browsers they get the same label apperance but with a radio button next to it.
+    */
+    .radio-select__title + .radio-select__inner .radio-select__input {
+        left: -9999px;
+        opacity: 0;
+        position: absolute;
+        visibility: none;
+    }
+				</code>
+			</pre>
+			<h2>About the component</h2>
+			<p>TBD.</p>
+
+			<h3>Screen Readers</h3>
+			<h4>Apple Voiceover</h4>
+			<p>TBD.</p>
+			<h4>JAWS</h4>
+			<p>TBD.</p>
+			<h4>NVDA</h4>
+			<p>TBD.</p>
+
+			<h3>Keyboard control</h3>
+			<p>TBD.</p>
+
+			<h3>High Contrast</h3>
+			<p>TBD.</p>
+
+			<h3>Inputs</h3>
+			<p>TBD.</p>
+
+			<h3>Cross browser notes</h3>
+			<p>TBD.</p>
+
+			<h3>Cross device notes</h3>
+			<p>TBD.</p>
+
+		</div>
+        <script src="../scripts/radio-select.js"></script>
+		<script src="../scripts/prism.js"></script>
+
+	</body>
+</html>
