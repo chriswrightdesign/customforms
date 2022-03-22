@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "critical": "^0.5.5",
-    "criticalcss": "^0.5.1",
+    "criticalcss": "^1.0.0",
     "gulp-load-plugins": "^0.8.1"
   }
 }
