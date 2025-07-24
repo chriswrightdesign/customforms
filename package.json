@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.4.4",
   "devDependencies": {
-    "critical": "^0.5.5",
+    "critical": "^0.7.3",
     "del": "^1.1.1",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.1.0",
@@ -20,8 +20,8 @@
     "gulp-uglify": "^1.1.0"
   },
   "dependencies": {
-    "critical": "^0.5.5",
-    "criticalcss": "^0.5.1",
+    "critical": "^0.7.3",
+    "criticalcss": "^1.0.0",
     "gulp-load-plugins": "^0.8.1"
   }
 }
